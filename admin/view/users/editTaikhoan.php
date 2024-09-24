@@ -44,11 +44,11 @@
                                 </div>
                                 <!-- /.card-header -->
                                 <!-- form start -->
-                                <form action="<?= BASE_URL_ADMIN . '?act=them-tai-khoan&id='.$list1['id'] ?>" method="POST" enctype="multipart/form-data">
+                                <form action="<?= BASE_URL_ADMIN . '?act=sua-tai-khoan&id='.$list1['id'] ?>" method="POST" enctype="multipart/form-data">
                                 <div class="card-body">
                                         <div class="form-group">
                                             <label>tên</label>
-                                            <input type="text" class="form-control" value="<?=$list1['name_user']?>" name="name"
+                                            <input type="text" class="form-control" value="<?=$list1['name_user']?>" name="name_user"
                                                 placeholder="tên">
                                             <?php if (isset($errors['name'])) { ?> 
                                                 <p class="text-danger"><?= $errors['name'] ?></p>

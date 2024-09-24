@@ -78,7 +78,7 @@
                                                             href="<?= BASE_URL_ADMIN . '?act=form-sua-san-pham&id_sanpham=' . $sanpham['id'] ?>">
                                                             <button class="btn btn-warning">Sửa</button>
                                                         </a>
-                                                        <a href="<?= BASE_URL_ADMIN . '?act=xoa-san-pham&id_sanpham=' . $sanpham['id'] ?>"
+                                                        <a href="<?= BASE_URL_ADMIN . '?act=xoa-san-pham&id=' . $sanpham['id'] ?>"
                                                             onclick="return confirm('Ban co muon xoa')">
                                                             <button class="btn btn-danger">Xóa</button>
                                                         </a>

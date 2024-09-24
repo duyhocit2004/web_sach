@@ -66,7 +66,7 @@ class TaikhoanModel {
         return $stmt->fetch();
     }
     public function Updatetaikhoan($name,$password,$email,$phone,$avatar,$nationality,$address,$role,$id){
-        $sql = "UPDATE users SET (name_user,password,email,phone,avatar,nationality,address,id_role) VALUES  (:name,:password,:email,:phone,:avatar,:nationality,:address,:role) WHERE :id";
+        $sql = "UPDATE users SET name_user=:name,password=:password,email=:email,phone=:phone,avatar=:avatar,nationality=:nationality,address=:address,id_role=:role WHERE id =:id";
         $stmt=$this->data->prepare($sql);
         $stmt -> execute([
             ':name'=>$name,
@@ -79,8 +79,14 @@ class TaikhoanModel {
             ':role'=>$role,
             ':id'=>$id,
         ]);
+        return true;
     }
-    public function DeleteTaikhoan(){
-        
+    public function DestroyAccount($id){
+        $sql = 'DELETE FROM users WHERE id = :id';
+        $stmt = $this -> data -> prepare($sql);
+        $stmt -> execute([
+            ':id' => $id,
+        ]);
+        return true;
     }
 }

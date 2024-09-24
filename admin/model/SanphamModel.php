@@ -42,20 +42,6 @@ class SanphamModel
         return $this->model->lastInsertId();
     }
 
-    public function insertAlbumAnh($product_id, $link_image)
-    {
-        $sql = 'INSERT INTO image_products (product_id, link_image)
-        VALUES(:product_id, :link_image)
-    ';
-        $stmt = $this->model->prepare($sql);
-        $stmt->execute([
-            ':product_id' => $product_id,
-            ':link_image' => $link_image,
-
-        ]);
-        return true;
-    }
-
 
 
 

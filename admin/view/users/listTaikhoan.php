@@ -84,11 +84,11 @@
 
                                                         <a
                                                             href="<?= BASE_URL_ADMIN . '?act=from-sua-tai-khoan&id=' . $taikhoan['id'] ?>">
-                                                            <button class="btn btn-warning">Sửa</button>
+                                                            <button class="btn btn-warning"><i class="fas fa-edit"></i></button>
                                                         </a>
-                                                        <a href="<?= BASE_URL_ADMIN . '?act=from-sua-tai-khoan$id=' . $taikhoan['id'] ?>"
+                                                        <a href="<?= BASE_URL_ADMIN . '?act=xoa-tai-khoan&id=' . $taikhoan['id'] ?>"
                                                             onclick="return confirm('Ban co muon xoa')">
-                                                            <button class="btn btn-danger">Xóa</button>
+                                                            <button class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
                                                         </a>
 
                                                     </td>
@@ -149,12 +149,12 @@
                                                     <td>
 
                                                         <a
-                                                            href="<?= BASE_URL_ADMIN . '?act=form-sua-san-pham&id_sanpham=' . $sanpham['id'] ?>">
-                                                            <button class="btn btn-warning">Sửa</button>
+                                                            href="<?= BASE_URL_ADMIN . '?act=form-sua-san-pham&id=' . $sanpham['id'] ?>">
+                                                            <button class="btn btn-warning"><i class="fas fa-edit"></i></button>
                                                         </a>
-                                                        <a href="<?= BASE_URL_ADMIN . '?act=xoa-san-pham&id_sanpham=' . $sanpham['id'] ?>"
+                                                        <a href="<?= BASE_URL_ADMIN . '?act=xoa-tai-khoan&id=' . $taikhoan['id'] ?>"
                                                             onclick="return confirm('Ban co muon xoa')">
-                                                            <button class="btn btn-danger">Xóa</button>
+                                                            <button class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
                                                         </a>
 
                                                     </td>
