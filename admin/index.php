@@ -4,7 +4,7 @@ session_start();
 // Require file Common
 require_once '../commons/env.php'; // Khai báo biến môi trường
 require_once '../commons/function.php'; // Hàm hỗ trợ
-// showAdminPage();
+
 // Require toàn bộ file Controllers
 require_once '../admin/controller/SanphamController.php';
 require_once '../admin/controller/TacgiaController.php';
@@ -25,11 +25,14 @@ require_once '../admin/model/TaikhoanModel.php';
 // Route
 $act = $_GET['act'] ?? '/';
 
+if($act !=='show-from-login' && $act !=='login' && $act !=='logout'){
+    CheckLoginAdmin();
+}
 // Để bảo bảo tính chất chỉ gọi 1 hàm Controller để xử lý request thì mình sử dụng match
 
 match ($act) {
     // Trang chủ
-    '/' => ( new SanphamController()) ->danhsachSanPham(),
+    '/' => ( new TacgiaController()) ->danhMucTacGia(),
     
     //login vs logout
     'show-from-login' => (new AuthController())->fromlogin(),
