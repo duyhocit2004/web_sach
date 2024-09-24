@@ -71,4 +71,7 @@ match ($act) {
     'from-sua-tai-khoan'=>(new TaikhoanController())->FromSuataikhoan(),
     'sua-tai-khoan'=>(new TaikhoanController())->suataikhoan(),
     'xoa-tai-khoan'=>(new TaikhoanController())->Deletetaikhoan(),
+
+    // quản lý đơn hàng
+    
 };
