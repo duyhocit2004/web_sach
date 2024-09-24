@@ -67,7 +67,7 @@ class TaikhoanController{
     }
     public function suataikhoan(){
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
-            $name = $_POST['name'];
+            $name = $_POST['name_user'];
             $password = $_POST['password'];
             $email = $_POST['email'];
             $phone = $_POST['phone'];
@@ -75,10 +75,7 @@ class TaikhoanController{
             $nationality = $_POST['nationality'];
             $address = $_POST['address'];
             $role = $_POST['id_role'];
-            $id = $_GET['id'];
-
-            $thumble = uploadFile($avatar,'./uploads/user/');
-
+     
             $error=[];
             if(empty($name) == 0 ){
                 $error['name'] = " vui lòng nhập tên";
@@ -105,12 +102,32 @@ class TaikhoanController{
                 $error['role'] = " vui lòng nhập tên";
             }
             $_SESSION['error'] = $error;
-            $this->model->UpdateTaikhoan($name,$password,$email,$phone,$thumble,$nationality,$address,$role,$id);
+
+            $id = $_GET['id'];
+            $taikhoan = $this->model->GetDetailTaikhoan($id);
+            $old_file = $taikhoan['avatar'];
+
+            if (isset($avatar) && $avatar['error'] == UPLOAD_ERR_OK) {
+                // Upload ảnh mới lên
+                $new_file = uploadFile($avatar, './uploads/procuts');
+
+                if(!empty($old_file)) { //Nếu có ảnh cũ thì xóa đi
+                    deleteFile($old_file);
+                }
+            }else {
+                $new_file = $old_file;
+            }
+            // var_dump($avatar,$nationality,$address,$role);die();
+            $this->model->UpdateTaikhoan($name,$password,$email,$phone,$new_file,$nationality,$address,$role,$id);
             header("Location : ".BASE_URL_ADMIN.'?act=tai-khoan');
-            exit();
+
         }
     }
     public function Deletetaikhoan(){
-        
+        $id = $_GET['id'];
+        $taikhoan = $this->model->GetDetailTaikhoan($id);
+        $this -> model -> DestroyAccount($id);
+        header("Location: " . BASE_URL_ADMIN . '?act=tai-khoan');
+        exit();
     }
 }

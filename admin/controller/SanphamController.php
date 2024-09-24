@@ -45,10 +45,9 @@ class SanPhamController
 
             $image = $_FILES['image'] ?? null;
             // Lưu hình ảnh
-            $file_thumb = uploadFile($image, './uploads/');
+            $file_thumb = uploadFile($image, './uploads/products/');
 
             // mảng hình ảnh
-            $image_array = $_FILES['image_array'] ;
 
 
 
@@ -82,23 +81,7 @@ class SanPhamController
                 //nếu k có lỗi thì tiến hành thêm sản phẩm
                 // var_dump("oke");
                 $product_id = $this->modelSanPham->insertSanPham($book_name, $title, $author_id, $genre_id, $published_date, $price, $description, $file_thumb);
-                
-                // Xử lý thêm album ảnh sản phẩm image_array
-                if(!empty($image_array['name'])) {
-                    foreach ($image_array['name'] as $key=>$value) {
-                        $file = [
-                            'name' => $image_array['name'][$key],
-                            'type' => $image_array['type'][$key],
-                            'tmp_name' => $image_array['tmp_name'][$key],
-                            'error' => $image_array['name'][$key],
-                            'size' => $image_array['size'][$key]
-                        ];
-                        $link_image = uploadFile($file, './uploads/');
-                        $this->modelSanPham->insertAlbumAnh($product_id, $link_image);
-                    }
-                }
-
-                header("Location: " . BASE_URL_ADMIN . '?act=san-pham');
+                header("Location: " . BASE_URL_ADMIN . '?act=products');
                 exit();
             } else {
                 // trả về form và lỗi
@@ -208,7 +191,7 @@ class SanPhamController
                                                 $new_file);
                 
 
-                header("Location: " . BASE_URL_ADMIN . '?act=san-pham');
+                header("Location: " . BASE_URL_ADMIN . '?act=products');
                 exit();
             } else {
                 // trả về form và lỗi
@@ -225,13 +208,13 @@ class SanPhamController
 
     public function deleteSanPham()
     {
-        $id = $_GET['id_sanpham'];
+        $id = $_GET['id'];
         $sanpham = $this->modelSanPham->getDetailSanPham($id);
 
         if ($sanpham) {
             $this -> modelSanPham -> distroySanPham($id);
         }
-        header("Location: " . BASE_URL_ADMIN . '?act=san-pham');
+        header("Location: " . BASE_URL_ADMIN . '?act=products');
         exit();
     }
 }

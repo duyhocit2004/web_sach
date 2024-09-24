@@ -21,10 +21,10 @@
             <section class="content-header">
                 <div class="container-fluid">
                     <div class="row mb-2">
-                        <div class="col-sm-6">
+                        <div class="col-sm-12">
                             <h1>Form</h1>
                         </div>
-                        <div class="col-sm-6">
+                        <div class="col-sm-12">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
                                 <li class="breadcrumb-item active">DataTables</li>
@@ -57,7 +57,7 @@
                                         </div>
 
                                         <!-- 2 -->
-                                        <div class="form-group col-6">
+                                        <div class="form-group col-12">
                                             <label>Tiêu đề</label>
                                             <input type="text" class="form-control" name="title"
                                                 placeholder="Nhập tiêu đề sản phẩm">
@@ -67,7 +67,7 @@
                                         </div>
 
                                         <!-- 3 -->
-                                        <div class="form-group col-6" >
+                                        <div class="form-group col-12" >
                                             <label>Tên Tác giả</label>
                                            <select class="form-control" name="author_id" id="exampleFormControlSelect1">
                                                 <option selected disabled>Chọn tác giả</option>
@@ -82,7 +82,7 @@
 
                                         <!-- 4 -->
                                          <!-- THỂ LOẠI CẦN CODE LẠI -->
-                                        <div class="form-group col-6">
+                                        <div class="form-group col-12">
                                             <label>Thể loại</label>
                                             <select class="form-control" name="genre_id" id="exampleFormControlSelect1">
                                                 <option selected disabled>Chọn thể loại</option>
@@ -96,7 +96,7 @@
                                         </div>
 
                                         <!-- 5 -->
-                                        <div class="form-group col-6">
+                                        <div class="form-group col-12">
                                             <label>Ngày xuất bản</label>
                                             <input type="date" class="form-control" name="published_date"
                                                 placeholder="Nhập ngày xuất bản">
@@ -105,10 +105,10 @@
                                             <?php } ?>
                                         </div>
 
-                                        <!-- 6 -->
-                                        <div class="form-group col-6">
+                                        <!-- 12 -->
+                                        <div class="form-group col-12">
                                             <label>Giá</label>
-                                            <input type="number" class="form-control" name="price"
+                                            <input type="text" class="form-control" name="price"
                                                 placeholder="Nhập Giá sản phẩm">
                                             <?php if (isset($_SESSION['error']['price'])) { ?> 
                                                 <p class="text-danger"><?= $_SESSION['error']['price'] ?></p>
@@ -116,27 +116,18 @@
                                         </div>
 
                                         <!-- 7 -->
-                                        <div class="form-group col-6">
+                                        <div class="form-group col-12">
                                             <label>Ảnh</label>
-                                            <input type="file" class="form-control" name="image"
-                                               >
+                                            <input type="file" class="form-control" name="image">
                                             <?php if (isset($_SESSION['error']['image'])) { ?> 
                                                 <p class="text-danger"><?= $_SESSION['error']['image'] ?></p>
                                             <?php } ?>
                                         </div>
-
-                                        <div class="form-group col-6">
-                                            <label>Album ảnh</label>
-                                            <input type="file" class="form-control" name="image_array[]" multiple
-                                                >
-                                                
-                                        </div>
-
-
                                         <!-- 8 -->
                                         <div class="form-group col-12">
                                             <label>Mô Tả</label>
-                                            <textarea name="description" id="" class="form-control" placeholder="Nhập mô tả"></textarea>
+                                            <!-- <textarea name="description" id="" class="form-control" placeholder="Nhập mô tả"></textarea> -->
+                                            <input type="text" class="form-control" name="description">
                                         </div>
                                         <!-- 9 -->
                                          <!-- SAU BỔ SUNG TIẾP -->

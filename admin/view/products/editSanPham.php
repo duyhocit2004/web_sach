@@ -118,34 +118,7 @@
                         </form>
                         <!-- /.card -->
                     </div>
-                    <div class="col-md-4">
-                        <!-- /.card -->
-                        <div class="card card-info">
-                            <div class="card-header">
-                                <h3 class="card-title">Album ảnh sản phẩm</h3>
-
-                                <div class="card-tools">
-                                    <button type="button" class="btn btn-tool" data-card-widget="collapse"
-                                        title="Collapse">
-                                        <i class="fas fa-minus"></i>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="card-body p-0">
-
-                            </div>
-                            <!-- /.card-body -->
-                        </div>
-                        <!-- /.card -->
-                    </div>
                 </div>
-                <div class="row">
-                    <div class="col-12">
-                        <a href="#" class="btn btn-secondary">Cancel</a>
-                        <input type="submit" value="Save" class="btn btn-success float-right">
-                    </div>
-                </div>
-            </section>
             <!-- /.content -->
 
 
