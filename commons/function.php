@@ -52,13 +52,16 @@ function deleteSessionError() {
 }
 
 // Debug
-// }
-//     function CheckLoginAdmin(){
-//         if(!isset($_SESSION['user_admin'])){
-//             // header("Location : " . BASE_URL_ADMIN . '?act=show-from-login');
-//             // require_once BASE_URL_ADMIN .'?act=show-from-login';
-//             exit();
-//         }
-//     }
+
+    function CheckLoginAdmin(){
+        if(!isset($_SESSION['user_admin'])){
+            // header("Location : " . BASE_URL_ADMIN . '?act=show-from-login');
+            require_once '../admin/view/auth/login.php';
+            exit();
+        }
+    }   
+    function showAdminPage(){
+        CheckLoginAdmin();
+    }
 
 

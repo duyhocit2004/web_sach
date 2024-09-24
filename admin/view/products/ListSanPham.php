@@ -38,17 +38,16 @@
             <section class="content">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-12">
-
-                            <div class="card">
-                                <div class="card-header">
+                    <div class="col-12">
+                        <div class="card">
+                        <div class="card-header">
                                     <a href="<?= BASE_URL_ADMIN . '?act=form-them-san-pham' ?>">
                                         <button class="btn btn-succsess" style="background-color: pink">Thêm Sản Phẩm</button>
                                     </a>
-                                </div>
-                                <!-- /.card-header -->
-                                <div class="card-body">
-                                    <table id="example1" class="table table-bordered table-striped">
+                                </div>  
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <table id="example2" class="table table-bordered table-hover">
                                         <thead>
                                             <tr>
                                                 <th>STT</th>

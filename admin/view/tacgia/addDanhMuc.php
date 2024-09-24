@@ -44,7 +44,7 @@
                                 </div>
                                 <!-- /.card-header -->
                                 <!-- form start -->
-                                <form action="<?= BASE_URL_ADMIN . '?act=them-danh-muc' ?>" method="POST">
+                                <form action="<?= BASE_URL_ADMIN . '?act=them-tac-gia' ?>" method="POST">
                                     <div class="card-body">
                                         <div class="form-group">
                                             <label>Tên Tác Giả</label>

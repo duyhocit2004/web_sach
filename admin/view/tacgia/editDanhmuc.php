@@ -44,7 +44,7 @@
                                 </div>
                                 <!-- /.card-header -->
                                 <!-- form start -->
-                                <form action="<?= BASE_URL_ADMIN . '?act=sua-danh-muc' ?>" method="POST">
+                                <form action="<?= BASE_URL_ADMIN . '?act=sua-tac-gia' ?>" method="POST">
                                     <input type="text" name="id" value="<?= $tacGia['id'] ?>" hidden>
                                     <div class="card-body">
                                         <div class="form-group">

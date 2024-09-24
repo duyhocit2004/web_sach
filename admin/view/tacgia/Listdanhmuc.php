@@ -38,18 +38,16 @@
             <section class="content">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-12">
-
-                            <div class="card">
-                                <div class="card-header">
-                                    <a href="<?= BASE_URL_ADMIN . '?act=form-them-danh-muc' ?>">
-                                        <button class="btn btn-succsess" style="background-color: pink">Thêm Tác
-                                            giả</button>
+                    <div class="col-12">
+                        <div class="card">
+                        <div class="card-header">
+                                    <a href="<?= BASE_URL_ADMIN . '?act=form-them-tac-gia' ?>">
+                                        <button class="btn btn-succsess" style="background-color: pink">Thêm Sản Phẩm</button>
                                     </a>
-                                </div>
-                                <!-- /.card-header -->
-                                <div class="card-body">
-                                    <table id="example1" class="table table-bordered table-striped">
+                                </div>  
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <table id="example2" class="table table-bordered table-hover">
                                         <thead>
                                             <tr>
                                                 <th>STT</th>
@@ -64,10 +62,10 @@
                                                     <td><?= $key + 1 ?></td>
                                                     <td><?= $tacgia['name'] ?></td>
                                                     <td>
-                                                        <a href="<?= BASE_URL_ADMIN . '?act=form-sua-danh-muc&id_tacgia=' . $tacgia['id'] ?>">
+                                                        <a href="<?= BASE_URL_ADMIN . '?act=form-sua-tac-gia&id_tacgia=' . $tacgia['id'] ?>">
                                                             <button class="btn btn-warning">Sửa</button>
                                                         </a>
-                                                        <a href="<?= BASE_URL_ADMIN . '?act=xoa-danh-muc&id_tacgia=' . $tacgia['id'] ?>" 
+                                                        <a href="<?= BASE_URL_ADMIN . '?act=xoa-tac-gia&id_tacgia=' . $tacgia['id'] ?>" 
                                                             onclick="return confirm('Ban co muon xoa')">
                                                             <button class="btn btn-danger">Xóa</button>
                                                         </a>

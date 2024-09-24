@@ -12,14 +12,14 @@ class TacgiaController
         $listDanhMuc = $this->modelDanhMuc->getAllDanhMuc();
     
         // var_dump($list);die();
-        require_once './view/danhmuc/Listdanhmuc.php';
+        require_once './view/tacgia/Listdanhmuc.php';
     }
 
     // Them
     public function formAddTacGia()
     {
         // Hiển thị form nhập
-        require_once './view/danhmuc/addDanhMuc.php';
+        require_once './view/tacgia/addDanhMuc.php';
 
     }
     public function postAddTacGia()
@@ -43,7 +43,7 @@ class TacgiaController
                 exit();
             } else {
                 // trả về form và lỗi
-                require_once './view/danhmuc/addDanhMuc.php';
+                require_once './view/tacgia/addDanhMuc.php';
             }
         }
     }
@@ -57,9 +57,9 @@ class TacgiaController
         $id = $_GET['id_tacgia'];
         $tacGia = $this->modelDanhMuc->getDetailDanhMuc($id);
         if ($tacGia) {
-            require_once './view/danhmuc/editDanhMuc.php';
+            require_once './view/tacgia/editDanhMuc.php';
         } else {
-            header("Location: " . BASE_URL_ADMIN . '?act=danh-muc');
+            header("Location: " . BASE_URL_ADMIN . '?act=tac-gia');
             exit();
         }
 
@@ -82,12 +82,12 @@ class TacgiaController
                 //nếu k có lỗi thì tiến hành sua danh mục
                 // var_dump("oke");
                 $this->modelDanhMuc->updateDanhMuc($id, $name);
-                header("Location: " . BASE_URL_ADMIN . '?act=danh-muc');
+                header("Location: " . BASE_URL_ADMIN . '?act=tac-gia');
                 exit();
             } else {
                 // trả về form và lỗi
                 $tacGia = ['id' => $id, 'name' => $name];
-                require_once './view/danhmuc/editDanhMuc.php';
+                require_once './view/tacgia/editDanhMuc.php';
 
             }
 
@@ -101,7 +101,7 @@ class TacgiaController
         if ($tacGia) {
             $this -> modelDanhMuc -> distroyDanhMuc($id);
         }
-        header("Location: " . BASE_URL_ADMIN . '?act=danh-muc');
+        header("Location: " . BASE_URL_ADMIN . '?act=tac-gia');
         exit();
     }
 }

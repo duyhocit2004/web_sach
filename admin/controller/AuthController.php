@@ -8,15 +8,16 @@ class AuthController {
     }
 
     public function fromLogin(): void {
-        // DeleteSessionError();
+        DeleteSessionError();   
         require_once './view/auth/login.php';
     }
 
     public function login() {
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $email = $_POST['email'];
             $password = $_POST['password'];
-
+            // var_dump($email,$password);die();
             $user = $this->model->checkLogin($email, $password);
             
             if ($user == $email) {

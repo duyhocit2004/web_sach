@@ -26,5 +26,5 @@ class AuthModel {
             // Trả về thông báo JavaScript
             return "<script>alert('Tên đăng nhập hoặc mật khẩu không đúng. Vui lòng nhập lại.');</script>";
         }
-    }
+    }   
 }
