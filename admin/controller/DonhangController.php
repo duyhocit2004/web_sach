@@ -39,7 +39,7 @@ class DonhangController{
         $list2 = $this->model->GetSanphamOrder($id);
     
         if ($list['payment_status_id'] < 2) {
-            $colorAlert = 'primary-emphasis';
+            $colorAlert = 'danger-emphasis';
         } elseif ($list['payment_status_id'] == 3) {
             $colorAlert = 'success';
         } elseif ($list['payment_status_id'] >= 4) {
