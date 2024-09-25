@@ -19,7 +19,7 @@ class AuthController {
             $password = $_POST['password'];
             // var_dump($email,$password);die();
             $user = $this->model->checkLogin($email, $password);
-            
+            // var_dump($user);die();
             if ($user == $email) {
                 $_SESSION['user_admin'] = $user;
                 header("Location: " . BASE_URL_ADMIN);

@@ -62,6 +62,15 @@
             </p>
           </a>
         </li>
+
+        <li class="nav-item">
+          <a href="<?= BASE_URL_ADMIN . '?act=don-hang'?>" class="nav-link">
+            <i class="nav-icon fas fa-th"></i>
+            <p>
+              Quản Lý Đơn hàng
+            </p>
+          </a>
+        </li>
         
       </ul>
     </nav>

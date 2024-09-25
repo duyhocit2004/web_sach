@@ -11,6 +11,7 @@ require_once '../admin/controller/TacgiaController.php';
 require_once '../admin/controller/AuthController.php';
 require_once '../admin/controller/TheloaiController.php';
 require_once '../admin/controller/TaikhoanController.php';
+require_once '../admin/controller/DonhangController.php';
 
 
 
@@ -20,6 +21,8 @@ require_once '../admin/model/TacgiaModel.php';
 require_once '../admin/model/TheLoaiModel.php';
 require_once '../admin/model/AuthModel.php';
 require_once '../admin/model/TaikhoanModel.php';
+require_once '../admin/model/DonhangModel.php';
+
 
 
 // Route
@@ -74,5 +77,10 @@ match ($act) {
     'xoa-tai-khoan'=>(new TaikhoanController())->Deletetaikhoan(),
 
     // quản lý đơn hàng
+    'don-hang' => (new DonhangController())->Danhsachdonhang(),
+    'from-sua-don-hang'=>(new DonhangController())->FromSuadonhang(),
+    'sua-don-hang'=>(new DonhangController())->Suadonhang(),
+    'xoa-don-hang'=>(new DonhangController())->Xoadonhang(),
+    'chitiet-don-hang'=>(new DonhangController())->Chitietdonhang(),
     
 };
