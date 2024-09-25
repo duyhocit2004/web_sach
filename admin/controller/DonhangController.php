@@ -10,10 +10,25 @@ class DonhangController{
         require_once '../admin/view/donhang/listDonhang.php';
     }
     public function Fromsuadonhang(){
-
+        $id = $_GET['id'];
+        $list = $this->model->GetDetailOrder($id);
+        $status = $this->model->GetPaymentMethodStatus();
+        $method = $this->model->GetPaymentMethod();
+        // var_dump($status,$method);
+        require_once '../admin/view/donhang/editDonhang.php';
     }
     public function Suadonhang(){
+        $recipient_name=$_POST['recipient_name'];
+        $recipient_email=$_POST['recipient_email'];
+        $recipient_phone=$_POST['recipient_phone'];
+        $recipient_address=$_POST['recipient_address'];
+        $order_date=$_POST['order_date'];
+        $note=$_POST['note'];
+        $payment_method_name=$_POST['payment_method_name'];
+        $payment_status=$_POST['payment_status'];
 
+        $this->model->GetDonhang($recipient_name,$recipient_email,$recipient_phone,$recipient_address,$order_date,$note,$payment_method_name,$payment_status);
+       
     }
     public function Xoadonhang(){
 

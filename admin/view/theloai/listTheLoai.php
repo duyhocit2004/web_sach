@@ -64,11 +64,11 @@
                                                     <td><?= $theloai['name'] ?></td>
                                                     <td>
                                                         <a href="<?= BASE_URL_ADMIN . '?act=form-sua-the-loai&id_theloai=' . $theloai['id'] ?>">
-                                                            <button class="btn btn-warning">Sửa</button>
+                                                            <button class="btn btn-warning"><i class="fas fa-edit"></i></button>
                                                         </a>
                                                         <a href="<?= BASE_URL_ADMIN . '?act=xoa-the-loai&id_theloai=' . $theloai['id'] ?>" 
                                                             onclick="return confirm('Ban co muon xoa')">
-                                                            <button class="btn btn-danger">Xóa</button>
+                                                            <button class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
                                                         </a>
 
                                                     </td>

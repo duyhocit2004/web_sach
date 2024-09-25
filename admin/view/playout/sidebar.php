@@ -31,7 +31,7 @@
 
           <li class="nav-item">
           <a href="<?= BASE_URL_ADMIN . '?act=tai-khoan'?>" class="nav-link">
-            <i class="nav-icon fas fa-th"></i>
+            <i class="fas fa-user"></i></i>
             <p>
               Quản Lý tài khoản
             </p>
@@ -39,7 +39,7 @@
         </li>
         <li class="nav-item">
           <a href="<?= BASE_URL_ADMIN . '?act=tac-gia' ?>" class="nav-link">
-            <i class="nav-icon fas fa-th"></i>
+          <i class="fas fa-user-tie"></i> </i>
             <p>
               Danh Mục Tác Giả
             </p>
@@ -47,7 +47,7 @@
         </li>
         <li class="nav-item">
           <a href="<?= BASE_URL_ADMIN . '?act=products'?>" class="nav-link">
-            <i class="nav-icon fas fa-th"></i>
+            <i class="fas fa-book"></i></i>
             <p>
               Quản Lý Sản Phẩm
             </p>
@@ -56,7 +56,7 @@
 
         <li class="nav-item">
           <a href="<?= BASE_URL_ADMIN . '?act=the-loai'?>" class="nav-link">
-            <i class="nav-icon fas fa-th"></i>
+          <i class="fas fa-won-sign"></i></i>
             <p>
               Quản Lý Thể Loại
             </p>
@@ -65,7 +65,7 @@
 
         <li class="nav-item">
           <a href="<?= BASE_URL_ADMIN . '?act=don-hang'?>" class="nav-link">
-            <i class="nav-icon fas fa-th"></i>
+            <i class=" fas fa-regular fa-copy"></i>
             <p>
               Quản Lý Đơn hàng
             </p>

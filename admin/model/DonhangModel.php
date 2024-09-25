@@ -19,8 +19,10 @@ class DonhangModel{
     }
 
     public function GetDetailOrder($id){
-       $sql = "SELECT orders.*,payment_status.payment_status as payment_status FROM orders 
+       $sql = "SELECT orders.*,payment_status.payment_status as payment_status ,users.name_user,payment_method.payment_method_name  FROM orders 
+       INNER JOIN payment_method ON orders.payment_method_id = payment_method.id
        INNER JOIN payment_status ON orders.payment_status_id = payment_status.id
+       INNER JOIN users ON orders.user_id = users.id
        WHERE orders.id = :id ";
          $stmt = $this->db->prepare($sql);
          $stmt->execute([
@@ -39,5 +41,38 @@ class DonhangModel{
         
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function GetPaymentMethod(){
+        $sql = "SELECT * FROM  payment_method";
+        $stmt = $this->db->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+
+    public function GetPaymentMethodStatus(){
+        $sql = "SELECT * FROM  payment_status";
+        $stmt = $this->db->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+    public function GetDonhang($recipient_name,$recipient_email,$recipient_phone,$recipient_address,$order_date,$note,$payment_method_name,$payment_status){
+        $sql = 'UPDATE orders SET  recipient_name = :recipient_name, recipient_email = :recipient_email, recipient_phone = :recipient_phone,
+         recipient_address = :recipient_address, order_date = :order_date, note = :note, payment_method_id = :payment_method_name,payment_status_id = :payment_status
+        ';
+        $stmt = $this->db->prepare($sql);
+        $stmt->execute([
+            ':recipient_name' => $recipient_name,
+            ':recipient_email' => $recipient_email,
+            ':recipient_phone' => $recipient_phone,
+            ':recipient_address' => $recipient_address,
+            ':order_date' => $order_date,
+            ':note' => $note,
+            ':payment_method_name' => $payment_method_name,
+            'payment_status'=>$payment_status,
+        ]);
+        return  header("Location :" .BASE_URL_ADMIN. '?act=don-hang');
+        
+    }
+
 
 }
