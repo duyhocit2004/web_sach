@@ -149,7 +149,7 @@
                                                     <td>
 
                                                         <a
-                                                            href="<?= BASE_URL_ADMIN . '?act=form-sua-san-pham&id=' . $sanpham['id'] ?>">
+                                                            href="<?= BASE_URL_ADMIN . '?act=from-sua-tai-khoan&id=' . $taikhoan['id'] ?>">
                                                             <button class="btn btn-warning"><i class="fas fa-edit"></i></button>
                                                         </a>
                                                         <a href="<?= BASE_URL_ADMIN . '?act=xoa-tai-khoan&id=' . $taikhoan['id'] ?>"

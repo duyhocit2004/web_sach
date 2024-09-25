@@ -19,9 +19,17 @@ class AuthController {
             $password = $_POST['password'];
             // var_dump($email,$password);die();
             $user = $this->model->checkLogin($email, $password);
-            // var_dump($user);die();
+            // var_dump($user['name']);die();
             if ($user == $email) {
                 $_SESSION['user_admin'] = $user;
+                if(isset($_SESSION['user_admin'])){
+                    $_SESSION['user_admin'] = [
+                        'email' => $email, // Lưu email
+                        'name' => $password,  // Lưu tên người dùng
+                    ];
+                    require_once "../admin/view/playout/sidebar.php";
+                }
+                
                 header("Location: " . BASE_URL_ADMIN);
                 exit();
             } else {

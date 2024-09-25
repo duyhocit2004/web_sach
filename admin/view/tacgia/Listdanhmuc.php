@@ -52,6 +52,8 @@
                                             <tr>
                                                 <th>STT</th>
                                                 <th>Tên Tác Giả</th>
+                                                <th>ảnh tác giả</th>
+                                                <th>mô tả</th>
                                                 <th>Thao tác</th>
 
                                             </tr>
@@ -61,6 +63,8 @@
                                                 <tr>
                                                     <td><?= $key + 1 ?></td>
                                                     <td><?= $tacgia['name'] ?></td>
+                                                    <td><?= $tacgia['img_author'] ?></td>
+                                                    <td><?= $tacgia['bio'] ?></td>
                                                     <td>
                                                         <a href="<?= BASE_URL_ADMIN . '?act=form-sua-tac-gia&id_tacgia=' . $tacgia['id'] ?>">
                                                             <button class="btn btn-warning"><i class="fas fa-edit"></i></button>

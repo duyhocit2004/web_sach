@@ -9,17 +9,23 @@
     <span class="brand-text font-weight-light">AdminLTE 3</span>
   </a>
 
+  <?php if(isset($_SESSION['user_admin'])): ?>
   <!-- Sidebar -->
-  <div class="sidebar">
-    <!-- Sidebar user (optional) -->
-    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-      <div class="image">
-        <img src="../admin/assets/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
-      </div>
-      <div class="info">
-        <a href="#" class="d-block"></a>
-      </div>
-    </div>
+     <div class="sidebar">
+     <!-- Sidebar user (optional) -->
+     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+       <div class="image">
+         <img src="../uploads/avatartrang.jpg" class="img-circle elevation-2" alt="User Image">
+       </div>
+       <div class="info">
+         <a href="#" class="d-block"><?= $_SESSION['user_admin']['name']?></a>
+       </div>
+  </div>
+  <?php else: ?>
+
+  <?php endif; ?>
+   
+
 
 
     <!-- Sidebar Menu -->
