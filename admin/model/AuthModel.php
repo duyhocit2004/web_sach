@@ -12,11 +12,11 @@ class AuthModel {
         $sql = "SELECT * FROM users WHERE email = :email";
         $stmt = $this->data->prepare($sql);
         $stmt->execute([':email' => $email]);
-        $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
+        $user = $stmt->fetch();
+        // var_dump($user);
         // Kiểm tra nếu người dùng tồn tại và so sánh mật khẩu
-        if ($user && $password == $user['password']) {
-            if ($user['id_role'] == 1) {
+        if ($user && $password === $user['password']) {
+            if ($user['id_role'] === 1) {
                 return true; // Đăng nhập thành công cho admin
             } else {
                 header("Location: " . BASE_URL_ADMIN . 'show-from-login');
