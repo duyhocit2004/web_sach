@@ -137,10 +137,10 @@
       </div><!-- /.container-fluid -->
       <div class="row">
             <div class="col text-center">
-                <a href="<?= BASE_URL_ADMIN . '?act=chitiet-don-hang&id=' . $donhang['id'] ?>">
+                <a href="<?= BASE_URL_ADMIN . '?act=don-hang' ?>">
                     <button class="btn btn-warning">quay lại</button>
                 </a>
-                <a href="<?= BASE_URL_ADMIN . '?act=xoa-san-pham&id=' . $donhang['id'] ?>" onclick="return confirm('Bạn có muốn xóa?')">
+                <a href="<?= BASE_URL_ADMIN . '?act=from-sua-don-hang&id=' . $list['id'] ?>">
                     <button class="btn btn-danger">chỉnh sửa</button>
                 </a>
             </div>
