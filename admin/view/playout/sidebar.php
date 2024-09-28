@@ -1,5 +1,5 @@
 <?php
-  var_dump($_SESSION['user_admin']);
+  // var_dump($_SESSION['user_admin']);
 ?>
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
   <!-- Brand Logo -->
