@@ -1,65 +1,56 @@
-<div class="modal fade" id="registrationModal" tabindex="-1" aria-labelledby="registrationModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="close-btn">
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="identityBox">
-                        <div class="form-wrapper">
-                            <h1 id="registrationModalLabel">Create account!</h1>
-                            <input class="inputField" type="text" name="name" id="name" placeholder="User Name">
-                            <input class="inputField" type="email" name="email" placeholder="Email Address">
-                            <input class="inputField" type="password" name="password" placeholder="Enter Password">
-                            <input class="inputField" type="password" name="password"
-                                placeholder="Enter Confirm Password">
-                            <div class="input-check remember-me">
-                                <div class="checkbox-wrapper">
-                                    <input type="checkbox" class="form-check-input" name="save-for-next"
-                                        id="rememberMe">
-                                    <label for="rememberMe">Remember me</label>
-                                </div>
-                                <div class="text"> <a href="index-2.html">Forgot Your password?</a> </div>
-                            </div>
-                            <div class="loginBtn">
-                                <a href="index-2.html" class="theme-btn rounded-0"> Log in </a>
-                            </div>
-                            <div class="orting-badge">
-                                Or
-                            </div>
-                            <div>
-                                <a class="another-option" href="https://www.google.com/">
-                                    <img src="assets/img/google.png" alt="google">
-                                    Continue With Google
-                                </a>
-                            </div>
-                            <div>
-                                <a class="another-option another-option-two" href="https://www.facebook.com/">
-                                    <img src="assets/img/facebook.png" alt="google">
-                                    Continue With Facebook
-                                </a>
-                            </div>
-                            <div class="form-check-3 d-flex align-items-center from-customradio-2 mt-3">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault">
-                                <label class="form-check-label">
-                                    I Accept Your Terms & Conditions
-                                </label>
-                            </div>
-                        </div>
+<!DOCTYPE html>
+<html lang="en">
 
-                        <div class="banner">
-                            <button type="button" class="rounded-0 login-btn" data-bs-toggle="modal"
-                                data-bs-target="#loginModal">Log in</button>
-                            <button type="button" class="theme-btn rounded-0 register-btn" data-bs-toggle="modal"
-                                data-bs-target="#registrationModal">Create
-                                Account</button>
-                            <div class="signUpBg">
-                                <img src="assets/img/registrationbg.jpg" alt="signUpBg">
+<!-- Mirrored from brandio.io/envato/iofrm/html/login37.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 29 Sep 2024 12:30:11 GMT -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iofrm</title>
+    <link rel="stylesheet" type="text/css" href="assets/login/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/login/css/fontawesome-all.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/login/css/iofrm-style.css">
+    <link rel="stylesheet" type="text/css" href="assets/login/css/iofrm-theme43.css">
+</head>
+<body>
+<div class="form-body form-left">
+        <div class="iofrm-layout">
+            <div class="img-holder">
+                <div class="bg"></div>
+            </div>
+            <div class="form-holder">
+                <div class="form-content">
+                    <div class="form-items">
+                        <div class="website-logo-inside logo-normal">
+                            <a href="index.html">
+                                <div class="logo">
+                                    <img class="logo-size" src="assets/login/images/logo-pink.svg" alt="">
+                                </div>
+                            </a>
+                        </div>
+                        <h3 class="font-md">Get more things done with Loggin platform.</h3>
+                        <p>Access to the most powerfull tool in the entire design and web industry.</p>
+                        <form>
+                            <input class="form-control" type="text" name="name" placeholder="Full Name" required>
+                            <input class="form-control" type="email" name="email" placeholder="E-mail Address" required>
+                            <input class="form-control" type="password" name="password" placeholder="Password" required>
+                            <div class="form-button d-flex">
+                                <button id="submit" type="submit" class="btn btn-primary">Register</button>
+                                <a href="?act=login" class="btn btn-outline-primary">Login</a>
                             </div>
+                        </form>
+                        <div class="other-links">
+                            <span>Or login with</span><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-google"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+<script src="assets/login/js/jquery.min.js"></script>
+<script src="assets/login/js/popper.min.js"></script>
+<script src="assets/login/js/bootstrap.bundle.min.js"></script>
+<script src="assets/login/js/main.js"></script>
+</body>
+
+<!-- Mirrored from brandio.io/envato/iofrm/html/login37.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 29 Sep 2024 12:30:14 GMT -->
+</html>

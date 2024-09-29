@@ -182,8 +182,8 @@
                                                 <i class="pe-7s-user"></i>
                                             </a>
                                             <ul class="dropdown-list">
-                                                <li><a href="login-register.html">login</a></li>
-                                                <li><a href="login-register.html">register</a></li>
+                                                <li><a href="?act=login">login</a></li>
+                                                <li><a href="?act=register">register</a></li>
                                                 <li><a href="my-account.html">my account</a></li>
                                             </ul>
                                         </li>
