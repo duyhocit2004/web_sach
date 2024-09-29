@@ -1,34 +1,54 @@
-<div id="preloader" class="preloader">
-        <div class="animation-preloader">
-            <div class="spinner">
+<div class="banner-statistics-area">
+            <div class="container">
+                <div class="row row-20 mtn-20">
+                    <div class="col-sm-6">
+                        <figure class="banner-statistics mt-20">
+                            <a href="#">
+                                <img src="assets/clients/img/banner/img1-top.jpg" alt="product banner">
+                            </a>
+                            <div class="banner-content text-right">
+                                <h5 class="banner-text1">BEAUTIFUL</h5>
+                                <h2 class="banner-text2">Wedding<span>Rings</span></h2>
+                                <a href="shop.html" class="btn btn-text">Shop Now</a>
+                            </div>
+                        </figure>
+                    </div>
+                    <div class="col-sm-6">
+                        <figure class="banner-statistics mt-20">
+                            <a href="#">
+                                <img src="assets/clients/img/banner/img2-top.jpg" alt="product banner">
+                            </a>
+                            <div class="banner-content text-center">
+                                <h5 class="banner-text1">EARRINGS</h5>
+                                <h2 class="banner-text2">Tangerine Floral <span>Earring</span></h2>
+                                <a href="shop.html" class="btn btn-text">Shop Now</a>
+                            </div>
+                        </figure>
+                    </div>
+                    <div class="col-sm-6">
+                        <figure class="banner-statistics mt-20">
+                            <a href="#">
+                                <img src="assets/clients/img/banner/img3-top.jpg" alt="product banner">
+                            </a>
+                            <div class="banner-content text-center">
+                                <h5 class="banner-text1">NEW ARRIVALLS</h5>
+                                <h2 class="banner-text2">Pearl<span>Necklaces</span></h2>
+                                <a href="shop.html" class="btn btn-text">Shop Now</a>
+                            </div>
+                        </figure>
+                    </div>
+                    <div class="col-sm-6">
+                        <figure class="banner-statistics mt-20">
+                            <a href="#">
+                                <img src="assets/clients/img/banner/img4-top.jpg" alt="product banner">
+                            </a>
+                            <div class="banner-content text-right">
+                                <h5 class="banner-text1">NEW DESIGN</h5>
+                                <h2 class="banner-text2">Diamond<span>Jewelry</span></h2>
+                                <a href="shop.html" class="btn btn-text">Shop Now</a>
+                            </div>
+                        </figure>
+                    </div>
+                </div>
             </div>
-            <div class="txt-loading">
-                <span data-text-preloader="Thế" class="letters-loading">
-                    Thế 
-                </span>
-                <span data-text-preloader="giới" class="letters-loading">
-                    giới
-                </span>
-                <span data-text-preloader="sách" class="letters-loading">
-                    sách
-                </span>
-            </div>
-            <p class="text-center">Loading</p>
         </div>
-        <div class="loader">
-            <div class="row">
-                <div class="col-3 loader-section section-left">
-                    <div class="bg"></div>
-                </div>
-                <div class="col-3 loader-section section-left">
-                    <div class="bg"></div>
-                </div>
-                <div class="col-3 loader-section section-right">
-                    <div class="bg"></div>
-                </div>
-                <div class="col-3 loader-section section-right">
-                    <div class="bg"></div>
-                </div>
-            </div>
-        </div>
-    </div>
