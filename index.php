@@ -1,5 +1,5 @@
 <?php 
-
+session_start();
 // Require file Common
 require_once './commons/env.php'; // Khai báo biến môi trường
 require_once './commons/function.php'; // Hàm hỗ trợ
@@ -8,11 +8,13 @@ require_once './commons/function.php'; // Hàm hỗ trợ
 // Require toàn bộ file Controllers
 require_once './controllers/HomeController.php';
 require_once './controllers/productController.php';
+require_once './controllers/AuthClientsController.php';
 
 
 // Require toàn bộ file Models
 require_once './models/Student.php';
 require_once './models/productModel.php';
+require_once './models/AuthClientsModel.php';
 
 // Route
 $act = $_GET['act'] ?? '/';
@@ -21,7 +23,11 @@ $act = $_GET['act'] ?? '/';
 
 match ($act) {
     // Trang chủ
-    '/' => (new ProductController())->index(),
+    '/' => (new HomeController())->index(),
 
-    
+    // 'login' => (new HomeController())->ShowFormLogin(),
+    // 'checklogin'=>(new HomeController())->CheckLogin(),
+    // 'register'=>(new HomeController())->register(),
+    // 'post-register'=>(new HomeController())->PostRegister(),
+    // 'logout'=>(new HomeController())->logout(),
 };
