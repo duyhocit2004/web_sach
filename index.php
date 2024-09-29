@@ -25,9 +25,9 @@ match ($act) {
     // Trang chủ
     '/' => (new HomeController())->index(),
 
-    // 'login' => (new HomeController())->ShowFormLogin(),
-    // 'checklogin'=>(new HomeController())->CheckLogin(),
-    // 'register'=>(new HomeController())->register(),
-    // 'post-register'=>(new HomeController())->PostRegister(),
-    // 'logout'=>(new HomeController())->logout(),
+    'login' => (new AuthClientsController())->ShowFormLogin(),
+    // 'checklogin'=>(new AuthClientsController())->CheckLogin(),
+    'register'=>(new AuthClientsController())->register(),
+    // 'post-register'=>(new AuthClientsController())->PostRegister(),
+    // 'logout'=>(new AuthClientsController())->logout(),
 };
