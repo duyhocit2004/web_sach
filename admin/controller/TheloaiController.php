@@ -49,58 +49,64 @@ class TheLoaiController
 
 
     // // Sua
-    // public function formEditTacGia()
-    // {
-    //     // Hiển thị form nhập
-    //     // Lấy thông tin của danh mục cần sửa
-    //     $id = $_GET['id_tacgia'];
-    //     $tacGia = $this->modelTheLoai->getDetailDanhMuc($id);
-    //     if ($tacGia) {
-    //         require_once './view/danhmuc/editDanhMuc.php';
-    //     } else {
-    //         header("Location: " . BASE_URL_ADMIN . '?act=danh-muc');
-    //         exit();
-    //     }
+    public function formEditTheLoai()
+    {
+        // Hiển thị form nhập
+        // Lấy thông tin của danh mục cần sửa
+        $id = $_GET['id_theloai'];
+        $tacGia = $this->modelTheLoai->getDetailTheLoai($id);
+        if ($tacGia) {
+            require_once './view/theloai/editTheLoai.php';
+        } else {
+            header("Location: " . BASE_URL_ADMIN . '?act=the-loai');
+            exit();
+        }
 
-    // }
-    // public function postEditTacGia()
-    // {
-    //     // Hàm này xỷ lý dữ liệu
-    //     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    //         //Lấy dữ liệu
-    //         $id = $_POST['id'];
-    //         $name = $_POST['name'];
+    }
+    public function postEditTheLoai()
+    {
+        // Hàm này xỷ lý dữ liệu
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            //Lấy dữ liệu
+            $id = $_POST['id'];
+            $name = $_POST['name'];
 
-    //         // Tạo một mảng trống để lấy dữ liệu
-    //         $errors = [];
-    //         if (empty($name)) {
-    //             $errors['name'] = 'Tên danh mục k được bỏ trống';
-    //         }
-    //         //nếu k có lỗi thì tiến hành thêm danh mục
-    //         if (empty($errors)) {
-    //             //nếu k có lỗi thì tiến hành sua danh mục
-    //             // var_dump("oke");
-    //             $this->modelTheLoai->updateDanhMuc($id, $name);
-    //             header("Location: " . BASE_URL_ADMIN . '?act=danh-muc');
-    //             exit();
-    //         } else {
-    //             // trả về form và lỗi
-    //             $tacGia = ['id' => $id, 'name' => $name];
-    //             require_once './view/danhmuc/editDanhMuc.php';
+            // Tạo một mảng trống để lấy dữ liệu
+            $errors = [];
+            if (empty($name)) {
+                $errors['name'] = 'Tên danh mục k được bỏ trống';
+            }
+            //nếu k có lỗi thì tiến hành thêm danh mục
+            if (empty($errors)) {
+                //nếu k có lỗi thì tiến hành sua danh mục
+                // var_dump("oke");
+                $this->modelTheLoai->updateTheLoai($id, $name);
+                header("Location: " . BASE_URL_ADMIN . '?act=the-loai');
+                exit();
+            } else {
+                // trả về form và lỗi
+                $tacGia = ['id' => $id, 'name' => $name];
+                require_once './view/theloai/editTheLoai.php';
 
-    //         }
+            }
 
-    //     }
-    // }
-    // public function deleteDanhMuc()
-    // {
-    //     $id = $_GET['id_tacgia'];
-    //     $tacGia = $this->modelTheLoai->getDetailDanhMuc($id);
+        }
+    }
 
-    //     if ($tacGia) {
-    //         $this -> modelTheLoai -> distroyDanhMuc($id);
-    //     }
-    //     header("Location: " . BASE_URL_ADMIN . '?act=danh-muc');
-    //     exit();
-    // }
+    public function deleteTheLoai()
+    {
+        try {
+            $id = $_GET['id_theloai'];
+            $tacGia = $this->modelTheLoai->getDetailTheLoai($id);
+    
+            if ($tacGia) {
+                $this -> modelTheLoai -> distroyTheLoai($id);
+            }          
+        } catch (Throwable $th) {
+            $_SESSION['delete'] = 'Có lỗi xảy ra trong quá trình thực hiện!';
+        }
+        
+        header("Location: " . BASE_URL_ADMIN . '?act=the-loai');
+        exit();
+    }
 }

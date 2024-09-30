@@ -1,6 +1,6 @@
 <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Corano - Jewelry Shop eCommerce Bootstrap 5 Template</title>
+    <title>Website Bán Sách</title>
     <meta name="robots" content="noindex, follow" />
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">

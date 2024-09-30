@@ -15,6 +15,10 @@
         <?php require_once '../admin/view/playout/sidebar.php' ?>
 
 
+        <?php if (isset($_SESSION['error']['delete'])) { ?> 
+            <p class="text-danger"><?= $_SESSION['error']['delete'] ?></p>
+        <?php } ?>
+        
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
@@ -40,37 +44,27 @@
                         <div class="col-12">
                             <div class="card card-primary">
                                 <div class="card-header">
-                                    <h1>Sửa thông tin: <?= $tacGia['name'] ?></h1>
+                                    <h3 class="card-title">Sửa thể loại</h3>
                                 </div>
                                 <!-- /.card-header -->
                                 <!-- form start -->
-                                <form action="<?= BASE_URL_ADMIN . '?act=sua-tac-gia' ?>" method="POST"
-                                    enctype="multipart/form-data">
+                                <form action="<?= BASE_URL_ADMIN . '?act=sua-the-loai' ?>" method="POST">
+                                    <input type="text" name="id" value="<?= $tacGia['id'] ?>" hidden>
                                     <div class="card-body">
-                                        <div class="card-body">
-                                            <div class="form-group">
-                                                <input type="hidden" name="tacgia_id" value="<?= $tacGia['id'] ?>">
-                                                <label>Tên Tác Giả</label>
-                                                <input type="text" class="form-control" id="name" name="name" value="<?= $tacGia['name']; ?>">
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label>Ảnh</label>
-                                                <input type="file" class="form-control" id="img_author"
-                                                    name="img_author" >
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label>bio</label>
-                                                <input type="text" class="form-control" id="bio" name="bio"
-                                                value="<?= $tacGia['bio']; ?>" >
-                                            </div>
-
+                                        <div class="form-group">
+                                            <label>Tên Tác Giả</label>
+                                            <input type="text" class="form-control" name="name" value="<?= $tacGia['name'] ?>"
+                                                placeholder="Nhập tên thể loại">
+                                            <?php if (isset($errors['name'])) { ?> 
+                                                <p class="text-danger"><?= $errors['name'] ?></p>
+                                            <?php } ?>
                                         </div>
 
-                                        <div class="card-footer">
-                                            <button type="submit" class="btn btn-primary">Submit</button>
-                                        </div>
+                                    </div>
+
+                                    <div class="card-footer">
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                    </div>
                                 </form>
                             </div>
 
@@ -85,12 +79,12 @@
 
 
         </div>
-        <!-- footer -->
-        <?php require_once '../admin/view/playout/footer.php' ?>
-        <!-- end_footer -->
-
-        <!-- jQuery -->
-        <?php require_once '../admin/view/playout/js.php' ?>
+         <!-- footer -->
+ <?php require_once '../admin/view/playout/footer.php' ?>
+    <!-- end_footer -->
+ 
+<!-- jQuery -->
+<?php require_once '../admin/view/playout/js.php' ?>
 
 </body>
 

@@ -44,15 +44,33 @@
                                 </div>
                                 <!-- /.card-header -->
                                 <!-- form start -->
-                                <form action="<?= BASE_URL_ADMIN . '?act=them-tac-gia' ?>" method="POST">
+                                <form action="<?= BASE_URL_ADMIN . '?act=them-tac-gia' ?>" method="POST" enctype="multipart/form-data">
                                     <div class="card-body">
                                         <div class="form-group">
                                             <label>Tên Tác Giả</label>
                                             <input type="text" class="form-control" name="name"placeholder="Nhập tên tác giả">
-                                            <?php if (isset($errors['name'])) { ?> 
-                                                <p class="text-danger"><?= $errors['name'] ?></p>
+                                            <?php if (isset($_SESSION['error']['name'])) { ?> 
+                                                <p class="text-danger"><?= $_SESSION['error']['name'] ?></p>
                                             <?php } ?>
                                         </div>
+
+                                        <div class="form-group">
+                                            <label>Ảnh</label>
+                                            <input type="file" class="form-control" name="img_author">
+                                            <?php if (isset($_SESSION['error']['img_author'])) { ?> 
+                                                <p class="text-danger"><?= $_SESSION['error']['img_author'] ?></p>
+                                            <?php } ?>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>bio</label>
+                                            <input type="text" class="form-control" name="bio"
+                                                placeholder="Nhập bio">
+                                            <?php if (isset($_SESSION['error']['bio'])) { ?> 
+                                                <p class="text-danger"><?= $_SESSION['error']['bio'] ?></p>
+                                            <?php } ?>
+                                        </div>
+
 
                                     </div>
 

@@ -87,7 +87,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="copyright-text text-center">
-                            <p>&copy; 2022 <b>Corano</b> Made with <i class="fa fa-heart text-danger"></i> by <a href="https://hasthemes.com/"><b>HasThemes</b></a></p>
+                            <p>DuAn1 &copy;  09/09/2024 -- 18/10/2024<i class="fa fa-heart text-danger"></i><b>Chinhle&QuocDuy</b></a></p>
                         </div>
                     </div>
                 </div>

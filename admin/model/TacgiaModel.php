@@ -13,15 +13,17 @@
         return $stmt -> fetchAll();
     }
 
-    public function insertDanhMuc($name){
-        $sql = 'INSERT INTO authors (name)
-            VALUES(:name)
+    public function insertDanhMuc($name, $img_author, $bio){
+        $sql = 'INSERT INTO authors (name, img_author, bio)
+            VALUES(:name, :img_author, :bio)
         ';
         $stmt = $this -> model -> prepare($sql);
         $stmt -> execute([
             ':name' => $name,
+            ':img_author' => $img_author,
+            ':bio' => $bio,
         ]);
-        return true;
+        return $this->model->lastInsertId();
     }
 
     public function getDetailDanhMuc($id){
@@ -33,12 +35,14 @@
         return $stmt -> fetch();
     }
 
-    public function updateDanhMuc($id, $name){
-        $sql = 'UPDATE authors SET name= :name WHERE id = :id';
+    public function updateDanhMuc($id, $name, $img_author, $bio){
+        $sql = 'UPDATE authors SET name= :name, img_author= :img_author, bio= :bio WHERE id = :id';
         $stmt = $this -> model -> prepare($sql);
         $stmt -> execute([
             ':id' => $id,
             ':name' => $name,
+            ':img_author' => $img_author,
+            ':bio' => $bio
         ]);
         return true;
     }
