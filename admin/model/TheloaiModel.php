@@ -24,32 +24,32 @@
         return true;
     }
 
-    // public function getDetailTheLoai($id){
-    //     $sql = 'SELECT * FROM authors WHERE id = :id';
-    //     $stmt = $this -> model -> prepare($sql);
-    //     $stmt -> execute([
-    //         ':id' => $id,
-    //     ]);
-    //     return $stmt -> fetch();
-    // }
+    public function getDetailTheLoai($id){
+        $sql = 'SELECT * FROM genres WHERE id = :id';
+        $stmt = $this -> model -> prepare($sql);
+        $stmt -> execute([
+            ':id' => $id,
+        ]);
+        return $stmt -> fetch();
+    }
 
-    // public function updateTheLoai($id, $name){
-    //     $sql = 'UPDATE authors SET name= :name WHERE id = :id';
-    //     $stmt = $this -> model -> prepare($sql);
-    //     $stmt -> execute([
-    //         ':id' => $id,
-    //         ':name' => $name,
-    //     ]);
-    //     return true;
-    // }
+    public function updateTheLoai($id, $name){
+        $sql = 'UPDATE genres SET name= :name WHERE id = :id';
+        $stmt = $this -> model -> prepare($sql);
+        $stmt -> execute([
+            ':id' => $id,
+            ':name' => $name,
+        ]);
+        return true;
+    }
 
-    // public function distroyDanhMuc($id){
-    //     $sql = 'DELETE FROM authors WHERE id = :id';
-    //     $stmt = $this -> model -> prepare($sql);
-    //     $stmt -> execute([
-    //         ':id' => $id,
-    //     ]);
-    //     return true;
-    // }
+    public function distroyTheLoai($id){
+        $sql = 'DELETE FROM genres WHERE id = :id';
+        $stmt = $this -> model -> prepare($sql);
+        $stmt -> execute([
+            ':id' => $id,
+        ]);
+        return true;
+    }
  }
 

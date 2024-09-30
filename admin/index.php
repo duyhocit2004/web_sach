@@ -55,9 +55,9 @@ match ($act) {
     'the-loai' => ( new TheLoaiController()) ->danhMucTheLoai(),
     'form-them-the-loai' => ( new TheLoaiController()) ->formAddTheLoai(),
     'them-the-loai' => ( new TheLoaiController()) ->postAddTheLoai(),
-        // 'form-sua-the-loai' => ( new TheLoaiController()) ->formEditTacGia(),
-        // 'sua-the-loai' => ( new TheLoaiController()) ->postEditTacGia(),
-        // 'xoa-the-loai' => ( new TheLoaiController()) ->deleteDanhMuc(),
+    'form-sua-the-loai' => ( new TheLoaiController()) ->formEditTheLoai(),
+    'sua-the-loai' => ( new TheLoaiController()) ->postEditTheLoai(),
+    'xoa-the-loai' => ( new TheLoaiController()) ->deleteTheLoai(),
 
 
     //quan ly san pham
