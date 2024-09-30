@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>iofrm</title>
+    <title>đăng nhập</title>
     <link rel="stylesheet" type="text/css" href="assets/login/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="assets/login/css/fontawesome-all.min.css">
     <link rel="stylesheet" type="text/css" href="assets/login/css/iofrm-style.css">
@@ -21,17 +21,13 @@
                 <div class="form-content">
                     <div class="form-items">
                         <div class="website-logo-inside logo-normal">
-                            <a href="index.html">
-                                <div class="logo">
-                                    <img class="logo-size" src="assets/login/images/logo-pink.svg" alt="">
-                                </div>
-                            </a>
+                            <img class="logo-size" height="100px" style="width: 300px;" src="uploads/clients/logo/logo.png" alt="">                        
                         </div>
-                        <h3 class="font-md">Get more things done with Loggin platform.</h3>
-                        <p>Access to the most powerfull tool in the entire design and web industry.</p>
-                        <form>
-                            <input class="form-control" type="text" name="username" placeholder="E-mail Address" required>
+                        <h3 class="font-md">đăng nhập</h3>
+                        <form action="?act=checklogin" method="POST">
+                            <input class="form-control" type="text" name="email" placeholder="E-mail Address" required>
                             <input class="form-control" type="password" name="password" placeholder="Password" required>
+
                             <div class="form-button d-flex">
                                 <button id="submit" type="submit" class="btn btn-primary">Login</button>
                                 <a href="?act=register" class="btn btn-outline-primary">Create account</a>
