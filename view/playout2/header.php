@@ -36,7 +36,8 @@
                                                 </ul>
                                             </li>
                                             <li><a href="#">Giới thiệu</a></li>
-                                            <li><a href="#">Liên Hệ</a></li>
+                                            <li><a href="<?= BASE_URL. '?act=contact' ?>">Liên Hệ</a></li>
+                                            <li><a href="#">Tác Giả</a></li>
                                         </ul>
                                     </nav>
                                     <!-- main menu navbar end -->
@@ -67,12 +68,7 @@
                                                 <li><a href="my-account.html">Tài Khoản</a></li>
                                             </ul>
                                         </li>
-                                        <li>
-                                            <a href="wishlist.html">
-                                                <i class="pe-7s-like"></i>
-                                                <div class="notification">0</div>
-                                            </a>
-                                        </li>
+                                        
                                         <li>
                                             <a href="#" class="minicart-btn">
                                                 <i class="pe-7s-shopbag"></i>
