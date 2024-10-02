@@ -9,12 +9,14 @@ require_once './commons/function.php'; // Hàm hỗ trợ
 require_once './controllers/HomeController.php';
 require_once './controllers/productController.php';
 require_once './controllers/AuthClientsController.php';
+require_once './controllers/contactController.php';
 
 
 // Require toàn bộ file Models
 require_once './models/Student.php';
 require_once './models/productModel.php';
 require_once './models/AuthClientsModel.php';
+require_once './models/contactModel.php';
 
 // Route
 $act = $_GET['act'] ?? '/';
@@ -24,6 +26,12 @@ $act = $_GET['act'] ?? '/';
 match ($act) {
     // Trang chủ
     '/' => (new HomeController())->index(),
+
+    //liên hệ
+    'contact' => (new ContactController())->formContact(),
+
+    //Sản Phẩm
+    'detail-product' => (new HomeController())->chitietSanPham(),
 
     'login' => (new AuthClientsController())->ShowFormLogin(),
     'checklogin'=>(new AuthClientsController())->CheckLogin(),

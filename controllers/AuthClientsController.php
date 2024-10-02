@@ -59,10 +59,7 @@ class AuthClientsController{
         }
     }
     public function logout(){
-            session_unset();
-            header("Location: " . BASE_URL);
-        
+        session_unset();
+        header("Location: " . BASE_URL);
     }
-
-    
 }

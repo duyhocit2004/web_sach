@@ -14,7 +14,6 @@
         <!-- Main Sidebar Container -->
         <?php require_once '../admin/view/playout/sidebar.php' ?>
 
-
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
@@ -33,6 +32,9 @@
                     </div>
                 </div><!-- /.container-fluid -->
             </section>
+            
+       
+
 
             <!-- Main content -->
             <section class="content">

@@ -35,7 +35,8 @@
                                                 </ul>
                                             </li>
                                             <li><a href="#">Giới thiệu</a></li>
-                                            <li><a href="#">Liên Hệ</a></li>
+                                            <li><a href="<?= BASE_URL. '?act=contact' ?>">Liên Hệ</a></li>
+                                            <li><a href="#">Tác Giả</a></li>
                                         </ul>
                                     </nav>
                                     <!-- main menu navbar end -->
@@ -91,7 +92,7 @@
                                                 </ul>
                                                 </a>                                
                                             </li>
-                                            <?php }?>
+                                        <?php }?>
                                         <li class="user-hover" >
                                             <a href="#" class="minicart-btn">
                                                 <i class="pe-7s-shopbag"></i>
