@@ -42,22 +42,19 @@
                     <!-- product details wrapper start -->
                     <div class="col-lg-12 order-1 order-lg-2">
                         <!-- product details inner end -->
-                        <div class="product-details-inner">
+                        <div class="product-details-inner">  
                             <div class="row">
                                 <div class="col-lg-5">
                                     <div class="product-large-slider">
-                                    <?php foreach ($sanpham as $key => $sanPham): ?>
+                                    
 
                                         <div class="pro-large-img img-zoom">
-                                            <img src="<?= BASE_URL. $sanPham['image']?>"
+                                            
+                                            <img src="<?= $sanpham['image']?>"
                                                 alt="product-details" />
                                         </div>
-                                        <?php endforeach ?>
-                                    
-                                    </div>
-                                    <div class="pro-nav slick-row-10 slick-arrow-style">
-                                       
                                         
+                                    
                                     </div>
                                 </div>
                                 <div class="col-lg-7">
@@ -65,7 +62,7 @@
                                         <div class="manufacturer-name">
                                             <a href="product-details.html">HasTech</a>
                                         </div>
-                                        <h3 class="product-name">Handmade Golden Necklace Full Family Package</h3>
+                                        <h3 class="product-name"><?=$sanpham['book_name']?></h3>
                                         <div class="ratings d-flex">
                                             <span><i class="fa fa-star-o"></i></span>
                                             <span><i class="fa fa-star-o"></i></span>
@@ -77,20 +74,16 @@
                                             </div>
                                         </div>
                                         <div class="price-box">
-                                            <span class="price-regular">$70.00</span>
+                                            <span class="price-regular">$<?=$sanpham['price']?></span>
                                             <span class="price-old"><del>$90.00</del></span>
                                         </div>
                                         <h5 class="offer-text"><strong>Hurry up</strong>! offer ends in:</h5>
-                                        <div class="product-countdown" data-countdown="2022/12/20"></div>
+                                        <div class="product-countdown" data-countdown="2024/12/20"></div>
                                         <div class="availability">
                                             <i class="fa fa-check-circle"></i>
-                                            <span>200 in stock</span>
+                                            <span><?=$sanpham['quantity']?> in stock </span>
                                         </div>
-                                        <p class="pro-desc">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                                            diam nonumy
-                                            eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-                                            voluptua. Phasellus id nisi quis justo tempus mollis sed et dui. In hac
-                                            habitasse platea dictumst.</p>
+                                        <p class="pro-desc"><?=$sanpham['description']?></p>
                                         <div class="quantity-cart-box d-flex align-items-center">
                                             <h6 class="option-title">qty:</h6>
                                             <div class="quantity">
@@ -100,32 +93,7 @@
                                                 <a class="btn btn-cart2" href="#">Add to cart</a>
                                             </div>
                                         </div>
-                                        <div class="pro-size">
-                                            <h6 class="option-title">size :</h6>
-                                            <select class="nice-select">
-                                                <option>S</option>
-                                                <option>M</option>
-                                                <option>L</option>
-                                                <option>XL</option>
-                                            </select>
-                                        </div>
-                                        <div class="color-option">
-                                            <h6 class="option-title">color :</h6>
-                                            <ul class="color-categories">
-                                                <li>
-                                                    <a class="c-lightblue" href="#" title="LightSteelblue"></a>
-                                                </li>
-                                                <li>
-                                                    <a class="c-darktan" href="#" title="Darktan"></a>
-                                                </li>
-                                                <li>
-                                                    <a class="c-grey" href="#" title="Grey"></a>
-                                                </li>
-                                                <li>
-                                                    <a class="c-brown" href="#" title="Brown"></a>
-                                                </li>
-                                            </ul>
-                                        </div>
+                                        
                                         <div class="useful-links">
                                             <a href="#" data-bs-toggle="tooltip" title="Compare"><i
                                                     class="pe-7s-refresh-2"></i>compare</a>
@@ -140,6 +108,7 @@
                                         </div>
                                     </div>
                                 </div>
+
                             </div>
                         </div>
                         <!-- product details inner end -->
