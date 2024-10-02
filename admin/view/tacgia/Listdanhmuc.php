@@ -42,7 +42,7 @@
                         <div class="card">
                         <div class="card-header">
                                     <a href="<?= BASE_URL_ADMIN . '?act=form-them-tac-gia' ?>">
-                                        <button class="btn btn-succsess" style="background-color: pink">Thêm Sản Phẩm</button>
+                                        <button class="btn btn-succsess" style="background-color: pink">Thêm Tác Giả</button>
                                     </a>
                                 </div>  
                         <!-- /.card-header -->
@@ -52,8 +52,8 @@
                                             <tr>
                                                 <th>STT</th>
                                                 <th>Tên Tác Giả</th>
-                                                <th>ảnh tác giả</th>
-                                                <th>mô tả</th>
+                                                <th>Ảnh</th>
+                                                <th>Bio</th>
                                                 <th>Thao tác</th>
 
                                             </tr>
@@ -63,7 +63,9 @@
                                                 <tr>
                                                     <td><?= $key + 1 ?></td>
                                                     <td><?= $tacgia['name'] ?></td>
-                                                    <td><?= $tacgia['img_author'] ?></td>
+                                                    <td>
+                                                        <img src="<?= BASE_URL . $tacgia['img_author'] ?>" alt="" style="width: 100px">
+                                                    </td> 
                                                     <td><?= $tacgia['bio'] ?></td>
                                                     <td>
                                                         <a href="<?= BASE_URL_ADMIN . '?act=form-sua-tac-gia&id_tacgia=' . $tacgia['id'] ?>">

@@ -28,7 +28,6 @@ class SanPhamController
         require_once '../admin/view/products/addSanPham.php';
 
         // Xoa session sau khi load trang
-        deleteSessionError();
     }
     public function postAddSanPham()
     {

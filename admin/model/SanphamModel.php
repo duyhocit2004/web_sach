@@ -79,9 +79,6 @@ class SanphamModel
     }
 
 
-
-
-
     public function distroySanPham($id){
         $sql = 'DELETE FROM products WHERE id = :id';
         $stmt = $this -> model -> prepare($sql);

@@ -164,11 +164,11 @@
                                             <!-- product item start -->
                                             <div class="product-item">
                                                 <figure class="product-thumb">
-                                                    <a href="product-details.html">
+                                                    <a href="<?= BASE_URL . '?act=detail-product&id='. $sanPham['id']; ?>">
                                                         <img class="pri-img" src="<?= BASE_URL . $sanPham['image'] ?>"
                                                             alt="product">
                                                         <img class="sec-img" src="<?= BASE_URL . $sanPham['image'] ?>"
-                                                            alt="product">
+                                                            alt="product">  
                                                     </a>
 
                                                     <!-- Cần chỉnh sửa  -->
@@ -190,7 +190,7 @@
                                                 <div class="product-caption text-center">
 
                                                     <h6 class="product-name">
-                                                        <a href="#"><?= $sanPham['book_name'] ?></a>
+                                                        <a href="<?= BASE_URL . '?act=detail-product&id='. $sanPham['id']; ?>"><?= $sanPham['book_name'] ?></a>
                                                     </h6>
                                                     <div class="price-box">
                                                         <span style="color: red"><?= formatPrice($sanPham['price']) . 'đ'; ?>
@@ -494,146 +494,7 @@
                                         </div>
                                     </div>
                                     <!-- group list item end -->
-
-                                    <!-- group list item start -->
-                                    <div class="group-slide-item">
-                                        <div class="group-item">
-                                            <div class="group-item-thumb">
-                                                <a href="product-details.html">
-                                                    <img src="assets/clients/img/product/product-3.jpg" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="group-item-desc">
-                                                <h5 class="group-product-name"><a href="product-details.html">
-                                                        Handmade Golden ring</a></h5>
-                                                <div class="price-box">
-                                                    <span class="price-regular">$55.00</span>
-                                                    <span class="price-old"><del>$30.00</del></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- group list item end -->
-
-                                    <!-- group list item start -->
-                                    <div class="group-slide-item">
-                                        <div class="group-item">
-                                            <div class="group-item-thumb">
-                                                <a href="product-details.html">
-                                                    <img src="assets/clients/img/product/product-5.jpg" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="group-item-desc">
-                                                <h5 class="group-product-name"><a href="product-details.html">
-                                                        exclusive gold Jewelry</a></h5>
-                                                <div class="price-box">
-                                                    <span class="price-regular">$45.00</span>
-                                                    <span class="price-old"><del>$25.00</del></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- group list item end -->
-
-                                    <!-- group list item start -->
-                                    <div class="group-slide-item">
-                                        <div class="group-item">
-                                            <div class="group-item-thumb">
-                                                <a href="product-details.html">
-                                                    <img src="assets/clients/img/product/product-7.jpg" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="group-item-desc">
-                                                <h5 class="group-product-name"><a href="product-details.html">
-                                                        Perfect Diamond earring</a></h5>
-                                                <div class="price-box">
-                                                    <span class="price-regular">$50.00</span>
-                                                    <span class="price-old"><del>$29.99</del></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- group list item end -->
-
-                                    <!-- group list item start -->
-                                    <div class="group-slide-item">
-                                        <div class="group-item">
-                                            <div class="group-item-thumb">
-                                                <a href="product-details.html">
-                                                    <img src="assets/clients/img/product/product-9.jpg" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="group-item-desc">
-                                                <h5 class="group-product-name"><a href="product-details.html">
-                                                        Handmade Golden Necklace</a></h5>
-                                                <div class="price-box">
-                                                    <span class="price-regular">$90.00</span>
-                                                    <span class="price-old"><del>$100.</del></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- group list item end -->
-
-                                    <!-- group list item start -->
-                                    <div class="group-slide-item">
-                                        <div class="group-item">
-                                            <div class="group-item-thumb">
-                                                <a href="product-details.html">
-                                                    <img src="assets/clients/img/product/product-11.jpg" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="group-item-desc">
-                                                <h5 class="group-product-name"><a href="product-details.html">
-                                                        Handmade Golden Necklace</a></h5>
-                                                <div class="price-box">
-                                                    <span class="price-regular">$20.00</span>
-                                                    <span class="price-old"><del>$30.00</del></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- group list item end -->
-
-                                    <!-- group list item start -->
-                                    <div class="group-slide-item">
-                                        <div class="group-item">
-                                            <div class="group-item-thumb">
-                                                <a href="product-details.html">
-                                                    <img src="assets/clients/img/product/product-13.jpg" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="group-item-desc">
-                                                <h5 class="group-product-name"><a href="product-details.html">
-                                                        Handmade Golden ring</a></h5>
-                                                <div class="price-box">
-                                                    <span class="price-regular">$55.00</span>
-                                                    <span class="price-old"><del>$30.00</del></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- group list item end -->
-
-                                    <!-- group list item start -->
-                                    <div class="group-slide-item">
-                                        <div class="group-item">
-                                            <div class="group-item-thumb">
-                                                <a href="product-details.html">
-                                                    <img src="assets/clients/img/product/product-15.jpg" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="group-item-desc">
-                                                <h5 class="group-product-name"><a href="product-details.html">
-                                                        exclusive gold Jewelry</a></h5>
-                                                <div class="price-box">
-                                                    <span class="price-regular">$45.00</span>
-                                                    <span class="price-old"><del>$25.00</del></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- group list item end -->
+                                   
                                 </div>
                             </div>
                             <!-- group list carousel start -->

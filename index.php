@@ -30,6 +30,9 @@ match ($act) {
     //liên hệ
     'contact' => (new ContactController())->formContact(),
 
+    //Sản Phẩm
+    'detail-product' => (new HomeController())->chitietSanPham(),
+
     'login' => (new AuthClientsController())->ShowFormLogin(),
     // 'checklogin'=>(new AuthClientsController())->CheckLogin(),
     'register'=>(new AuthClientsController())->register(),

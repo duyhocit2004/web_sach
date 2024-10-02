@@ -20,7 +20,6 @@ class TacgiaController
     {
         // Hiển thị form nhập
         require_once './view/tacgia/addDanhMuc.php';
-        deleteSessionError();
 
     }
     public function postAddTacGia()

@@ -15,7 +15,5 @@ class AuthClientsController{
     }
     public function logout(){
         require_once "./view/auth/login.php";
-    }
-
-    
+    } 
 }

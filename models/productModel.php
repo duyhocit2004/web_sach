@@ -20,5 +20,13 @@ class ProductModel{
             echo "Lỗi" . $e->getMessage();
         }
     }
+
+    public function getDetailSanPham($id){
+        $sql = 'SELECT * FROM products WHERE id = :id';
+        $stmt = $this -> model -> prepare($sql);
+        $stmt -> execute([':id' => $id]);
+        return $stmt -> fetch();
+    }
+
   
 }
