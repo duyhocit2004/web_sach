@@ -31,7 +31,7 @@ match ($act) {
     'contact' => (new ContactController())->formContact(),
 
     //Sản Phẩm
-    'detail-product' => (new HomeController())->chitietSanPham(),
+    'detail-product' => (new ProductController())->chitietSanPham(),
 
     'login' => (new AuthClientsController())->ShowFormLogin(),
     'checklogin'=>(new AuthClientsController())->CheckLogin(),

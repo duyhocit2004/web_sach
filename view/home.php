@@ -131,8 +131,6 @@
                                                     <a href="<?= BASE_URL . '?act=detail-product&id='. $sanPham['id']; ?>">
                                                         <img class="pri-img" src="<?= BASE_URL . $sanPham['image'] ?>"
                                                             alt="product">
-                                                        <img class="sec-img" src="<?= BASE_URL . $sanPham['image'] ?>"
-                                                            alt="product">  
                                                     </a>
 
                                                     <!-- Cần chỉnh sửa  -->
@@ -148,7 +146,7 @@
 
 
                                                     <div class="cart-hover">
-                                                        <button class="btn btn-cart">Xem Chi Tiết</button>
+                                                        <a href="<?=BASE_URL . '?act=detail-product&id='.$sanpham[$id]?>" class="btn btn-cart"> xem chi</a>
                                                     </div>
                                                 </figure>
                                                 <div class="product-caption text-center">
@@ -219,7 +217,7 @@
 
 
                                         <div class="cart-hover">
-                                            <button class="btn btn-cart">Xem Chi Tiết</button>
+                                            <a href="<?=BASE_URL.'?act=detail-product&id=' . $sanPham['id']?>" class="btn btn-cart">xem chi tiết</a>
                                         </div>
                                     </figure>
                                     <div class="product-caption text-center">
