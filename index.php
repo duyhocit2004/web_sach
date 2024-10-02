@@ -34,8 +34,8 @@ match ($act) {
     'detail-product' => (new HomeController())->chitietSanPham(),
 
     'login' => (new AuthClientsController())->ShowFormLogin(),
-    // 'checklogin'=>(new AuthClientsController())->CheckLogin(),
+    'checklogin'=>(new AuthClientsController())->CheckLogin(),
     'register'=>(new AuthClientsController())->register(),
-    // 'post-register'=>(new AuthClientsController())->PostRegister(),
-    // 'logout'=>(new AuthClientsController())->logout(),
+    'post-register'=>(new AuthClientsController())->PostRegister(),
+    'logout'=>(new AuthClientsController())->logout(),
 };

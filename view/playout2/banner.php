@@ -4,7 +4,7 @@
                     <div class="col-sm-6">
                         <figure class="banner-statistics mt-20">
                             <a href="#">
-                                <img src="assets/clients/img/banner/img1-top.jpg" alt="product banner">
+                                <img src="" alt="product banner">
                             </a>
                             <div class="banner-content text-right">
                                 <h5 class="banner-text1">BEAUTIFUL</h5>
@@ -16,7 +16,7 @@
                     <div class="col-sm-6">
                         <figure class="banner-statistics mt-20">
                             <a href="#">
-                                <img src="assets/clients/img/banner/img2-top.jpg" alt="product banner">
+                                <img src="" alt="product banner">
                             </a>
                             <div class="banner-content text-center">
                                 <h5 class="banner-text1">EARRINGS</h5>

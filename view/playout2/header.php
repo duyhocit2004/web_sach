@@ -1,7 +1,6 @@
 <header class="header-area header-wide">
         <!-- main header start -->
         <div class="main-header d-none d-lg-block">
-
             <!-- header middle area start -->
             <div class="header-main-area sticky">
                 <div class="container">
@@ -12,7 +11,7 @@
                             <div class="logo">
                                 <a href="<?= BASE_URL ?>">
                                     <!-- SỬA LOGO  -->
-                                    <img src="assets/clients/img/logo/logo.png" alt="Brand Logo">
+                                    <img src="uploads/clients/logo/logo.png" alt="Brand Logo">
                                 </a>
                             </div>
                         </div>
@@ -56,20 +55,45 @@
                                         <button class="header-search-btn"><i class="pe-7s-search"></i></button>
                                     </form>
                                 </div>
-                                <div class="header-configure-area">
+                                <div class="header-configure-area ">
                                     <ul class="nav justify-content-end">
-                                        <li class="user-hover">
+                                        <!-- kiểm tra seesion đã có thông tin người đăng nhập hay chưa -->
+                                        <?php if(isset($_SESSION['user_clients'])){ ?>
+                                            <li class="py-2">
+                                            <?php
+                                                // tạo  biến mới lưu trữ email từ session
+                                                $user =$_SESSION['user_clients']['email'];
+                                                // Xử lý lấy phần tên người dùng
+                                                // Hàm explode() chia một chuỗi thành một mảng.
+                                                // vị trí cắt chuỗi từ "@"
+                                                $username = explode("@" , $user)[0];
+                                                echo $username;
+                                                ?>
+                                            </li>
+                                            <li class="user-hover">  
+                                              
+                                                <a href="#">
+                                                    <i class="pe-7s-user"></i>
+                                                    <ul class="dropdown-list">
+                                                        <li><a href="my-account.html">Tài Khoản</a></li>
+                                                        <li><a href="?act=logout">đăng xuất</a></li>
+                                                    </ul>
+                                                </a>
+                                     
+                                            </li>
+                                        <?php } else {?>
+                                            <li class="user-hover">
                                             <a href="#">
-                                                <i class="pe-7s-user"></i>
-                                            </a>
-                                            <ul class="dropdown-list">
-                                                <li><a href="?act=login">Đăng Nhập</a></li>
-                                                <li><a href="?act=register">Đăng Ký</a></li>
-                                                <li><a href="my-account.html">Tài Khoản</a></li>
-                                            </ul>
-                                        </li>
-                                        
-                                        <li>
+                                                    <i class="pe-7s-user"></i>
+                                                    <ul class="dropdown-list">
+                                                    <li><a href="?act=login">Đăng Nhập</a></li>
+                                                    <li><a href="?act=register">Đăng Ký</a></li>
+                                                
+                                                </ul>
+                                                </a>                                
+                                            </li>
+                                        <?php }?>
+                                        <li class="user-hover" >
                                             <a href="#" class="minicart-btn">
                                                 <i class="pe-7s-shopbag"></i>
                                                 <div class="notification">2</div>
