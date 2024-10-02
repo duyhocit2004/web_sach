@@ -62,7 +62,7 @@
                                             <li class="py-2">
                                             <?php
                                                 // tạo  biến mới lưu trữ email từ session
-                                                $user =$_SESSION['user_clients']['email'];
+                                                $user = $_SESSION['user_clients']['email'];
                                                 // Xử lý lấy phần tên người dùng
                                                 // Hàm explode() chia một chuỗi thành một mảng.
                                                 // vị trí cắt chuỗi từ "@"
