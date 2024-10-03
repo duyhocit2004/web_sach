@@ -85,13 +85,16 @@
                                         </div>
                                         <p class="pro-desc"><?=$sanpham['description']?></p>
                                         <div class="quantity-cart-box d-flex align-items-center">
-                                            <h6 class="option-title">qty:</h6>
-                                            <div class="quantity">
-                                                <div class="pro-qty"><input type="text" value="1"></div>
-                                            </div>
-                                            <div class="action_link">
-                                                <a class="btn btn-cart2" href="#">Add to cart</a>
-                                            </div>
+
+                                        <!-- thêm vô giỏ hàng -->
+                                        <form action="<?=BASE_URL .'?act=addtocart&id='. $sanpham['id']?>" method="POST">
+                                                <div class="quantity ">
+                                                <div class="pro-qty my-4"><input type="text" value="1" name="quantity"></div>
+                                                </div>
+                                                <div class="action_link">
+                                                    <button class="btn btn-cart2">thêm giỏ hàng</button>
+                                                </div>
+                                            </form>
                                         </div>
                                         
                                         <div class="useful-links">
