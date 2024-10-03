@@ -10,6 +10,8 @@ require_once './controllers/HomeController.php';
 require_once './controllers/productController.php';
 require_once './controllers/AuthClientsController.php';
 require_once './controllers/contactController.php';
+require_once './controllers/cartController.php';
+require_once './controllers/MinicartController.php';
 
 
 // Require toàn bộ file Models
@@ -17,6 +19,8 @@ require_once './models/Student.php';
 require_once './models/productModel.php';
 require_once './models/AuthClientsModel.php';
 require_once './models/contactModel.php';
+require_once './models/CartClientModel.php';
+require_once './models/MiniCartClientsModel.php';
 
 // Route
 $act = $_GET['act'] ?? '/';
@@ -33,9 +37,16 @@ match ($act) {
     //Sản Phẩm
     'detail-product' => (new ProductController())->chitietSanPham(),
 
+    //đăng nhập , đăng kí , đăng xuất
     'login' => (new AuthClientsController())->ShowFormLogin(),
     'checklogin'=>(new AuthClientsController())->CheckLogin(),
     'register'=>(new AuthClientsController())->register(),
     'post-register'=>(new AuthClientsController())->PostRegister(),
     'logout'=>(new AuthClientsController())->logout(),
-};
+
+    //thêm giỏ hàng
+    'addtocart' => (new CartController())->addTocart(),
+
+    //hiện sản phẩm trên giỏ hàng bé
+    
+}; 
