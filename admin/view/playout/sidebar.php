@@ -1,5 +1,5 @@
 <?php
-  // var_dump($_SESSION['user_admin']);
+// var_dump($_SESSION['user_admin']);
 ?>
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
   <!-- Brand Logo -->
@@ -9,22 +9,22 @@
     <span class="brand-text font-weight-light">AdminLTE 3</span>
   </a>
 
-  <?php if(isset($_SESSION['user_admin'])): ?>
-  <!-- Sidebar -->
-     <div class="sidebar">
-     <!-- Sidebar user (optional) -->
-     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-       <div class="image">
-         <img src="../uploads/avatartrang.jpg" class="img-circle elevation-2" alt="User Image">
-       </div>
-       <div class="info">
-         <a href="#" class="d-block"><?= $_SESSION['user_admin']['name']?></a>
-       </div>
-  </div>
-  <?php else: ?>
+  <?php if (isset($_SESSION['user_admin'])): ?>
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <img src="../uploads/avatartrang.jpg" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+          <a href="#" class="d-block"><?= $_SESSION['user_admin']['name'] ?></a>
+        </div>
+      </div>
+    <?php else: ?>
 
-  <?php endif; ?>
-   
+    <?php endif; ?>
+
 
 
 
@@ -35,8 +35,8 @@
                with font-awesome or any other icon font library -->
 
 
-          <li class="nav-item">
-          <a href="<?= BASE_URL_ADMIN . '?act=tai-khoan'?>" class="nav-link">
+        <li class="nav-item">
+          <a href="<?= BASE_URL_ADMIN . '?act=tai-khoan' ?>" class="nav-link">
             <i class="fas fa-user"></i></i>
             <p>
               Quản Lý tài khoản
@@ -45,14 +45,14 @@
         </li>
         <li class="nav-item">
           <a href="<?= BASE_URL_ADMIN . '?act=tac-gia' ?>" class="nav-link">
-          <i class="fas fa-user-tie"></i> </i>
+            <i class="fas fa-user-tie"></i> </i>
             <p>
               Danh Mục Tác Giả
             </p>
           </a>
         </li>
         <li class="nav-item">
-          <a href="<?= BASE_URL_ADMIN . '?act=products'?>" class="nav-link">
+          <a href="<?= BASE_URL_ADMIN . '?act=products' ?>" class="nav-link">
             <i class="fas fa-book"></i></i>
             <p>
               Quản Lý Sản Phẩm
@@ -61,8 +61,8 @@
         </li>
 
         <li class="nav-item">
-          <a href="<?= BASE_URL_ADMIN . '?act=the-loai'?>" class="nav-link">
-          <i class="fas fa-won-sign"></i></i>
+          <a href="<?= BASE_URL_ADMIN . '?act=the-loai' ?>" class="nav-link">
+            <i class="fas fa-won-sign"></i></i>
             <p>
               Quản Lý Thể Loại
             </p>
@@ -70,14 +70,24 @@
         </li>
 
         <li class="nav-item">
-          <a href="<?= BASE_URL_ADMIN . '?act=don-hang'?>" class="nav-link">
+          <a href="<?= BASE_URL_ADMIN . '?act=don-hang' ?>" class="nav-link">
             <i class=" fas fa-regular fa-copy"></i>
             <p>
               Quản Lý Đơn hàng
             </p>
           </a>
         </li>
-        
+
+        <li class="nav-item">
+          <a href="<?= BASE_URL_ADMIN . '?act=contact' ?>" class="nav-link">
+            <i class=" fas fa-regular fa-copy"></i>
+            <p>
+              Quản Lý Liên Hệ
+            </p>
+          </a>
+        </li>
+
+
       </ul>
     </nav>
     <!-- /.sidebar-menu -->

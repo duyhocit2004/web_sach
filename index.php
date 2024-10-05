@@ -18,6 +18,7 @@ require_once './models/productModel.php';
 require_once './models/AuthClientsModel.php';
 require_once './models/contactModel.php';
 
+
 // Route
 $act = $_GET['act'] ?? '/';
 
@@ -38,4 +39,7 @@ match ($act) {
     'register'=>(new AuthClientsController())->register(),
     'post-register'=>(new AuthClientsController())->PostRegister(),
     'logout'=>(new AuthClientsController())->logout(),
+
+    //Tìm kiếm
+    'search' => (new HomeController())->search(),
 };
