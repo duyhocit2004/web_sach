@@ -14,9 +14,6 @@
     <?php require_once "./view/playout2/header.php" ?>
     <!-- end Header Area -->
 
-    
-
-
     <main>
         <!-- breadcrumb area start -->
         <div class="breadcrumb-area">
@@ -50,39 +47,51 @@
                     <div class="col-lg-6">
                         <div class="contact-message">
                             <h4 class="contact-title">Tell Us Your Project</h4>
-                            <form id="contact-form" action="https://whizthemes.com/mail-php/genger/mail.php" method="post" class="contact-form">
+                            <?php if (isset($_SESSION['success_message'])): ?>
+                                <div class="alert alert-success">
+                                    <?= $_SESSION['success_message']; ?>
+                                </div>
+                                <?php unset($_SESSION['success_message']); // Xóa thông báo sau khi hiển thị ?>
+                            <?php endif; ?>
+                            
+                            <form action="<?= BASE_URL_ADMIN . '?act=them-lien-he' ?>" method="post"
+                                class="contact-form">
+
                                 <div class="row">
+
                                     <div class="col-lg-6 col-md-6 col-sm-6">
-                                        <input name="first_name" placeholder="Name *" type="text" required>
+                                        <input name="name" placeholder="Nhập Tên *" type="text" required>
                                     </div>
+
                                     <div class="col-lg-6 col-md-6 col-sm-6">
-                                        <input name="phone" placeholder="Phone *" type="text" required>
+                                        <input name="phone" placeholder="Nhâp Số Điện Thoại *" type="text" required>
                                     </div>
+
                                     <div class="col-lg-6 col-md-6 col-sm-6">
-                                        <input name="email_address" placeholder="Email *" type="text" required>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-6">
-                                        <input name="contact_subject" placeholder="Subject *" type="text">
+                                        <input name="subject" placeholder="Nhập Chủ Đề *" type="text">
                                     </div>
                                     <div class="col-12">
+
                                         <div class="contact2-textarea text-center">
-                                            <textarea placeholder="Message *" name="message" class="form-control2" required=""></textarea>
+                                            <textarea placeholder="Nhập tin nhẳn *" name="message" class="form-control2"
+                                                required=""></textarea>
                                         </div>
+
                                         <div class="contact-btn">
-                                            <button class="btn btn-sqr" type="submit">Send Message</button>
+                                            <button type="submit" class="btn btn-sqr">Gửi</button>
                                         </div>
+
                                     </div>
-                                    <div class="col-12 d-flex justify-content-center">
-                                        <p class="form-messege"></p>
-                                    </div>
+
                                 </div>
+
                             </form>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="contact-info">
                             <h4 class="contact-title">Liên Hệ</h4>
-                            
+
                             <ul>
                                 <li><i class="fa fa-fax"></i> Địa chỉ : Cao Đẳng FPT Polytechnic</li>
                                 <li><i class="fa fa-phone"></i> + 0962139512 </li>
@@ -106,7 +115,7 @@
     </div>
     <!-- Scroll to Top End -->
 
-   
+
     <!-- offcanvas mini cart end -->
 
     <!-- JS
@@ -123,4 +132,5 @@
 
 
 <!-- Mirrored from htmldemo.net/corano/corano/contact-us.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 29 Jun 2024 09:54:03 GMT -->
+
 </html>
