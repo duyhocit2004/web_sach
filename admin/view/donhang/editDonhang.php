@@ -95,7 +95,7 @@
                                             <?php endforeach; ?>
                                            </select>
                                         </div>
-
+                                        <input type="hidden" class="form-control" name="id" value="<?= $list['id'] ?>">
                                     </div>
 
                                     <div class="card-footer">

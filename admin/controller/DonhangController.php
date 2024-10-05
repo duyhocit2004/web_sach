@@ -26,12 +26,21 @@ class DonhangController{
         $note=$_POST['note'];
         $payment_method_name=$_POST['payment_method_name'];
         $payment_status=$_POST['payment_status'];
+        $id=$_POST['id'];
 
-        $this->model->GetDonhang($recipient_name,$recipient_email,$recipient_phone,$recipient_address,$order_date,$note,$payment_method_name,$payment_status);
-       
+        $request = $this->model->GetDonhang($recipient_name,$recipient_email,$recipient_phone,$recipient_address,$order_date,$note,$payment_method_name,$payment_status,$id);
+        header("Location: " . BASE_URL_ADMIN . '?act=don-hang');
+        exit();
     }
     public function Xoadonhang(){
+        $id = $_GET['id'];
+        $donhang = $this->model->getDetailDonHang($id);
 
+        if ($donhang) {
+            $this -> model -> getDelete($id);
+        }
+        header("Location: " . BASE_URL_ADMIN . '?act=don-hang');
+        exit();
     }
     public function Chitietdonhang() {
         $id = $_GET['id'];

@@ -55,10 +55,10 @@ class DonhangModel{
         $stmt->execute();
         return $stmt->fetchAll();
     }
-    public function GetDonhang($recipient_name,$recipient_email,$recipient_phone,$recipient_address,$order_date,$note,$payment_method_name,$payment_status){
+    public function GetDonhang($recipient_name,$recipient_email,$recipient_phone,$recipient_address,$order_date,$note,$payment_method_name,$payment_status,$id){
         $sql = 'UPDATE orders SET  recipient_name = :recipient_name, recipient_email = :recipient_email, recipient_phone = :recipient_phone,
-         recipient_address = :recipient_address, order_date = :order_date, note = :note, payment_method_id = :payment_method_name,payment_status_id = :payment_status
-        ';
+        recipient_address = :recipient_address, order_date = :order_date, note = :note, payment_method_id = :payment_method_name,payment_status_id = :payment_status
+        WHERE id = :id';
         $stmt = $this->db->prepare($sql);
         $stmt->execute([
             ':recipient_name' => $recipient_name,
@@ -68,11 +68,26 @@ class DonhangModel{
             ':order_date' => $order_date,
             ':note' => $note,
             ':payment_method_name' => $payment_method_name,
-            'payment_status'=>$payment_status,
+            ':payment_status'=>$payment_status,
+            ':id'=> $id,
         ]);
-        return  header("Location :" .BASE_URL_ADMIN. '?act=don-hang');
+        return true;
         
     }
 
+    public function getDelete($id) {
+        $sql = 'DELETE FROM orders WHERE id = :id';
+        $stmt = $this -> db -> prepare($sql);
+        $stmt -> execute([
+            ':id' => $id,
+        ]);
+        return true;
+    }
+    public function getDetailDonHang($id){
+        $sql = 'SELECT * FROM orders WHERE id = :id';
+        $stmt = $this -> db -> prepare($sql);
+        $stmt -> execute([':id' => $id]);
+        return $stmt -> fetch();
+    }
 
 }

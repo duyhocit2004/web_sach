@@ -57,6 +57,7 @@
                                                 <th>Thể Loại</th>
                                                 <th>Giá</th>
                                                 <th>Mô Tả</th>
+                                                <th>Số Lượng</th>
                                                 <th>Thao tác</th>
 
                                             </tr>
@@ -73,6 +74,7 @@
                                                     <td><?= $sanpham['genres_name'] ?></td>
                                                     <td><?= $sanpham['price'] ?></td>
                                                     <td><?= $sanpham['description'] ?></td>
+                                                    <td><?= $sanpham['quantity'] ?></td>
                                                     <td>
                                                         <a
                                                             href="<?= BASE_URL_ADMIN . '?act=form-sua-san-pham&id_sanpham=' . $sanpham['id'] ?>">
@@ -82,7 +84,6 @@
                                                             onclick="return confirm('Ban co muon xoa')">
                                                             <button class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
                                                         </a>
-
                                                     </td>
                                                 </tr>
                                             <?php endforeach ?>

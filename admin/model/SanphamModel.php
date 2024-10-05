@@ -21,10 +21,10 @@ class SanphamModel
     }
 
 
-    public function insertSanPham($book_name, $title, $author_id, $genre_id, $published_date, $price, $description, $image)
+    public function insertSanPham($book_name, $title, $author_id, $genre_id, $published_date, $price, $description, $image, $quantity)
     {
-        $sql = 'INSERT INTO products (book_name, title, author_id, genre_id, published_date, price, description, image)
-            VALUES(:book_name, :title, :author_id, :genre_id, :published_date, :price, :description, :image)
+        $sql = 'INSERT INTO products (book_name, title, author_id, genre_id, published_date, price, description, image, quantity)
+            VALUES(:book_name, :title, :author_id, :genre_id, :published_date, :price, :description, :image, :quantity)
         ';
         $stmt = $this->model->prepare($sql);
         $stmt->execute([
@@ -36,6 +36,7 @@ class SanphamModel
             ':price' => $price,
             ':description' => $description,
             ':image' => $image,
+            ':quantity' => $quantity,
         ]);
 
         //lấy id sản phẩm vừa thêm
@@ -45,8 +46,8 @@ class SanphamModel
 
 
 
-    public function updateSanPham($sanpham_id, $book_name, $title, $author_id, $genre_id, $published_date, $price, $description, $image){
-        $sql = 'UPDATE products SET book_name= :book_name, title= :title, author_id= :author_id, genre_id= :genre_id, published_date= :published_date, price= :price, description= :description, image= :image
+    public function updateSanPham($sanpham_id, $book_name, $title, $author_id, $genre_id, $published_date, $price, $description, $image, $quantity){
+        $sql = 'UPDATE products SET book_name= :book_name, title= :title, author_id= :author_id, genre_id= :genre_id, published_date= :published_date, price= :price, description= :description, image= :image, quantity= :quantity
          WHERE id = :id';
         $stmt = $this -> model -> prepare($sql);
         $stmt -> execute([
@@ -58,7 +59,9 @@ class SanphamModel
             ':published_date' => $published_date,
             ':price' => $price,
             ':description' => $description,
-            ':image' => $image
+            ':image' => $image,
+            ':quantity' => $quantity
+
         ]);
         return true;
     }
