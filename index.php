@@ -10,6 +10,9 @@ require_once './controllers/HomeController.php';
 require_once './controllers/productController.php';
 require_once './controllers/AuthClientsController.php';
 require_once './controllers/contactController.php';
+require_once './controllers/cartController.php';
+require_once './controllers/MinicartController.php';
+require_once './controllers/OrderController.php';
 
 
 // Require toàn bộ file Models
@@ -17,6 +20,9 @@ require_once './models/Student.php';
 require_once './models/productModel.php';
 require_once './models/AuthClientsModel.php';
 require_once './models/contactModel.php';
+require_once './models/CartClientModel.php';
+require_once './models/MiniCartClientsModel.php';
+require_once './models/OrderClientsModel.php';
 
 
 // Route
@@ -32,8 +38,9 @@ match ($act) {
     'contact' => (new ContactController())->formContact(),
 
     //Sản Phẩm
-    'detail-product' => (new HomeController())->chitietSanPham(),
+    'detail-product' => (new ProductController())->chitietSanPham(),
 
+    //đăng nhập , đăng kí , đăng xuất
     'login' => (new AuthClientsController())->ShowFormLogin(),
     'checklogin'=>(new AuthClientsController())->CheckLogin(),
     'register'=>(new AuthClientsController())->register(),
@@ -42,4 +49,15 @@ match ($act) {
 
     //Tìm kiếm
     'search' => (new HomeController())->search(),
-};
+    
+    //thêm giỏ hàng
+    'addtocart' => (new CartController())->addTocart(),
+
+    //giỏ hàng
+    'cart' => (new CartController())->listOnCart(),
+    'DeleteProductOnCart' => (new CartController())->listOnCart(),
+    
+    //thanh toán
+    'order' => (new OrderController())->PageOder(),
+    'postOder' => (new OrderController())->PostOrder(),
+}; 

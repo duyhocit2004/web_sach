@@ -120,28 +120,41 @@
                     <div class="product-container">
 
 
-                        <!-- product tab content start -->
-                        <div class="tab-content">
-                            <div class="tab-pane fade show active" id="tab1">
-                                <div class="product-carousel-4 slick-row-10 slick-arrow-style">
-                                    <?php foreach ($listSanPham as $key => $sanPham): ?>
-                                        <!-- product item start -->
-                                        <div class="product-item">
-                                            <figure class="product-thumb">
-                                                <a href="<?= BASE_URL . '?act=detail-product&id=' . $sanPham['id']; ?>">
-                                                    <img class="pri-img" src="<?= BASE_URL . $sanPham['image'] ?>"
-                                                        alt="product">
-                                                    <img class="sec-img" src="<?= BASE_URL . $sanPham['image'] ?>"
-                                                        alt="product">
-                                                </a>
+                            <!-- product tab content start -->
+                            <div class="tab-content">
+                                <div class="tab-pane fade show active" id="tab1">
+                                    <div class="product-carousel-4 slick-row-10 slick-arrow-style">
+                                        <?php foreach ($listSanPham as $key => $sanPham): ?>
+                                            <!-- product item start -->
+                                            <div class="product-item">
+                                                <figure class="product-thumb">
+                                                    <a href="<?= BASE_URL . '?act=detail-product&id='. $sanPham['id']; ?>">
+                                                        <img class="pri-img" src="<?= BASE_URL . $sanPham['image'] ?>"
+                                                            alt="product">
+                                                    </a>
 
                                                 <!-- Cần chỉnh sửa  -->
                                                 <div class="product-badge">
                                                     <div class="product-label new">
                                                         <span>new</span>
                                                     </div>
-                                                    <div class="product-label discount">
-                                                        <span>10%</span>
+                                                    <!-- Cần chỉnh sửa  -->
+
+
+                                                    <div class="cart-hover">
+                                                        <a href="<?=BASE_URL . '?act=detail-product&id='.$sanpham[$id]?>" class="btn btn-cart"> xem chi</a>
+                                                    </div>
+                                                </figure>
+                                                <div class="product-caption text-center">
+
+                                                    <h6 class="product-name">
+                                                        <a href="<?= BASE_URL . '?act=detail-product&id='. $sanPham['id']; ?>"><?= $sanPham['book_name'] ?></a>
+                                                    </h6>
+                                                    <div class="price-box">
+                                                        <span style="color: red"><?= formatPrice($sanPham['price']) . 'đ'; ?>
+                                                        </span>
+                                                        <!-- <span class="price-regular">$60.00</span>
+                                                    <span class="price-old"><del>$70.00</del></span> -->
                                                     </div>
                                                 </div>
                                                 <!-- Cần chỉnh sửa  -->
@@ -220,7 +233,7 @@
 
 
                                         <div class="cart-hover">
-                                            <button class="btn btn-cart">Xem Chi Tiết</button>
+                                            <a href="<?=BASE_URL.'?act=detail-product&id=' . $sanPham['id']?>" class="btn btn-cart">xem chi tiết</a>
                                         </div>
                                     </figure>
                                     <div class="product-caption text-center">

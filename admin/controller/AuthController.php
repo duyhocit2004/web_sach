@@ -27,7 +27,6 @@ class AuthController {
                         'email' => $email, // Lưu email
                         'name' => $password,  // Lưu tên người dùng
                     ];
-                    require_once "../admin/view/playout/sidebar.php";
                 }
                 
                 header("Location: " . BASE_URL_ADMIN);
