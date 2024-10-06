@@ -24,6 +24,7 @@ require_once './models/CartClientModel.php';
 require_once './models/MiniCartClientsModel.php';
 require_once './models/OrderClientsModel.php';
 
+
 // Route
 $act = $_GET['act'] ?? '/';
 
@@ -46,6 +47,9 @@ match ($act) {
     'post-register'=>(new AuthClientsController())->PostRegister(),
     'logout'=>(new AuthClientsController())->logout(),
 
+    //Tìm kiếm
+    'search' => (new HomeController())->search(),
+    
     //thêm giỏ hàng
     'addtocart' => (new CartController())->addTocart(),
 

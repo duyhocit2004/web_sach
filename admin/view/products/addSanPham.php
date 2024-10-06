@@ -108,7 +108,7 @@
                                         <!-- 12 -->
                                         <div class="form-group col-12">
                                             <label>Giá</label>
-                                            <input type="text" class="form-control" name="price"
+                                            <input type="number" class="form-control" name="price"
                                                 placeholder="Nhập Giá sản phẩm">
                                             <?php if (isset($_SESSION['error']['price'])) { ?> 
                                                 <p class="text-danger"><?= $_SESSION['error']['price'] ?></p>
@@ -129,6 +129,15 @@
                                             <!-- <textarea name="description" id="" class="form-control" placeholder="Nhập mô tả"></textarea> -->
                                             <input type="text" class="form-control" name="description">
                                         </div>
+                                        <div class="form-group col-12">
+                                            <label>Số Lượng</label>
+                                            <input type="number" class="form-control" name="quantity"
+                                                placeholder="Nhập số lượng sản phẩm">
+                                            <?php if (isset($_SESSION['error']['quantity'])) { ?> 
+                                                <p class="text-danger"><?= $_SESSION['error']['quantity'] ?></p>
+                                            <?php } ?>
+                                        </div>
+
                                         <!-- 9 -->
                                          <!-- SAU BỔ SUNG TIẾP -->
                                         <!-- <div class="form-group col-12" >

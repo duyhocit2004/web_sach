@@ -27,6 +27,12 @@ class ProductModel{
         $stmt -> execute([':id' => $id]);
         return $stmt -> fetch();
     }
+    public function searchProducts($keyword) {
+        $sql = "SELECT * FROM products WHERE book_name LIKE :keyword";
+        $stmt = $this->model->prepare($sql);
+        $stmt->execute(['keyword' => '%' . $keyword . '%']);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 
   
 }

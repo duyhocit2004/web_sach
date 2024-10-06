@@ -14,7 +14,6 @@
         <!-- Main Sidebar Container -->
         <?php require_once '../admin/view/playout/sidebar.php' ?>
 
-
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
@@ -22,7 +21,7 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>Quản lý Danh Sách Sản Phẩm</h1>
+                            <h1>Quản lý Liên Hệ</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
@@ -33,57 +32,45 @@
                     </div>
                 </div><!-- /.container-fluid -->
             </section>
+            
+       
+
 
             <!-- Main content -->
             <section class="content">
                 <div class="container-fluid">
                     <div class="row">
                     <div class="col-12">
-                        <div class="card">
-                        <div class="card-header">
-                                    <a href="<?= BASE_URL_ADMIN . '?act=form-them-san-pham' ?>">
-                                        <button class="btn btn-succsess" style="background-color: pink">Thêm Sản Phẩm</button>
-                                    </a>
-                                </div>  
+                        <div class="card">    
                         <!-- /.card-header -->
                         <div class="card-body">
                             <table id="example2" class="table table-bordered table-hover">
+                                                  
                                         <thead>
                                             <tr>
                                                 <th>STT</th>
-                                                <th>Tên Sách</th>
-                                                <th>Ảnh</th>
-                                                <th>Tên Tác giả</th>
-                                                <th>Thể Loại</th>
-                                                <th>Giá</th>
-                                                <th>Mô Tả</th>
-                                                <th>Số Lượng</th>
+                                                <th>Tên</th>
+                                                <th>Số điện thoại</th>
+                                                <th>Chủ Đề</th>
+                                                <th>Thông điệp</th>
                                                 <th>Thao tác</th>
 
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php foreach ($listSanPham as $key => $sanpham): ?>
+                                            <?php foreach ($listContact as $key => $contact): ?>
                                                 <tr>
                                                     <td><?= $key + 1 ?></td>
-                                                    <td><?= $sanpham['book_name'] ?></td>
+                                                    <td><?= $contact['name'] ?></td>
+                                                    <td><?= $contact['phone'] ?></td>
+                                                    <td><?= $contact['subject'] ?></td>
+                                                    <td><?= $contact['message'] ?></td>
                                                     <td>
-                                                        <img src="<?= BASE_URL . $sanpham['image'] ?>" alt="" style="width: 100px">
-                                                    </td> 
-                                                    <td><?= $sanpham['name'] ?></td>
-                                                    <td><?= $sanpham['genres_name'] ?></td>
-                                                    <td><?= $sanpham['price'] ?></td>
-                                                    <td><?= $sanpham['description'] ?></td>
-                                                    <td><?= $sanpham['quantity'] ?></td>
-                                                    <td>
-                                                        <a
-                                                            href="<?= BASE_URL_ADMIN . '?act=form-sua-san-pham&id_sanpham=' . $sanpham['id'] ?>">
-                                                            <button class="btn btn-warning"><i class="fas fa-edit"></i></button>
-                                                        </a>
-                                                        <a href="<?= BASE_URL_ADMIN . '?act=xoa-san-pham&id=' . $sanpham['id'] ?>"
+                                                        <a href="<?= BASE_URL_ADMIN . '?act=xoa-lien-he&id_contact=' . $contact['id'] ?>" 
                                                             onclick="return confirm('Ban co muon xoa')">
                                                             <button class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
                                                         </a>
+
                                                     </td>
                                                 </tr>
                                             <?php endforeach ?>
@@ -105,12 +92,12 @@
 
 
         </div>
-        <!-- footer -->
-        <?php require_once '../admin/view/playout/footer.php' ?>
-        <!-- end_footer -->
-
-        <!-- jQuery -->
-        <?php require_once '../admin/view/playout/js.php' ?>
+ <!-- footer -->
+ <?php require_once '../admin/view/playout/footer.php' ?>
+    <!-- end_footer -->
+ 
+<!-- jQuery -->
+<?php require_once '../admin/view/playout/js.php' ?>
 </body>
 
 </html>

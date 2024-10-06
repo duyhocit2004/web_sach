@@ -42,7 +42,7 @@
                         <div class="card">
                         <div class="card-header">
                                     <a href="<?= BASE_URL_ADMIN . '?act=form-them-san-pham' ?>">
-                                        <button class="btn btn-succsess" style="background-color: pink">Thêm Sản Phẩm</button>
+                                        <button class="btn btn-succsess" style="background-color: pink">Thêm Đơn Hàng</button>
                                     </a>
                                 </div>  
                         <!-- /.card-header -->
@@ -78,7 +78,7 @@
                                                             href="<?= BASE_URL_ADMIN . '?act=chitiet-don-hang&id=' . $donhang['id'] ?>">
                                                             <button class="btn btn-warning">chi tiết</button>
                                                         </a>
-                                                        <a href="<?= BASE_URL_ADMIN . '?act=xoa-san-pham&id=' . $donhang['id'] ?>"
+                                                        <a href="<?= BASE_URL_ADMIN . '?act=xoa-don-hang&id=' . $donhang['id'] ?>"
                                                             onclick="return confirm('Ban co muon xoa')">
                                                             <button class="btn btn-danger">Xóa</button>
                                                         </a>

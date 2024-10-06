@@ -41,6 +41,7 @@ class SanPhamController
             $published_date = $_POST['published_date'] ?? '';
             $price = $_POST['price'] ?? '';
             $description = $_POST['description'] ?? '';
+            $quantity = $_POST['quantity'] ?? '';
 
             $image = $_FILES['image'] ?? null;
             // Lưu hình ảnh
@@ -73,13 +74,17 @@ class SanPhamController
             if ($image['error'] !== 0) {
                 $errors['image'] = 'Phải chọn ảnh sản phẩm';
             }
+            if (empty($quantity)) {
+                $errors['quantity'] = 'Số lượng phải nhập';
+            }
+           
             $_SESSION['error'] = $errors;
             
             //nếu k có lỗi thì tiến hành thêm sản phẩm
             if (empty($errors)) {
                 //nếu k có lỗi thì tiến hành thêm sản phẩm
                 // var_dump("oke");
-                $product_id = $this->modelSanPham->insertSanPham($book_name, $title, $author_id, $genre_id, $published_date, $price, $description, $file_thumb);
+                $product_id = $this->modelSanPham->insertSanPham($book_name, $title, $author_id, $genre_id, $published_date, $price, $description, $file_thumb, $quantity);
                 header("Location: " . BASE_URL_ADMIN . '?act=products');
                 exit();
             } else {
@@ -107,7 +112,6 @@ class SanPhamController
         $sanPham = $this->modelSanPham->getDetailSanPham($id);
         if ($sanPham) {
             require_once './view/products/editSanPham.php';
-            deleteSessionError();
         } else {
             header("Location: " . BASE_URL_ADMIN . '?act=san-pham');
             exit();
@@ -133,6 +137,8 @@ class SanPhamController
             $published_date = $_POST['published_date'] ?? '';
             $price = $_POST['price'] ?? '';
             $description = $_POST['description'] ?? '';
+            $quantity = $_POST['quantity'] ?? '';
+
 
             $image = $_FILES['image'] ?? null;
            
@@ -158,6 +164,9 @@ class SanPhamController
             }
             if (empty($price)) {
                 $errors['price'] = 'Giá sản phẩm không được bỏ trống';
+            }
+            if (empty($quantity)) {
+                $errors['quantity'] = 'Số lượng phải nhập';
             }
             
             $_SESSION['error'] = $errors;
@@ -187,7 +196,8 @@ class SanPhamController
                                                 $published_date, 
                                                 $price, 
                                                 $description, 
-                                                $new_file);
+                                                $new_file,
+                                                $quantity);
                 
 
                 header("Location: " . BASE_URL_ADMIN . '?act=products');
