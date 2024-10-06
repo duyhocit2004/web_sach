@@ -66,12 +66,7 @@
                                                 placeholder="Nhập tên tác giả">
                                         </div>
 
-                                        <div class="form-group">
-                                            <label> tổng tiền</label>
-                                            <input type="text" disabled class="form-control" name="total_amount" value="<?= $list['total_amount'] ?>"
-                                                placeholder="Nhập tên tác giả">
-                                        </div>
-
+    
                                         <div class="form-group">
                                             <label>ghi chú</label>
                                             <input type="text" class="form-control" name="note" value="<?= $list['note'] ?>"

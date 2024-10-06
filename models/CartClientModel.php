@@ -12,8 +12,8 @@ class CartClientModel {
         "email" => $email,
     ]);
 
-    $user = $stmt->fetch();
-    return $user; // Return null if no user is found
+     
+    return $stmt->fetch(); // Return null if no user is found
 }
   public function getFromId($id){
     $sql = "SELECT * FROM shopping_cart WHERE user_id = :user_id";
@@ -40,12 +40,12 @@ class CartClientModel {
       return $this->data->lastInsertId();
    }
    public function Update_quality($Cart_detail,$newquality,$id_product){
-    $sql = "UPDATE shopping_cart_details SET quatlity = :quality WHERE shopping_cart_id = :id_cart AND product_id = :id_product  ";
+    $sql = "UPDATE shopping_cart_details SET quantity = :quantity  WHERE shopping_cart_id = :id_cart AND product_id =:product_id     ";
     $stmt = $this->data->prepare($sql);
     $stmt -> execute([
-      'quatlity' => $newquality,
-      'shopping_cart_id' => $Cart_detail,
-      'product_id' =>$id_product,
+      "quantity" => $newquality,
+      "id_cart" => $Cart_detail,
+      "product_id" =>$id_product,
     ]);
     return true;
    }
@@ -61,5 +61,16 @@ class CartClientModel {
 
    }
 
+   public function listcart($id){
+    $sql = "SELECT shopping_cart_details.*,products.book_name ,products.image,products.price
+    FROM shopping_cart_details
+    INNER JOIN products ON shopping_cart_details.product_id = products.id 
+      WHERE shopping_cart_details.shopping_cart_id = :id ";
+    $stmt = $this->data->prepare($sql);
+    $stmt ->execute([
+      ':id' => $id,
+    ]);
+    return $stmt->fetchAll() ;
+   }
    
 }
