@@ -21,4 +21,35 @@ class OrderClientsModel {
         $stmt -> execute();
         return $stmt ->fetchAll();
     }
+
+    public function addOrder(
+    $id_nguoi_dung,
+    $recipient_name,
+    $recipient_email,
+    $recipient_phone,
+    $recipient_address,
+    $note,
+    $payment_method,
+    $order_date,
+    $payment_status_id,
+    $OrderID){
+        $sql = "INSERT INTO orders (user_id,recipient_name,recipient_email,recipient_phone,recipient_address,note,order_date,payment_method_id,payment_status_id, Order_ID)
+        VALUES (:user_id,:recipient_name,:recipient_email,:recipient_phone,:recipient_address,:note,:order_date,:payment_method,:payment_status_id, :Order_ID)";
+        $stmt = $this->data->prepare($sql);
+        $stmt -> execute([
+            ':user_id' => $id_nguoi_dung,
+            ':recipient_name' => $recipient_name,
+            ':recipient_email' => $recipient_email,
+            ':recipient_phone' => $recipient_phone,
+            ':recipient_address' => $recipient_address,
+            ':order_date' => $order_date,
+            ':note' =>$note,
+            ':payment_method' => $payment_method,
+            ':payment_status_id' => $payment_status_id,
+            ':Order_ID' => $OrderID
+
+
+        ]);
+        return $this->data ->lastInsertId();
+    }
 }

@@ -55,5 +55,5 @@ match ($act) {
     
     //thanh toán
     'order' => (new OrderController())->PageOder(),
-    'postOder' => (new CartController())->PostOrder(),
+    'postOder' => (new OrderController())->PostOrder(),
 }; 
