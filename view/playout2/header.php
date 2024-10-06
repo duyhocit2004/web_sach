@@ -94,7 +94,7 @@
                                             </li>
                                         <?php }?>
                                         <li class="user-hover" >
-                                            <a href="#" class="minicart-btn">
+                                            <a href="?act=cart" class="minicart-btn">
                                                 <i class="pe-7s-shopbag"></i>
                                                 <div class="notification">2</div>
                                             </a>

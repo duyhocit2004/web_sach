@@ -1,3 +1,4 @@
+<!-- Mirrored from htmldemo.net/corano/corano/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 29 Jun 2024 09:53:43 GMT -->
  <!-- Modernizer JS -->
  <script src="assets/clients/js/vendor/modernizr-3.6.0.min.js"></script>
     <!-- jQuery JS -->
@@ -26,3 +27,4 @@
     <script src="assets/clients/js/plugins/google-map.js"></script>
     <!-- Main JS -->
     <script src="assets/clients/js/main.js"></script>
+    <script src="assets/clients/js/main2.js"></script>
