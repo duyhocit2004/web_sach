@@ -11,21 +11,11 @@ class HomeController
 
     public function index()
     {
-        $listSanPham = $this->modelSanPham->getAllSanPham();
+        $listSanPham = $this->modelSanPham->getAllProducts();
         require_once "./view/home.php";
     }
 
 
-    public function search()
-    {
-        $keyword = $_POST['keyword'] ?? ''; // Lấy từ khóa tìm kiếm từ URL
-        $listSanPham = $this->modelSanPham->searchProducts($keyword); // Tìm kiếm sản phẩm
-        if ($listSanPham) {
-            require_once './view/search.php';
-        } else {
-            header("Location: " . BASE_URL);
-            exit();
-        }
-    }
+    
  
 }

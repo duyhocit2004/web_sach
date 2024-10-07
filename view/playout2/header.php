@@ -28,7 +28,7 @@
                                             <a href="<?= BASE_URL ?>">Trang Chủ</a>
                                         </li>
 
-                                        <li><a href="#">Sản Phẩm <i class="fa fa-angle-down"></i></a>
+                                        <li><a href="<?= BASE_URL . '?act=shop-product'?>">Sản Phẩm <i class="fa fa-angle-down"></i></a>
                                             <ul class="dropdown">
                                                 <li><a href="blog-left-sidebar.html">blog left sidebar</a></li>
 
@@ -68,7 +68,7 @@
                                             ?>
                                         </li>
                                         <li class="user-hover">
-                                            
+
                                             <a href="#">
                                                 <i class="pe-7s-user"></i>
                                                 <ul class="dropdown-list">

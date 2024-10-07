@@ -6,7 +6,7 @@ class ProductModel{
         $this->model = connectDB();
     }
 
-    public function getAllSanPham() {
+    public function getAllProducts() {
         try {
         $sql = 'SELECT products.*, authors.name, genres.name AS genres_name
         FROM products
