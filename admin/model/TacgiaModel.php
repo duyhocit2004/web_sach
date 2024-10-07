@@ -30,7 +30,7 @@
         $sql = 'SELECT * FROM authors WHERE id = :id';
         $stmt = $this -> model -> prepare($sql);
         $stmt -> execute([
-            ':id' => $id,
+            ':id' => $id
         ]);
         return $stmt -> fetch();
     }

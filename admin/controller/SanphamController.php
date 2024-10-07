@@ -174,7 +174,7 @@ class SanPhamController
             //Logic sửa ảnh
             if (isset($image) && $image['error'] == UPLOAD_ERR_OK) {
                 // Upload ảnh mới lên
-                $new_file = uploadFile($image, './uploads/');
+                $new_file = uploadFile($image, './uploads/products');
 
                 if(!empty($old_file)) { //Nếu có ảnh cũ thì xóa đi
                     deleteFile($old_file);
