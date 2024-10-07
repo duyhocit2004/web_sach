@@ -65,19 +65,20 @@
                                                 $user = $_SESSION['user_clients']['email'];
                                                 $username = explode("@", $user)[0];
                                                 echo $username;
-                                            ?>
-                                        </li>
-                                        <li class="user-hover">
+                                                ?>
+                                            </li>
+                                            <li class="user-hover">  
+                                              
+                                                <a href="#">
+                                                    <i class="pe-7s-user"></i>
+                                                    <ul class="dropdown-list">
+                                                        <li><a href="?act=account">Tài Khoản</a></li>
+                                                        <li><a href="?act=logout">đăng xuất</a></li>
+                                                    </ul>
+                                                </a>
+                                     
+                                            </li>
 
-                                            <a href="#">
-                                                <i class="pe-7s-user"></i>
-                                                <ul class="dropdown-list">
-                                                    <li><a href="my-account.html">Tài Khoản</a></li>
-                                                    <li><a href="?act=logout">Đăng Xuất</a></li>
-                                                </ul>
-                                            </a>
-
-                                        </li>
                                     <?php } else { ?>
                                         <li class="user-hover">
                                             <a href="#">

@@ -94,7 +94,7 @@
                         <th><?=$as['book_name']?></th>
                         <th><?=$as['quantity']?></th>
                         <th><?=$as['unit_price']?></th>
-                        <th><?=$as['price']?></th>
+                        <th><?=$as['sum_price']?></th>
                     </tr>
                     <?php endforeach; ?>
                     </tbody>
@@ -146,11 +146,7 @@
             </div>
         </div>
     </section>
-            <!-- /.content -->
-
-  
-                                                 
-
+            <!-- /.content --> 
         </div>
         <!-- footer -->
         <?php require_once '../admin/view/playout/footer.php' ?>

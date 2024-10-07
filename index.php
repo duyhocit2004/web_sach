@@ -13,7 +13,11 @@ require_once './controllers/contactController.php';
 require_once './controllers/cartController.php';
 require_once './controllers/MinicartController.php';
 require_once './controllers/OrderController.php';
+
+require_once './controllers/AccountClientsController.php';
+
 require_once './controllers/authorsController.php';
+
 
 
 
@@ -24,6 +28,9 @@ require_once './models/AuthClientsModel.php';
 require_once './models/contactModel.php';
 require_once './models/CartClientModel.php';
 require_once './models/MiniCartClientsModel.php';
+
+require_once './models/AccountClientsModel.php';
+
 require_once './models/OrderClientsModel.php';
 require_once './models/genresModel.php';
 require_once './models/authorsModel.php';
@@ -65,6 +72,11 @@ match ($act) {
     //thanh toán
     'order' => (new OrderController())->PageOder(),
     'postOder' => (new OrderController())->PostOrder(),
+
+    //thông tin người dùng
+    'account' => (new AccountClientsController())->listOrder(),
+    'editClients' => (new AccountClientsController())->editClients(),
+    'postuser' =>(new AccountClientsController())->postuser(),
 
     //tác giả
     'authors' => (new AuthorsController()) -> Authors(),

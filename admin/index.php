@@ -12,6 +12,7 @@ require_once '../admin/controller/AuthController.php';
 require_once '../admin/controller/TheloaiController.php';
 require_once '../admin/controller/TaikhoanController.php';
 require_once '../admin/controller/DonhangController.php';
+require_once '../admin/controller/MessagerController.php';
 require_once '../admin/controller/ContactController.php';
 
 
@@ -23,6 +24,7 @@ require_once '../admin/model/TheLoaiModel.php';
 require_once '../admin/model/AuthModel.php';
 require_once '../admin/model/TaikhoanModel.php';
 require_once '../admin/model/DonhangModel.php';
+require_once '../admin/model/MessageModel.php';
 require_once '../admin/model/ContactModel.php';
 
 
@@ -84,6 +86,8 @@ match ($act) {
     'sua-don-hang'=>(new DonhangController())->Suadonhang(),
     'xoa-don-hang'=>(new DonhangController())->Xoadonhang(),
     'chitiet-don-hang'=>(new DonhangController())->Chitietdonhang(),
+
+    //thông báo đặt hàng
     
     // Quản lý liên hệ
     'contact' => (new ContactController())->danhsachContact(),
