@@ -13,6 +13,7 @@ require_once '../admin/controller/TheloaiController.php';
 require_once '../admin/controller/TaikhoanController.php';
 require_once '../admin/controller/DonhangController.php';
 require_once '../admin/controller/MessagerController.php';
+require_once '../admin/controller/ContactController.php';
 
 
 
@@ -24,6 +25,7 @@ require_once '../admin/model/AuthModel.php';
 require_once '../admin/model/TaikhoanModel.php';
 require_once '../admin/model/DonhangModel.php';
 require_once '../admin/model/MessageModel.php';
+require_once '../admin/model/ContactModel.php';
 
 
 
@@ -87,4 +89,10 @@ match ($act) {
 
     //thông báo đặt hàng
     
+    // Quản lý liên hệ
+    'contact' => (new ContactController())->danhsachContact(),
+    'xoa-lien-he' => ( new ContactController()) ->deleteContact(),
+    'them-lien-he' => ( new ContactController()) ->postAddContact(),
+    // 'from-them-lien-he' => ( new ContactController()) ->deleteContact(),
+
 };

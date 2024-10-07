@@ -93,11 +93,12 @@ class TacgiaController
             // Lấy ra dữ liệu cũ của sản phẩm
             $tacgia_id = $_POST['tacgia_id'] ?? '';
             // Truy vấn
-            $sanPhamOld = $this->modelDanhMuc->getDetailDanhMuc($tacgia_id);
-            $old_file = $sanPhamOld['img_author']; //Lấy ảnh cũ để phục vũ cho sửa ảnh
+            $tacGiaOld = $this->modelDanhMuc->getDetailDanhMuc($tacgia_id);
+            $old_file = $tacGiaOld['img_author']; //Lấy ảnh cũ để phục vũ cho sửa ảnh
 
             $name = $_POST['name'] ?? '';
             $bio = $_POST['bio'] ?? '';
+
             $img_author = $_FILES['img_author'] ?? null;
 
             // Tạo một mảng trống để lấy dữ liệu
@@ -114,7 +115,7 @@ class TacgiaController
 
             if (isset($img_author) && $img_author['error'] == UPLOAD_ERR_OK) {
                 // Upload ảnh mới lên
-                $new_file = uploadFile($img_author, './uploads/authors/');
+                $new_file = uploadFile($img_author, './uploads/authors');
 
                 if(!empty($old_file)) { //Nếu có ảnh cũ thì xóa đi
                     deleteFile($old_file);
@@ -127,7 +128,11 @@ class TacgiaController
             if (empty($errors)) {
                 //nếu k có lỗi thì tiến hành sua danh mục
                 // var_dump("oke");
-                $this->modelDanhMuc->updateDanhMuc($tacgia_id, $name, $img_author, $bio);
+                $this->modelDanhMuc->updateDanhMuc(
+                    $tacgia_id, 
+                    $name, 
+                    $new_file, 
+                    $bio);
                 header("Location: " . BASE_URL_ADMIN . '?act=tac-gia');
                 exit();
             } else {

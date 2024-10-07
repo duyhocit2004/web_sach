@@ -13,7 +13,12 @@ require_once './controllers/contactController.php';
 require_once './controllers/cartController.php';
 require_once './controllers/MinicartController.php';
 require_once './controllers/OrderController.php';
+
 require_once './controllers/AccountClientsController.php';
+
+require_once './controllers/authorsController.php';
+
+
 
 
 // Require toàn bộ file Models
@@ -23,7 +28,13 @@ require_once './models/AuthClientsModel.php';
 require_once './models/contactModel.php';
 require_once './models/CartClientModel.php';
 require_once './models/MiniCartClientsModel.php';
+
 require_once './models/AccountClientsModel.php';
+
+require_once './models/OrderClientsModel.php';
+require_once './models/genresModel.php';
+require_once './models/authorsModel.php';
+
 
 // Route
 $act = $_GET['act'] ?? '/';
@@ -38,6 +49,7 @@ match ($act) {
     'contact' => (new ContactController())->formContact(),
 
     //Sản Phẩm
+    'shop-product' => (new ProductController())->getAllSanPham(),
     'detail-product' => (new ProductController())->chitietSanPham(),
 
     //đăng nhập , đăng kí , đăng xuất
@@ -46,6 +58,9 @@ match ($act) {
     'register'=>(new AuthClientsController())->register(),
     'post-register'=>(new AuthClientsController())->PostRegister(),
     'logout'=>(new AuthClientsController())->logout(),
+
+    //Tìm kiếm
+    'search' => (new ProductController())->search(),
 
     //thêm giỏ hàng
     'addtocart' => (new CartController())->addTocart(),
@@ -62,4 +77,7 @@ match ($act) {
     'account' => (new AccountClientsController())->listOrder(),
     'editClients' => (new AccountClientsController())->editClients(),
     'postuser' =>(new AccountClientsController())->postuser(),
+
+    //tác giả
+    'authors' => (new AuthorsController()) -> Authors(),
 }; 

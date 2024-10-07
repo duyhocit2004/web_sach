@@ -33,12 +33,12 @@
                             <h6 class="widget-title">Thông tin</h6>
                             <div class="widget-body">
                                 <ul class="info-list">
-                                    <li><a href="#">about us</a></li>
-                                    <li><a href="#">Delivery Information</a></li>
-                                    <li><a href="#">privet policy</a></li>
-                                    <li><a href="#">Terms & Conditions</a></li>
-                                    <li><a href="#">contact us</a></li>
-                                    <li><a href="#">site map</a></li>
+                                    <li><a href="#">Chúng tôi</a></li>
+                                    <li><a href="#">Giao hàng</a></li>
+                                    <li><a href="#">Chính sách tư nhân</a></li>
+                                    <li><a href="#">Liên hệ</a></li>
+                                    <li><a href="#">Điều khoản và điều kiên</a></li>
+                                    <li><a href="#">Địa chỉ</a></li>
                                 </ul>
                             </div>
                         </div>

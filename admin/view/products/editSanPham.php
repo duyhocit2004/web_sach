@@ -108,7 +108,14 @@
                                 <div class="form-group">
                                     <label for="description">Mô tả sản phẩm</label>
                                     <textarea id="description" name="description" class="form-control" rows="4"><?= $sanPham['description'] ?></textarea>
-                                </div>                              
+                                </div>  
+                                <!-- 9 -->
+                                <div class="form-group">
+                                    <label for="quantity">Số lượng sản phẩm</label>
+                                    <input type="number" id="quantity" name="quantity" class="form-control"
+                                        value="<?= $sanPham['quantity'] ?>">
+                                </div>
+                                        
                             </div>
                             <!-- /.card-body -->
                              <div class="card-footer">
