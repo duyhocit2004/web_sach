@@ -150,8 +150,8 @@
                                             </figure>
                                             <div class="product-content-list">
 
-                                                <hlass="product-name">
-                                                    <a href="<?= BASE_URL . $products['book_name'] ?>"><?= $products['book_name'] ?>
+                                            <hlass="product-name">
+                                                    <a href="<?= BASE_URL . '?act=detail-product&id=' . $products['id']; ?>"><?= $products['book_name'] ?>
                                                     </a>
                                                     <div class="price-box">
                                                         <span

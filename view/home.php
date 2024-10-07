@@ -196,7 +196,7 @@
                                 <!-- product item start -->
                                 <div class="product-item">
                                     <figure class="product-thumb">
-                                        <a href="product-details.html">
+                                        <a href="<?= BASE_URL . '?act=detail-product&id=' . $sanPham['id']; ?>">
                                             <img class="pri-img" src="<?= BASE_URL . $sanPham['image'] ?>" alt="product">
                                             <img class="sec-img" src="<?= BASE_URL . $sanPham['image'] ?>" alt="product">
                                         </a>
@@ -221,7 +221,7 @@
                                     <div class="product-caption text-center">
 
                                         <h6 class="product-name">
-                                            <a href="#"><?= $sanPham['book_name'] ?></a>
+                                            <a href="<?= BASE_URL . '?act=detail-product&id=' . $sanPham['id']; ?>"><?= $sanPham['book_name'] ?></a>
                                         </h6>
                                         <div class="price-box">
                                             <span style="color: red"><?= formatPrice($sanPham['price']) . 'đ'; ?> </span>
