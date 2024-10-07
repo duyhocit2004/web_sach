@@ -75,7 +75,7 @@
                                                 <a href="#">
                                                     <i class="pe-7s-user"></i>
                                                     <ul class="dropdown-list">
-                                                        <li><a href="my-account.html">Tài Khoản</a></li>
+                                                        <li><a href="?act=account">Tài Khoản</a></li>
                                                         <li><a href="?act=logout">đăng xuất</a></li>
                                                     </ul>
                                                 </a>

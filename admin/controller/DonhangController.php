@@ -49,8 +49,8 @@ class DonhangController{
         // Kiểm tra xem $list2 có dữ liệu không
         $tongtienSP = 0; // Gán giá trị ban đầu
         foreach ($list2 as $item) {
-            if (isset($item['price'])) {
-                $tongtienSP += $item['price']; // Cộng dồn giá trị
+            if (isset($item['sum_price'])) {
+                $tongtienSP += $item['sum_price']; // Cộng dồn giá trị
             } else {
                 // Xử lý khi không có giá (nếu cần)
                 echo "Giá không được cung cấp cho sản phẩm.";
