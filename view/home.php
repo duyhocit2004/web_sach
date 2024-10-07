@@ -120,49 +120,30 @@
                     <div class="product-container">
 
 
-                            <!-- product tab content start -->
-                            <div class="tab-content">
-                                <div class="tab-pane fade show active" id="tab1">
-                                    <div class="product-carousel-4 slick-row-10 slick-arrow-style">
-                                        <?php foreach ($listSanPham as $key => $sanPham): ?>
-                                            <!-- product item start -->
-                                            <div class="product-item">
-                                                <figure class="product-thumb">
-                                                    <a href="<?= BASE_URL . '?act=detail-product&id='. $sanPham['id']; ?>">
-                                                        <img class="pri-img" src="<?= BASE_URL . $sanPham['image'] ?>"
-                                                            alt="product">
-                                                    </a>
+                        <!-- product tab content start -->
+                        <div class="tab-content">
+                            <div class="tab-pane fade show active" id="tab1">
+                                <div class="product-carousel-4 slick-row-10 slick-arrow-style">
+                                    <?php foreach ($listSanPham as $key => $sanPham): ?>
+                                        <!-- product item start -->
+                                        <div class="product-item">
+                                            <figure class="product-thumb">
+                                                <a href="<?= BASE_URL . '?act=detail-product&id=' . $sanPham['id']; ?>">
+                                                    <img class="pri-img" src="<?= BASE_URL . $sanPham['image'] ?>"
+                                                        alt="product">
+                                                </a>
 
                                                 <!-- Cần chỉnh sửa  -->
                                                 <div class="product-badge">
                                                     <div class="product-label new">
                                                         <span>new</span>
                                                     </div>
-                                                    <!-- Cần chỉnh sửa  -->
 
 
                                                     <div class="cart-hover">
-                                                        <a href="<?=BASE_URL . '?act=detail-product&id='.$sanpham[$id]?>" class="btn btn-cart"> xem chi</a>
+                                                        <a href="<?= BASE_URL . '?act=detail-product&id=' . $sanPham['id'] ?>"
+                                                            class="btn btn-cart">xem chi tiết</a>
                                                     </div>
-                                                </figure>
-                                                <div class="product-caption text-center">
-
-                                                    <h6 class="product-name">
-                                                        <a href="<?= BASE_URL . '?act=detail-product&id='. $sanPham['id']; ?>"><?= $sanPham['book_name'] ?></a>
-                                                    </h6>
-                                                    <div class="price-box">
-                                                        <span style="color: red"><?= formatPrice($sanPham['price']) . 'đ'; ?>
-                                                        </span>
-                                                        <!-- <span class="price-regular">$60.00</span>
-                                                    <span class="price-old"><del>$70.00</del></span> -->
-                                                    </div>
-                                                </div>
-                                                <!-- Cần chỉnh sửa  -->
-
-
-                                                <div class="cart-hover">
-                                                    <button class="btn btn-cart">Xem Chi Tiết</button>
-                                                </div>
                                             </figure>
                                             <div class="product-caption text-center">
 
@@ -233,7 +214,8 @@
 
 
                                         <div class="cart-hover">
-                                            <a href="<?=BASE_URL.'?act=detail-product&id=' . $sanPham['id']?>" class="btn btn-cart">xem chi tiết</a>
+                                            <a href="<?= BASE_URL . '?act=detail-product&id=' . $sanPham['id'] ?>"
+                                                class="btn btn-cart">xem chi tiết</a>
                                         </div>
                                     </figure>
                                     <div class="product-caption text-center">
@@ -371,7 +353,7 @@
                     <div class="col-12">
                         <div class="blog-carousel-active slick-row-10 slick-arrow-style">
                             <!-- blog post item start -->
-                            <div class="blog-post-item">
+                            <!-- <div class="blog-post-item">
                                 <figure class="blog-thumb">
                                     <a href="blog-details.html">
                                         <img src="assets/clients/img/blog/blog-img1.jpg" alt="blog image">
@@ -386,84 +368,11 @@
                                             Color Changed</a>
                                     </h5>
                                 </div>
-                            </div>
+                            </div> -->
                             <!-- blog post item end -->
 
                             <!-- blog post item start -->
-                            <div class="blog-post-item">
-                                <figure class="blog-thumb">
-                                    <a href="blog-details.html">
-                                        <img src="assets/clients/img/blog/blog-img2.jpg" alt="blog image">
-                                    </a>
-                                </figure>
-                                <div class="blog-content">
-                                    <div class="blog-meta">
-                                        <p>25/03/2019 | <a href="#">Corano</a></p>
-                                    </div>
-                                    <h5 class="blog-title">
-                                        <a href="blog-details.html">Children Left Home Alone For 4 Days In TV series
-                                            Experiment</a>
-                                    </h5>
-                                </div>
-                            </div>
-                            <!-- blog post item end -->
 
-                            <!-- blog post item start -->
-                            <div class="blog-post-item">
-                                <figure class="blog-thumb">
-                                    <a href="blog-details.html">
-                                        <img src="assets/clients/img/blog/blog-img3.jpg" alt="blog image">
-                                    </a>
-                                </figure>
-                                <div class="blog-content">
-                                    <div class="blog-meta">
-                                        <p>25/03/2019 | <a href="#">Corano</a></p>
-                                    </div>
-                                    <h5 class="blog-title">
-                                        <a href="blog-details.html">Lotto Winner Offering Up Money To Any Man That Will
-                                            Date Her</a>
-                                    </h5>
-                                </div>
-                            </div>
-                            <!-- blog post item end -->
-
-                            <!-- blog post item start -->
-                            <div class="blog-post-item">
-                                <figure class="blog-thumb">
-                                    <a href="blog-details.html">
-                                        <img src="assets/clients/img/blog/blog-img4.jpg" alt="blog image">
-                                    </a>
-                                </figure>
-                                <div class="blog-content">
-                                    <div class="blog-meta">
-                                        <p>25/03/2019 | <a href="#">Corano</a></p>
-                                    </div>
-                                    <h5 class="blog-title">
-                                        <a href="blog-details.html">People are Willing Lie When Comes Money, According
-                                            to Research</a>
-                                    </h5>
-                                </div>
-                            </div>
-                            <!-- blog post item end -->
-
-                            <!-- blog post item start -->
-                            <div class="blog-post-item">
-                                <figure class="blog-thumb">
-                                    <a href="blog-details.html">
-                                        <img src="assets/clients/img/blog/blog-img5.jpg" alt="blog image">
-                                    </a>
-                                </figure>
-                                <div class="blog-content">
-                                    <div class="blog-meta">
-                                        <p>25/03/2019 | <a href="#">Corano</a></p>
-                                    </div>
-                                    <h5 class="blog-title">
-                                        <a href="blog-details.html">romantic Love Stories Of Hollywoodâ€™s Biggest
-                                            Celebrities</a>
-                                    </h5>
-                                </div>
-                            </div>
-                            <!-- blog post item end -->
                         </div>
                     </div>
                 </div>
@@ -472,63 +381,7 @@
         <!-- latest blog area end -->
 
         <!-- brand logo area start -->
-        <div class="brand-logo section-padding pt-0">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="brand-logo-carousel slick-row-10 slick-arrow-style">
-                            <!-- single brand start -->
-                            <div class="brand-item">
-                                <a href="#">
-                                    <img src="assets/clients/img/brand/1.png" alt="">
-                                </a>
-                            </div>
-                            <!-- single brand end -->
 
-                            <!-- single brand start -->
-                            <div class="brand-item">
-                                <a href="#">
-                                    <img src="assets/clients/img/brand/2.png" alt="">
-                                </a>
-                            </div>
-                            <!-- single brand end -->
-
-                            <!-- single brand start -->
-                            <div class="brand-item">
-                                <a href="#">
-                                    <img src="assets/clients/img/brand/3.png" alt="">
-                                </a>
-                            </div>
-                            <!-- single brand end -->
-
-                            <!-- single brand start -->
-                            <div class="brand-item">
-                                <a href="#">
-                                    <img src="assets/clients/img/brand/4.png" alt="">
-                                </a>
-                            </div>
-                            <!-- single brand end -->
-
-                            <!-- single brand start -->
-                            <div class="brand-item">
-                                <a href="#">
-                                    <img src="assets/clients/img/brand/5.png" alt="">
-                                </a>
-                            </div>
-                            <!-- single brand end -->
-
-                            <!-- single brand start -->
-                            <div class="brand-item">
-                                <a href="#">
-                                    <img src="assets/clients/img/brand/6.png" alt="">
-                                </a>
-                            </div>
-                            <!-- single brand end -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <!-- brand logo area end -->
     </main>
 

@@ -60,7 +60,7 @@
                                                 <th>địa chỉ</th>
                                                 <th>quốc tịch</th>
                                                 <th>vai trò</th>
-                                                <th>mật khẩu</th>
+                                                <!-- <th>mật khẩu</th> -->
                                                 <th>thao tác</th>
 
 
@@ -79,7 +79,7 @@
                                                     <td><?= $taikhoan['address'] ?></td>
                                                     <td><?= $taikhoan['nationality'] ?></td>
                                                     <td><?= $taikhoan['id_name'] ?></td>
-                                                    <td><?= $taikhoan['password'] ?></td>
+                                                    <!-- <td><?= $taikhoan['password'] ?></td> -->
                                                     <td>
 
                                                         <a
@@ -126,7 +126,7 @@
                                                 <th>địa chỉ</th>
                                                 <th>quốc tịch</th>
                                                 <th>vai trò</th>
-                                                <th>mật khẩu</th>
+                                                <!-- <th>mật khẩu</th> -->
                                                 <th>thao tác</th>
 
 
@@ -145,7 +145,7 @@
                                                     <td><?= $taikhoan['address'] ?></td>
                                                     <td><?= $taikhoan['nationality'] ?></td>
                                                     <td><?= $taikhoan['id_name'] ?></td>
-                                                    <td><?= $taikhoan['password'] ?></td>
+                                                    <!-- <td><?= $taikhoan['password'] ?></td> -->
                                                     <td>
 
                                                         <a

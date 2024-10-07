@@ -15,6 +15,7 @@ require_once './controllers/MinicartController.php';
 require_once './controllers/OrderController.php';
 
 
+
 // Require toàn bộ file Models
 require_once './models/Student.php';
 require_once './models/productModel.php';
@@ -23,6 +24,7 @@ require_once './models/contactModel.php';
 require_once './models/CartClientModel.php';
 require_once './models/MiniCartClientsModel.php';
 require_once './models/OrderClientsModel.php';
+require_once './models/genresModel.php';
 
 
 // Route
@@ -38,6 +40,7 @@ match ($act) {
     'contact' => (new ContactController())->formContact(),
 
     //Sản Phẩm
+    'shop-product' => (new ProductController())->getAllSanPham(),
     'detail-product' => (new ProductController())->chitietSanPham(),
 
     //đăng nhập , đăng kí , đăng xuất
@@ -48,8 +51,8 @@ match ($act) {
     'logout'=>(new AuthClientsController())->logout(),
 
     //Tìm kiếm
-    'search' => (new HomeController())->search(),
-    
+    'search' => (new ProductController())->search(),
+
     //thêm giỏ hàng
     'addtocart' => (new CartController())->addTocart(),
 
