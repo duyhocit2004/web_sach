@@ -36,7 +36,7 @@
                                         </li>
                                         <li><a href="#">Giới thiệu</a></li>
                                         <li><a href="<?= BASE_URL . '?act=contact' ?>">Liên Hệ</a></li>
-                                        <li><a href="#">Tác Giả</a></li>
+                                        <li><a href="<?= BASE_URL . '?act=authors' ?>">Tác Giả</a></li>
                                     </ul>
                                 </nav>
                                 <!-- main menu navbar end -->

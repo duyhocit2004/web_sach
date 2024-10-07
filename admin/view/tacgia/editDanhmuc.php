@@ -51,19 +51,20 @@
                                             <div class="form-group">
                                                 <input type="hidden" name="tacgia_id" value="<?= $tacGia['id'] ?>">
                                                 <label>Tên Tác Giả</label>
-                                                <input type="text" class="form-control" id="name" name="name" value="<?= $tacGia['name']; ?>">
+                                                <input type="text" class="form-control" id="name" name="name"
+                                                    value="<?= $tacGia['name']; ?>">
                                             </div>
 
                                             <div class="form-group">
                                                 <label>Ảnh</label>
-                                                <input type="file" class="form-control" id="img_author"
-                                                    name="img_author" >
+                                                <input type="file" id="img_author" name="img_author"
+                                                    class="form-control">
                                             </div>
 
                                             <div class="form-group">
                                                 <label>bio</label>
                                                 <input type="text" class="form-control" id="bio" name="bio"
-                                                value="<?= $tacGia['bio']; ?>" >
+                                                    value="<?= $tacGia['bio']; ?>">
                                             </div>
 
                                         </div>

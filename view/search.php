@@ -104,7 +104,7 @@
                                                 <div class="product-item">
 
                                                     <figure class="product-thumb">
-                                                        <a href="product-details.html">
+                                                        <a href="<?= BASE_URL . '?act=detail-product&id=' . $product['id']; ?>">
                                                             <img class="pri-img" src="<?= BASE_URL . $product['image'] ?>"
                                                                 alt="product">
                                                             <img class="sec-img" src="<?= BASE_URL . $product['image'] ?>"
@@ -122,7 +122,7 @@
                                                     </figure>
                                                     <div class="product-caption text-center">
                                                         <h6 class="product-name">
-                                                            <a href="<?= BASE_URL . $product['book_name'] ?>"><?= $product['book_name'] ?>
+                                                            <a href="<?= BASE_URL . '?act=detail-product&id=' . $product['id']; ?>"><?= $product['book_name'] ?>
                                                             </a>
                                                         </h6>
                                                         <div class="price-box">
@@ -137,7 +137,7 @@
                                                 <!-- product list item end -->
                                                 <div class="product-list-item">
                                                     <figure class="product-thumb">
-                                                        <a href="product-details.html">
+                                                        <a href="<?= BASE_URL . '?act=detail-product&id=' . $product['id']; ?>">
                                                             <img class="pri-img" src="<?= BASE_URL . $product['image'] ?>"
                                                                 alt="product">
                                                             <img class="sec-img" src="<?= BASE_URL . $product['image'] ?>"
@@ -157,7 +157,7 @@
                                                     <div class="product-content-list">
 
                                                         <hlass="product-name">
-                                                            <a href="<?= BASE_URL . $product['book_name'] ?>"><?= $product['book_name'] ?>
+                                                            <a href="<?= BASE_URL . '?act=detail-product&id=' . $product['id']; ?>"><?= $product['book_name'] ?>
                                                             </a>
                                                             <div class="price-box">
                                                                 <span
