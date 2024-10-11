@@ -10,13 +10,20 @@
             if(!isset($_SESSION['cart'] )){
                 $_SESSION['cart'] = [];
             }
+            // var_dump($_POST);die;
+        
             
             
             if (isset($_SESSION['user_clients'])) {
                 $user = $this->model->checkuser($_SESSION['user_clients']['email']);
                 // var_dump($user['id']);die;
                 // lấy sản phẩm từ giỏ hàng của người dùng
+                    $id_product = $_GET['id'];
+                    $quality = $_POST['quantity']; 
 
+                    $product = $this->model->getproducts($id_product);
+                    
+            
                     $cart = $this->model->getFromId($user['id']);
                     $_SESSION['user']=$cart;
 
@@ -31,8 +38,7 @@
                         $chitiet = $this->model->detail_cart($cart['id']);
                     }
                 // chi tiết giỏ hàng
-                    $id_product = $_GET['id'];
-                    $quality = $_POST['quantity'];  
+                   
 
                     
                     $checkproduct = false ;

@@ -46,7 +46,7 @@
                                         <div class="checkout-billing-details-wrap">
                                             <h5 class="checkout-title">Billing Details</h5>
                                             <div class="billing-form-wrap">
-                                            
+                                                    
                                                 <div class="single-input-item">
                                                         <label for="email" class="required">tên người nhận</label>
                                                         <input type="text"placeholder="tên người nhận"  value="<?=$user1['name_user']?>" name="name_user" required />
@@ -95,6 +95,9 @@
                                                             <?php 
                                                             $tong = 0;
                                                             foreach($chitiet as $detail): ?>
+                                                                <input type="hidden" value="<?=$detail['product_id']?>" name="products" >
+                                                                <input type="hidden" value="<?=$detail['quantity']?>" name="quantity" >
+                                                                <?php var_dump($detail); ?>
                                                                 <tr>
                                                                     <td><?=$detail['book_name']?> <strong> ×  <?=$detail['quantity']?></strong></td>
                                                                     

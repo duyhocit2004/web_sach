@@ -14,23 +14,19 @@ class CustomerOderModel{
         ]);
         return $stmt -> fetch();
     }
-    public function list($user){
-        $sql = "SELECT * FROM orders WHERE user_id = :user";
+    public function list(){
+        $sql = "SELECT * FROM orders";
         $stmt = $this->data->prepare($sql);
-        $stmt ->execute([
-            ':user'=>$user
-        ]);
-        return $stmt->fetch();
+        $stmt ->execute();
+        return $stmt->fetchAll();
     }
-    public function listdetail($id){
+    public function listdetail(){
         $sql = "SELECT order_details.*,products.book_name ,products.image,products.price
         FROM order_details
-        INNER JOIN products ON order_details.product_id = products.id 
-          WHERE order_details.orders_id = :id ";
+        INNER JOIN products ON order_details.product_id = products.id ";
+        // --   WHERE order_details.orders_id = :id 
         $stmt = $this->data->prepare($sql);
-        $stmt ->execute([
-            ':id'=>$id
-        ]);
+        $stmt ->execute();
         return $stmt->fetchAll();
     }
     public function getdetailproduct($id){

@@ -6,10 +6,11 @@ class CustomerOderController{
     }
     public function listOrder(){
         if(isset($_SESSION['user_clients'])){
-            $user = $this->model->user($_SESSION['user_clients']['email']);
+            // $user = $this->model->user($_SESSION['user_clients']['email']);
 
-            $list = $this->model->list( $user['id']);
-            $listdetail = $this->model->listdetail($list['id']);
+            $list = $this->model->list();
+            // var_dump($list);
+            $listdetail = $this->model->listdetail();
 
         } 
         // var_dump($user);
