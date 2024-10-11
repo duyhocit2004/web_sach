@@ -37,7 +37,7 @@
         <!-- checkout main wrapper start -->
         <div class="checkout-page-wrapper section-padding">
             <div class="container">
-                <form action="<?= BASE_URL.'?act=postOder'?>" method="POST">
+                <form action="<?= BASE_URL.'?act=addOder'?>" method="POST">
                     <div class="row">
                         <!-- Checkout Billing Details -->
                         
@@ -110,17 +110,6 @@
                                                                 <td>tổng tiền sản phẩm</td>
                                                                 <td><strong><?=$tong?></strong></td>
                                                             
-                                                            </tr>
-                                                        
-                                                            <tr>
-                                                                
-                                                                <td>giao hàng</td>
-                                                                <td class="d-flex justify-content-center">
-                                                                            <div class="custom-control custom-radio">
-                                                                                <input type="radio" id="freeshipping" name="shipping" class="custom-control-input" required />
-                                                                                <label class="custom-control-label" for="freeshipping">nội thành(2%)</label>
-                                                                            </div>
-                                                                </td>
                                                             </tr>
                                                             <tr>
                                                                 <?php

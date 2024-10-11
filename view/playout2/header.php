@@ -65,13 +65,16 @@
                                                 $user = $_SESSION['user_clients']['email'];
                                                 $username = explode("@", $user)[0];
                                                 echo $username;
-                                                ?>
+                                                ?>  
                                             </li>
                                             <li class="user-hover">  
-                                              
+                                              <?php 
+                                               $avatar = $_SESSION['user_clients']['avatar'];
+                                              ?>
                                                 <a href="#">
                                                     <i class="pe-7s-user"></i>
                                                     <ul class="dropdown-list">
+                                                    <li><a href="?act=CustomerOder">Đơn hàng</a></li>
                                                         <li><a href="?act=account">Tài Khoản</a></li>
                                                         <li><a href="?act=logout">đăng xuất</a></li>
                                                     </ul>
@@ -92,9 +95,9 @@
                                         </li>
                                     <?php } ?>
                                     <li class="user-hover">
-                                        <a href="#" class="minicart-btn">
+                                        <a href="?act=cart" class="minicart-btn">
                                             <i class="pe-7s-shopbag"></i>
-                                            <div class="notification">2</div>
+                                            <div class="notification"></div>
                                         </a>
                                     </li>
                                 </ul>
