@@ -52,4 +52,15 @@ class OrderClientsModel {
         ]);
         return $this->data ->lastInsertId();
     }
+    public function AdddetailOder ($id,$product,$quantity,$sum_price){
+        $sql= "INSERT INTO order_details (orders_id,product_id,quantity,sum_price) VALUES (:orders_id,:product_id,:quantity,:sum_price)";
+        $stmt =$this->data->prepare($sql);
+        $stmt ->execute([
+            ':orders_id'=>$id,
+            ':product_id'=>$product,
+            ':quantity'=>$quantity,
+            ':sum_price'=>$sum_price
+        ]);
+        return true;
+    }
 }

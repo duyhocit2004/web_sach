@@ -35,13 +35,14 @@
                                     </thead>
                                     <tbody>
                                         <?php 
-
+                                            echo $_SESSION['cart']['name'];
                                         $tienship = 2;
                                         $tongtien = 0;
-                                        foreach($_SESSION['cart'] as $cart): ?>
+                                        if(isset($_SESSION['cart'] )) {
+                                                foreach($_SESSION['cart'] as $cart): ?> 
                                         <tr>
                                             <td class="pro-thumbnail"><a href="<?=BASE_URL . '?act=cart-product&id='.$cart['product_id']?>">
-                                            <img class="img-fluid" src="<?=BASE_URL . $cart['image']  ?>" alt="Product" /></a></td>
+                                            <img class="img-fluid" src="<?=BASE_URL . $cart['image']  ?>" alt="" /></a></td>
                                             <td class="pro-title"><a href="#"><?=$cart['book_name']?></a></td>
                                             <td class="pro-price"><span><?=formatPrice($cart['price'])?><?="đ"?></span></td>
                                             <td class="pro-quantity">
@@ -60,7 +61,8 @@
                                             ?></span></td>
                                             <td class="pro-remove"><a href="#"><i class="fa fa-trash-o"></i></a></td>
                                         </tr>
-                                        <?php endforeach; ?>
+                                            <?php endforeach;}?>
+                                        
                                     </tbody>
                                 </table>
                             </div>

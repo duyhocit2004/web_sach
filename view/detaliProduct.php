@@ -43,6 +43,7 @@
                     <div class="col-lg-12 order-1 order-lg-2">
                         <!-- product details inner end -->
                         <form action="<?=BASE_URL .'?act=addtocart&id='. $sanpham['id']?>" method="POST">
+                            <!-- <input type="hidden" value="<?= $sanpham['id'] ?>" name="product"> -->
                         <div class="product-details-inner">  
                             <div class="row">
                                 <div class="col-lg-5">

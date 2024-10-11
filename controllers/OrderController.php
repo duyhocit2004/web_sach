@@ -29,40 +29,58 @@
         require_once "./view/order.php";
     }
      public function addOder(){
-        if($_SERVER['REQUEST_METHOD'] == 'POST'){
-            $recipient_name = $_POST['name_user'];
-            $recipient_email = $_POST['recipient_email'];
-            $recipient_phone = $_POST['recipient_phone'];
-            $recipient_address = $_POST['recipient_address'];
-            $note = $_POST['ordernote'];
-            // $sum_price = $_POST['sum_price'];
-            $payment_method = $_POST['payment_method'];
-            $order_date = date('y-m-d' );
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            // Check for expected POST variables
+            $recipient_name = $_POST['name_user'] ?? '';
+            $recipient_email = $_POST['recipient_email'] ?? '';
+            $recipient_phone = $_POST['recipient_phone'] ?? '';
+            $recipient_address = $_POST['recipient_address'] ?? '';
+            $note = $_POST['ordernote'] ?? '';
+            $payment_method = $_POST['payment_method'] ?? '';
+            $order_date = date('Y-m-d');
             $payment_status_id = 1;
-            $OrderID = "DH" . rand(2000,3000000);
-            // var_dump($_POST);die;
-
-
-            $user = $this->model->checkuserorder($_SESSION['user_clients']['email']);
-            $id_nguoi_dung = $user['id'];
-            
-
-          $this->model->addOrder($id_nguoi_dung,
-          $recipient_name,
-          $recipient_email,
-          $recipient_phone,
-          $recipient_address,
-          $note,
-          $payment_method,
-          $order_date,
-          $payment_status_id,
-           $OrderID);
-        }
+            $OrderID = "DH" . rand(2000, 3000000);
         
-        // if(isset($_SESSION['cart'])){
-        //     session_unset(); 
-        // }
+            // Check user
+            $user = $this->model->checkuserorder($_SESSION['user_clients']['email']);
+            $id_nguoi_dung = $user['id'] ?? null;
+        
+            // Add order
+            $cart = $this->model->addOrder(
+                $id_nguoi_dung,
+                $recipient_name,
+                $recipient_email,
+                $recipient_phone,
+                $recipient_address,
+                $note,
+                $payment_method,
+                $order_date,
+                $payment_status_id,
+                $OrderID
+            );
+        
+            // thêm chi tiết giỏ hàng
+            $sum_price = $_POST['sum_price'] ?? 0;
+            $product = $_POST['products'] ?? [];
+            $quantity = $_POST['quantity'] ?? [];
+        
+            // kiểm tra
+            // var_dump($sum_price, $product, $quantity);
+        
+            // Đảm bảo sản phẩm và số lượng là mảng
+            if (!empty($product) && !empty($quantity)) {
+                $this->model->AdddetailOder($cart, $product, $quantity, $sum_price);
+                unset($_SESSION['cart']);
+            } else {
+                // Xử lý lỗi thiếu sản phẩm hoặc số lượng
+                echo "Error: No products or quantities specified.";
+            }
+            
+               
         header("Location: " . BASE_URL .'?act=CustomerOder');
         exit();
+        }
+        
+
      }
  }
