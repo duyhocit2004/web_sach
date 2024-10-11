@@ -7,8 +7,7 @@ class AccountClientsController {
     public function listOrder(){
         if(isset($_SESSION['user_clients'])){
             $user = $this->model->getAccount($_SESSION['user_clients']['email']);
-
-            var_dump($user); 
+            
         }
         // Tách họ và tên dựa trên dấu cách
     $nameParts = explode(" ", $user['name_user']);
@@ -30,7 +29,6 @@ class AccountClientsController {
         if(isset($_SESSION['user_clients'])){
             $user = $this->model->getAccount($_SESSION['user_clients']['email']);
 
-            var_dump($user); 
         }
         // Tách họ và tên dựa trên dấu cách
     $nameParts = explode(" ", $user['name_user']);
@@ -51,35 +49,36 @@ class AccountClientsController {
     public function postuser(){
         // var_dump($_POST);die();
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
-            if(isset($_SESSION['user_clients'])){
+              // lấy thông tin người dùng nhập vào form
+              $id = $_GET['id'];
+              $firtname = $_POST['firtname']; 
+              $lastname = $_POST['lastname'];
+              $name_user = $firtname . $lastname;
 
-                // lấy thông tin người dùng nhập vào form
-                $id = $_GET['id'];
-                $firtname = $_POST['firtname']; 
-                $lastname = $_POST['lastname'];
-                $name_user = $firtname . " " . $lastname;
-                $email = $_POST['email'];
-                $phone = $_POST['phone'];
-                $address = $_POST['address'];
-                $avatar = $_POST['avatar'];
-                $nationality = $_POST['nationality'];
+              $email = $_POST['email'];
+              $phone = $_POST['phone'];
+              $address = $_POST['address'];
+              $avatar = $_FILES['avatar'];
+              $nationality = $_POST['nationality'];
+              
+              // cập nhật thông tin ngươid dùng nhập vào form
+              $password = $_POST['password'];
+              $new_password = $_POST['new_password'];
+              $confirm_password = $_POST['confirm_password'];
+
+              
+              if(isset($_SESSION['user_clients'])){
+                $this->model->UpdateAccount($id,$name_user,$email, $phone,$address,$nationality);
+
+                session_unset();
+                header("Location: " . BASE_URL . '?act=login');
+                exit();
+              }
                 
-                // cập nhật thông tin ngươid dùng nhập vào form
-                $password = $_POST['password'];
-                $new_password = $_POST['new_password'];
-                $confirm_password = $_POST['confirm_password'];
+            }else{
+                header("Location :" .BASE_URL.'?act=account');
+                exit();
 
-
-                $user = $this->model->getAccount($_SESSION['user_clients']['email']);
-
-                $error = [];
-                if($user['password'] == $password){
-                    
-                    if($new_password == $confirm_password){
-
-                        $this->model->UpdateAccount();
-                    }
-                }
             }
 
 
@@ -88,4 +87,3 @@ class AccountClientsController {
         }
        
     }
-}

@@ -38,20 +38,21 @@
 
                                         $tienship = 2;
                                         $tongtien = 0;
-                                        foreach($chitiet as $detail): ?>
+                                        foreach($_SESSION['cart'] as $cart): ?>
                                         <tr>
-                                            <td class="pro-thumbnail"><a href="<?=BASE_URL . '?act=detail-product&id='.$detail['product_id']?>"><img class="img-fluid" src="<?=$detail['image']?>" alt="Product" /></a></td>
-                                            <td class="pro-title"><a href="#"><?=$detail['book_name']?></a></td>
-                                            <td class="pro-price"><span><?=formatPrice($detail['price'])?><?="đ"?></span></td>
+                                            <td class="pro-thumbnail"><a href="<?=BASE_URL . '?act=cart-product&id='.$cart['product_id']?>">
+                                            <img class="img-fluid" src="<?=BASE_URL . $cart['image']  ?>" alt="Product" /></a></td>
+                                            <td class="pro-title"><a href="#"><?=$cart['book_name']?></a></td>
+                                            <td class="pro-price"><span><?=formatPrice($cart['price'])?><?="đ"?></span></td>
                                             <td class="pro-quantity">
 
                                                 <div class="pro-qty">
-                                                    <input type="text" class="quanlity" value="<?=$detail['quantity']?>" />
+                                                    <input type="text" class="quanlity" value="<?=$cart['quantity']?>" />
                                                 </div>
 
                                             </td>
                                             <td class="pro-subtotal"><span><?php 
-                                            $sum = $detail['price'] * $detail['quantity'] ;
+                                            $sum = $cart['price'] * $cart['quantity'] ;
                                             $tongtien += $sum;
                                             echo  formatPrice($sum ). ' đ';
                                          

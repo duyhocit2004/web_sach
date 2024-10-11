@@ -21,34 +21,31 @@
             }else{
                 $chitiet = $this->model1->listcart($cart['id']);
             }
-            if(!isset($_SESSION['user_clients'])){
-                header("Location: " . BASE_URL . '?act=login');
-                exit();
-            }
-            print_r($user);
+            
             $method = $this->model->GetMethod();
             $user1 = $user;
-            require_once "./view/order.php";
+
         }
-        
+        require_once "./view/order.php";
     }
-     public function PostOrder(){
+     public function addOder(){
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
             $recipient_name = $_POST['name_user'];
             $recipient_email = $_POST['recipient_email'];
             $recipient_phone = $_POST['recipient_phone'];
             $recipient_address = $_POST['recipient_address'];
             $note = $_POST['ordernote'];
-            $sum_price = $_POST['sum_price'];
+            // $sum_price = $_POST['sum_price'];
             $payment_method = $_POST['payment_method'];
             $order_date = date('y-m-d' );
             $payment_status_id = 1;
             $OrderID = "DH" . rand(2000,3000000);
-            // var_dump($ngay_dat);die;
+            // var_dump($_POST);die;
+
 
             $user = $this->model->checkuserorder($_SESSION['user_clients']['email']);
             $id_nguoi_dung = $user['id'];
-            // var_dump($id_nguoi_dung);
+            
 
           $this->model->addOrder($id_nguoi_dung,
           $recipient_name,
@@ -61,6 +58,11 @@
           $payment_status_id,
            $OrderID);
         }
-        header("Location :" . BASE_URL . '?act=cart');
+        
+        // if(isset($_SESSION['cart'])){
+        //     session_unset(); 
+        // }
+        header("Location: " . BASE_URL .'?act=CustomerOder');
+        exit();
      }
  }

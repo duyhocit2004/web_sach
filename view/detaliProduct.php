@@ -42,6 +42,7 @@
                     <!-- product details wrapper start -->
                     <div class="col-lg-12 order-1 order-lg-2">
                         <!-- product details inner end -->
+                        <form action="<?=BASE_URL .'?act=addtocart&id='. $sanpham['id']?>" method="POST">
                         <div class="product-details-inner">  
                             <div class="row">
                                 <div class="col-lg-5">
@@ -62,7 +63,7 @@
                                         <div class="manufacturer-name">
                                             <a href="product-details.html">HasTech</a>
                                         </div>
-                                        <h3 class="product-name"><?=$sanpham['book_name']?></h3>
+                                        <h3 class="product-name" name="name"><?=$sanpham['book_name']?></h3>
                                         <div class="ratings d-flex">
                                             <span><i class="fa fa-star-o"></i></span>
                                             <span><i class="fa fa-star-o"></i></span>
@@ -87,7 +88,7 @@
                                         <div class="quantity-cart-box d-flex align-items-center">
 
                                         <!-- thêm vô giỏ hàng -->
-                                        <form action="<?=BASE_URL .'?act=addtocart&id='. $sanpham['id']?>" method="POST">
+                                        
                                                 <div class="quantity ">
                                                 <div class="pro-qty my-4"><input type="text" value="1" name="quantity"></div>
                                                 </div>

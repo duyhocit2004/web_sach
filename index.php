@@ -17,6 +17,8 @@ require_once './controllers/OrderController.php';
 require_once './controllers/AccountClientsController.php';
 
 require_once './controllers/authorsController.php';
+require_once './controllers/testcontroller.php';
+require_once './controllers/CustomerOderController.php';
 
 
 
@@ -34,6 +36,8 @@ require_once './models/AccountClientsModel.php';
 require_once './models/OrderClientsModel.php';
 require_once './models/genresModel.php';
 require_once './models/authorsModel.php';
+require_once './models/CustomerOderModel.php';
+
 
 
 // Route
@@ -71,7 +75,7 @@ match ($act) {
     
     //thanh toán
     'order' => (new OrderController())->PageOder(),
-    'postOder' => (new OrderController())->PostOrder(),
+    'addOder' => (new OrderController())->addOder()(),
 
     //thông tin người dùng
     'account' => (new AccountClientsController())->listOrder(),
@@ -80,4 +84,11 @@ match ($act) {
 
     //tác giả
     'authors' => (new AuthorsController()) -> Authors(),
+
+    //test
+    'test' => (new Testcontroller())->test(),
+
+    //quản lý đơn hàng của khách hàng
+    'CustomerOder' =>(new CustomerOderController() )->listOrder(),
+    'detailOrder' =>(new CustomerOderController()) ->detailCustomerOder(),
 }; 
