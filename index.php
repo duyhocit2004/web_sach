@@ -19,6 +19,7 @@
     require_once './controllers/authorsController.php';
     require_once './controllers/testcontroller.php';
     require_once './controllers/CustomerOderController.php';
+    require_once './controllers/paymentOrdersController.php';
 
 
 
@@ -75,7 +76,7 @@
         
         //thanh toán
         'order' => (new OrderController())->PageOder(),
-        'addOder' => (new OrderController())->addOder()(),
+        'addOder' => (new OrderController())->addOder(),
 
         //thông tin người dùng
         'account' => (new AccountClientsController())->listOrder(),
@@ -91,4 +92,7 @@
         //quản lý đơn hàng của khách hàng
         'CustomerOder' =>(new CustomerOderController() )->listOrder(),
         'detailOrder' =>(new CustomerOderController()) ->detailCustomerOder(),
+
+        //phương thức thanh toán
+        'thanh-toan' =>(new paymentOrdersController())-> execPostRequest(),
     }; 
