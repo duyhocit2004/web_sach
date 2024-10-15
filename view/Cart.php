@@ -38,22 +38,23 @@
                                             // echo $_SESSION['cart']['name'];
                                         $tienship = 2;
                                         $tongtien = 0;
-
-                                                foreach($chitiet as $cart): ?> 
+                                            if(isset($_SESSION['cart'])){
+                                            var_dump($_SESSION['cart']);
+                                                foreach($_SESSION['cart'] as $product): ?> 
                                         <tr>
-                                            <td class="pro-thumbnail"><a href="<?=BASE_URL . '?act=cart-product&id='.$cart['product_id']?>">
-                                            <img class="img-fluid" src="<?=BASE_URL . $cart['image']  ?>" alt="" /></a></td>
-                                            <td class="pro-title"><a href="#"><?=$cart['book_name']?></a></td>
-                                            <td class="pro-price"><span><?=formatPrice($cart['price'])?><?="đ"?></span></td>
+                                            <td class="pro-thumbnail"><a href="<?=BASE_URL . '?act=cart-product&id='.$product['product_id']?>">
+                                            <img class="img-fluid" src="<?=BASE_URL . $product['image']  ?>" alt="" /></a></td>
+                                            <td class="pro-title"><a href="#"><?=$product['book_name']?></a></td>
+                                            <td class="pro-price"><span><?=formatPrice($product['price'])?><?="đ"?></span></td>
                                             <td class="pro-quantity">
 
                                                 <div class="pro-qty">
-                                                    <input type="text" class="quanlity" value="<?=$cart['quantity']?>" />
+                                                    <input type="text" class="quanlity" value="<?=$product['quality']?>" />
                                                 </div>
 
                                             </td>
                                             <td class="pro-subtotal"><span><?php 
-                                            $sum = $cart['price'] * $cart['quantity'] ;
+                                            $sum = $product['price'] * $product['quality'] ;
                                             $tongtien += $sum;
                                             echo  formatPrice($sum ). ' đ';
                                          
@@ -61,7 +62,8 @@
                                             ?></span></td>
                                             <td class="pro-remove"><a href="#"><i class="fa fa-trash-o"></i></a></td>
                                         </tr>
-                                            <?php endforeach;?>
+                                            <?php endforeach;}else{?>
+                                            <?php }?>
                                         
                                     </tbody>
                                 </table>

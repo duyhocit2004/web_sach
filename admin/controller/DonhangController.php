@@ -70,7 +70,7 @@ class DonhangController{
         }
     
         // Tính thuế và tổng tiền
-        $thuechinh = 9.3; // Thuế suất 9,3%
+        $thuechinh = 2; // Thuế suất 9,3%
         $thue = $tongtienSP * ($thuechinh / 100); // Tính thuế
         $shiphang = 200; // Chi phí vận chuyển cố định
         $tong = $tongtienSP + $thue + $shiphang; //tổng tiền

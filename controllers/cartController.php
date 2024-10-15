@@ -17,23 +17,35 @@
             
             if (isset($_SESSION['user_clients'])) {
                 $user = $this->model->checkuser($_SESSION['user_clients']['email']);
+                $cart = $this->model->getFromId($user['id']);
+
                 // lấy sản phẩm từ giỏ hàng của người dùng
                     $id_product = $_GET['id'];
                     $quality = $_POST['quantity']; 
 
+                    // unset($_SESSION['cart'] );
                     $product = $this->model->getproducts($id_product);
+                    // Duyệt qua giỏ hàng để kiểm tra sản phẩm
+                        foreach ($_SESSION['cart'] as &$cartProduct) {
+                            if ($cartProduct['product_id'] === $product['id']) {
+                                // Nếu sản phẩm đã tồn tại, cộng dồn số lượng
+                                $cartProduct['quality'] += $quality;
+                                $productExists = true;
+                                break; // Dừng vòng lặp
+                            }
+                        }
+                    // Nếu sản phẩm chưa tồn tại, thêm sản phẩm mới vào giỏ hàng
+                        if (!$productExists) {
+                            $_SESSION['cart'][] = [
+                                'product_id' => $product['id'],
+                                'book_name' => $product['book_name'],
+                                'price' => $product['price'],
+                                'quality' => $quality,
+                                'image' => $product['image'],
+                            ];
+                        }
 
-                    
-                    // var_dump($product);die();
-            
-                    $cart = $this->model->getFromId($user['id']);
-                    $_SESSION['user']=[
-                        'book_name' => $product['book_name'],
-                        'price' => $product['price'],
-                        'quality' => $quality,
-                        
-                    ];
-                    
+
 
 
                     // var_dump( $_SESSION['cart']);die;
@@ -78,9 +90,6 @@
         }
     public function listOnCart(){
         if(isset($_SESSION['user_clients'])){
-            if(!isset($_SESSION['cart'])){
-                $_SESSION['cart'] = [];
-            }
 
             $user = $this->model -> checkuser($_SESSION['user_clients']['email']);
 
@@ -99,7 +108,6 @@
 
             
 
-                $_SESSION['cart'] = $chitiet;
 
             require_once "./view/Cart.php";
         }

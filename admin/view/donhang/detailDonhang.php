@@ -79,22 +79,23 @@
                     <thead>
                     <tr>
                         <th>STT</th>
-                        <th>id đơn hàng</th>
+                        <th>ảnh</th>
                         <th>sản phẩm</th>
-                        <th>đơn giá</th>
                         <th>số lượng</th>
+                        <th>giá sản phẩm</th>
                         <th>thành tiền</th>
                     </tr>
                     </thead>
                     <tbody>
                         <?php foreach($list2 as $key=>$as):?>
                     <tr>
-                        <th><?= $key?></th>
-                        <th><?=$as['product_id']?></th>
+                        <th><?= $key +1?></th>
+                        <th><img width="50px" src="<?= BASE_URL.$as['image']?>" alt=""></th>
                         <th><?=$as['book_name']?></th>
+
                         <th><?=$as['quantity']?></th>
-                        <th><?=$as['unit_price']?></th>
-                        <th><?=$as['sum_price']?></th>
+                        <th><?=formatPrice($as['unit_price'])?></th>
+                        <th><?= formatPrice($as['sum_price'])?></th>
                     </tr>
                     <?php endforeach; ?>
                     </tbody>
@@ -112,19 +113,19 @@
                     <table class="table">
                       <tr>
                         <th style="width:50%">tiền sản phẩm :</th>
-                        <td><?=$tongtienSP?></td>
+                        <td><?=formatPrice($tongtienSP)?></td>
                       </tr>
                       <tr>
-                        <th>thuế (9.3%)</th>
-                        <td><?= $thue  ?></td>
+                        <th>thuế (2%)</th>
+                        <td><?= formatPrice($thue ) ?></td>
                       </tr>
                       <tr>
-                        <th>thuế shiper :</th>
-                        <td><?= $shiphang?></td>
+                        <th>thuế ship hàng :</th>
+                        <td><?= formatPrice($shiphang)?></td>
                       </tr>
                       <tr>
                         <th>tổng tiền:</th>
-                        <td><?=$tong ?></td>
+                        <td><?=formatPrice($tong )?></td>
                       </tr>
                     </table>
                   </div>

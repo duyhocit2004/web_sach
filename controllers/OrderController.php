@@ -23,6 +23,7 @@
             }
             
             $method = $this->model->GetMethod();
+            $_SESSION['cart'];
             $user1 = $user;
 
         }
@@ -64,8 +65,9 @@
             // thêm chi tiết giỏ hàng
                 // var_dump($products);
                foreach ($_SESSION['cart'] as $item){
-                $sum = $item['price'] * $item['quantity'];
-                $oder= $this->model->AdddetailOder($cart, $item['product_id'] , $item['quantity'],$item['price'] ,$sum );
+                $sum = $item['price'] * $item['quality'];
+                $this->model->AdddetailOder($cart, $item['product_id'] , $item['quality'],$item['price'] ,$sum );
+                unset($_SESSION['cart']);
                }
 
             //    var_dump($oder);die();

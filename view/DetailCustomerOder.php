@@ -79,11 +79,11 @@
                 </tr>
                     <?php foreach($listproducts as $key=>$products): ?>
                 <tr>
-                    <th><?=$products['id']?></th>
+                    <th><?=$key+1?></th>
                     <th><img src="<?=$products['image']?>" width="100px" alt=""></th>
                     <th><?=$products['book_name']?></th>
-                    <th><?=$products['quantity']?></th>
-                    <th><?=$products['sum_price']?></th>
+                    <th><?=formatPrice($products['quantity'])?></th>
+                    <th><?=formatPrice($products['sum_price'])?></th>
                 </tr>
                     <?php endforeach;?>
             </table>

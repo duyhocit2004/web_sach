@@ -76,8 +76,7 @@
                                             </div>
                                         </div>
                                         <div class="price-box">
-                                            <span class="price-regular">$<?=$sanpham['price']?></span>
-                                            <span class="price-old"><del>$90.00</del></span>
+                                            <span class="price-regular"><?=formatPrice($sanpham['price'])?> đ</span>
                                         </div>
                                         <h5 class="offer-text"><strong>Hurry up</strong>! offer ends in:</h5>
                                         <div class="product-countdown" data-countdown="2024/12/20"></div>
@@ -281,7 +280,7 @@
                                             <a href="product-details.html"><?=$list['book_name']?></a>
                                         </h6>
                                         <div class="price-box">
-                                            <span class="price-regular"><?= $list['price']?></span>
+                                            <span class="price-regular"><?= formatPrice($list['price'])?></span>
                                         </div>
                                     </div>
                                 </div>
