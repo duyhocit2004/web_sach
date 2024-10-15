@@ -46,19 +46,21 @@
                 <table class="table  table-striped">
                     <tr>
                         <td>STT</td>
-                        <td>ảnh sản phẩm</td>
-                        <td>tên sản phẩm</td>
-                        <td>số lượng</td>
-                        <td>tổng tiền</td>
+                        <td>mã đơn hàng</td>
+                        <td>tên người đặt</td>
+                        <td>email</td>
+                        <td>ngày đặt</td>
+                        <td>trạng thái</td>
                         <td>thao tác</td>
                     </tr>
-                    <?php foreach($listdetail as $key => $detail): ?>
+                    <?php foreach($list as $key => $detail): ?>
                     <tr>
                         <th><?=$key + 1?></th>
-                        <th><img src="<?=$detail['image']?>" width="100px" alt=""></th>
-                        <th><?=$detail['book_name']?></th>
-                        <th><?=$detail['quantity']?></th>
-                        <th><?=$detail['sum_price']?></th>
+                        <th><?=$detail['Order_ID']?>  </th>
+                        <th><?=$detail['recipient_name']?>  </th>
+                        <th><?=$detail['recipient_email']?></th>
+                        <th><?=$detail['order_date']?></th>
+                        <th><?=$detail['statusname']?></th>
                         <th>
                             <a class="my-custom-button" href="<?= BASE_URL . '?act=detailOrder&id=' . $detail['id'] ?>">Xem</a>
                         </th>

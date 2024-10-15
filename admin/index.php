@@ -85,7 +85,7 @@ match ($act) {
     'from-sua-don-hang'=>(new DonhangController())->FromSuadonhang(),
     'sua-don-hang'=>(new DonhangController())->Suadonhang(),
     'xoa-don-hang'=>(new DonhangController())->Xoadonhang(),
-    'chitiet-don-hang'=>(new DonhangController())->Chitietdonhang(),
+    'chi-tiet-don-hang'=>(new DonhangController())->Chitietdonhang(),
 
     //thông báo đặt hàng
     

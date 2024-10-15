@@ -34,12 +34,12 @@ class DonhangModel{
         $sql = 'SELECT order_details.*, products.book_name 
                 FROM order_details
                 INNER JOIN products ON order_details.product_id = products.id 
-                WHERE order_details.id = :id';
+                WHERE order_details.orders_id = :id';
         
         $stmt = $this->db->prepare($sql);
         $stmt->execute([':id' => $id]);
         
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $stmt->fetchAll();
     }
 
     public function GetPaymentMethod(){

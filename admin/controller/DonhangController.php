@@ -44,9 +44,12 @@ class DonhangController{
     }
     public function Chitietdonhang() {
         $id = $_GET['id'];
+        // lấy thông tin từ giỏ hàng
         $list = $this->model->GetDetailOrder($id);
-        $list2 = $this->model->GetSanphamOrder($id);
+        // lấy các danh sách các sản phẩm đã đặt của đơn hàng ở bảng chi tiết
+        $list2 = $this->model->GetSanphamOrder( $id);
     
+        // var_dump($list2);die();
         if ($list['payment_status_id'] < 2) {
             $colorAlert = 'danger-emphasis';
         } elseif ($list['payment_status_id'] == 3) {

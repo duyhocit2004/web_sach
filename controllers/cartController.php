@@ -23,9 +23,10 @@
 
                     $product = $this->model->getproducts($id_product);
                     
+                    var_dump($product);
             
                     $cart = $this->model->getFromId($user['id']);
-                    $_SESSION['user']=$cart;
+                    // $_SESSION['user']=$cart;
 
 
                     // var_dump( $_SESSION['cart']);die;
@@ -89,7 +90,7 @@
             }
             // var_dump($chitiet);die();
 
-
+            
 
                 $_SESSION['cart'] = $chitiet;
 
