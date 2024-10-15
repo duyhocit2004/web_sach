@@ -21,7 +21,7 @@ class OrderClientsModel {
         $stmt -> execute();
         return $stmt ->fetchAll();
     }
-
+    
     public function addOrder(
     $id_nguoi_dung,
     $recipient_name,
@@ -52,13 +52,14 @@ class OrderClientsModel {
         ]);
         return $this->data ->lastInsertId();
     }
-    public function AdddetailOder ($id,$product,$quantity,$sum_price){
-        $sql= "INSERT INTO order_details (orders_id,product_id,quantity,sum_price) VALUES (:orders_id,:product_id,:quantity,:sum_price)";
+    public function AdddetailOder ($giohang,$product,$quantity,$price,$sum_price){
+        $sql= "INSERT INTO order_details (orders_id,product_id,quantity,unit_price,sum_price) VALUES (:orders_id,:product_id,:quantity,:unit_price,:sum_price)";
         $stmt =$this->data->prepare($sql);
         $stmt ->execute([
-            ':orders_id'=>$id,
+            ':orders_id'=>$giohang,
             ':product_id'=>$product,
             ':quantity'=>$quantity,
+            ':unit_price'=>$price,
             ':sum_price'=>$sum_price
         ]);
         return true;

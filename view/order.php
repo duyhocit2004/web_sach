@@ -92,19 +92,18 @@
                                                             </tr>
                                                         </thead>
                                                         <tbody>
+                                                            <?php var_dump($_SESSION['cart']) ?>
                                                             <?php 
                                                             $tong = 0;
-                                                            foreach($chitiet as $detail): ?>
-                                                                <input type="hidden" value="<?=$detail['product_id']?>" name="products" >
-                                                                <input type="hidden" value="<?=$detail['quantity']?>" name="quantity" >
-                                                                <?php var_dump($detail); ?>
+                                                            foreach($_SESSION['cart'] as $products): ?>
+
                                                                 <tr>
-                                                                    <td><?=$detail['book_name']?> <strong> ×  <?=$detail['quantity']?></strong></td>
+                                                                    <td><?=$products['book_name']?><strong> ×  <?=$products['quality']?></strong></td>
                                                                     
-                                                                    <td><?=formatPrice($detail['price'])?></td>
+                                                                    <td><?=formatPrice($products['price'])?></td>
                                                                 </tr>
                                                             <?php
-                                                            $tong += $detail['price'] * $detail['quantity'];
+                                                            $tong += $products['price'] * $products['quality'];
                                                         endforeach; ?>
                                                         </tbody>
                                                         <tfoot>

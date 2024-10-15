@@ -31,10 +31,9 @@ class TacgiaController
             //Lấy dữ liệu
             $name = $_POST['name'] ?? '';
             $bio = $_POST['bio'] ?? '';
+            $image = $_FILES['img_author'];
 
-            $img_author = $_FILES['img_author'] ?? null;
-            // Lưu hình ảnh
-            $file_thum = uploadFile($img_author, './uploads/authors/');
+            $file_thumb = uploadFile($image, './uploads/author/');
 
 
             // Tạo một mảng trống để lấy dữ liệu
@@ -45,7 +44,7 @@ class TacgiaController
             if (empty($bio)) {
                 $errors['bio'] = 'Bio không được bỏ trống';
             }
-            if ($img_author['error'] !== 0) {
+            if ($image['error'] !== 0) {
                 $errors['img_author'] = 'Phải chọn ảnh sản phẩm';
             }
 
@@ -55,7 +54,7 @@ class TacgiaController
             if (empty($errors)) {
                 //nếu k có lỗi thì tiến hành thêm sản phẩm
                 // var_dump("oke");
-                $product_id = $this->modelDanhMuc->insertDanhMuc($name, $file_thum, $bio);
+                $product_id = $this->modelDanhMuc->insertDanhMuc($name, $file_thumb, $bio);
                 header("Location: " . BASE_URL_ADMIN . '?act=tac-gia');
                 exit();
             } else {

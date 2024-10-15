@@ -19,6 +19,9 @@ class ProductController{
         
         $id = $_GET['id'];
         $sanpham = $this->modelProduct->getDetailSanPham($id);
+        $listProducts = $this->modelProduct->getAllProducts();
+        $listGenres = $this->modelGenres->getAllGenres();
+            
 
         if ($sanpham) {
             require_once './view/detaliProduct.php';

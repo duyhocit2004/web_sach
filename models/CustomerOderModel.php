@@ -14,10 +14,17 @@ class CustomerOderModel{
         ]);
         return $stmt -> fetch();
     }
-    public function list(){
-        $sql = "SELECT * FROM orders";
+    public function list($user_id) {
+        $sql = "SELECT orders.*, payment_status.payment_status AS statusname
+                FROM orders
+                INNER JOIN payment_status ON orders.payment_status_id = payment_status.id
+                WHERE orders.user_id = :user";
+        
         $stmt = $this->data->prepare($sql);
-        $stmt ->execute();
+        $stmt->execute([
+            ':user' => $user_id
+        ]);
+        
         return $stmt->fetchAll();
     }
     public function listdetail(){
@@ -28,17 +35,6 @@ class CustomerOderModel{
         $stmt = $this->data->prepare($sql);
         $stmt ->execute();
         return $stmt->fetchAll();
-    }
-    public function getdetailproduct($id){
-        $sql = "SELECT order_details.*,products.book_name ,products.image,products.price
-        FROM order_details
-        INNER JOIN products ON order_details.product_id = products.id 
-          WHERE order_details.id= :id ";
-        $stmt = $this->data->prepare($sql);
-        $stmt ->execute([
-            ':id'=>$id
-        ]);
-        return $stmt->fetch();
     }
     public function getdetail($id){
         $sql = "SELECT orders .*, payment_method.payment_method_name , payment_status.payment_status FROM orders
@@ -51,4 +47,16 @@ class CustomerOderModel{
         ]);
         return $stmt->fetch();
     }
+    public function getdetailproduct($id){
+        $sql = "SELECT order_details.*,products.book_name ,products.image,products.price
+        FROM order_details
+        INNER JOIN products ON order_details.product_id = products.id 
+          WHERE order_details.orders_id= :id ";
+        $stmt = $this->data->prepare($sql);
+        $stmt ->execute([
+            ':id'=>$id
+        ]);
+        return $stmt->fetchAll();
+    }
+
 }

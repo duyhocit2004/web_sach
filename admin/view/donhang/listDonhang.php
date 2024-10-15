@@ -22,7 +22,7 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>Quản lý đơn hàng></h1>
+                            <h1>Quản lý đơn hàng</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
@@ -75,7 +75,7 @@
                                                     <td><?= $donhang['payment_status'] ?></td>
                                                     <td>
                                                         <a
-                                                            href="<?= BASE_URL_ADMIN . '?act=chitiet-don-hang&id=' . $donhang['id'] ?>">
+                                                            href="<?= BASE_URL_ADMIN . '?act=chi-tiet-don-hang&id=' . $donhang['id'] ?>">
                                                             <button class="btn btn-warning">chi tiết</button>
                                                         </a>
                                                         <a href="<?= BASE_URL_ADMIN . '?act=xoa-don-hang&id=' . $donhang['id'] ?>"

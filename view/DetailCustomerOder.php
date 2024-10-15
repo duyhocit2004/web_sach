@@ -77,13 +77,15 @@
                     <td>số lượng</td>
                     <td>tổng tiền</td>
                 </tr>
+                    <?php foreach($listproducts as $key=>$products): ?>
                 <tr>
-                    <th><?=$list['id']?></th>
-                    <th><img src="<?=$list['image']?>" width="100px" alt=""></th>
-                    <th><?=$list['book_name']?></th>
-                    <th><?=$list['quantity']?></th>
-                    <th><?=$list['sum_price']?></th>
+                    <th><?=$key+1?></th>
+                    <th><img src="<?=$products['image']?>" width="100px" alt=""></th>
+                    <th><?=$products['book_name']?></th>
+                    <th><?=formatPrice($products['quantity'])?></th>
+                    <th><?=formatPrice($products['sum_price'])?></th>
                 </tr>
+                    <?php endforeach;?>
             </table>
                 <div>
                         <a class="my-custom-button" href="?act=CustomerOder">trở lại</a>

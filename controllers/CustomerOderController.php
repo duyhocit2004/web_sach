@@ -6,11 +6,12 @@ class CustomerOderController{
     }
     public function listOrder(){
         if(isset($_SESSION['user_clients'])){
-            // $user = $this->model->user($_SESSION['user_clients']['email']);
+            $user = $this->model->user($_SESSION['user_clients']['email']);
 
-            $list = $this->model->list();
-            // var_dump($list);
-            $listdetail = $this->model->listdetail();
+            //lấy các đơn hàng của người dùn đã đặt
+            $list = $this->model->list($user['id']);
+            // chi tiết đơn hàng người dùng
+            // $listdetail = $this->model->listdetail();
 
         } 
         // var_dump($user);
@@ -19,13 +20,14 @@ class CustomerOderController{
 
     public function detailCustomerOder(){
         if(isset($_SESSION['user_clients'])){
-            $user = $this->model->user($_SESSION['user_clients']['email']);
+            // $user = $this->model->user($_SESSION['user_clients']['email']);
             $id = $_GET['id'];
+            $listdetail = $this->model->getdetail($id);
             // var_dump($id);
-            $list = $this->model->getdetailproduct( $id);
+            $listproducts = $this->model->getdetailproduct( $listdetail['id']);
            
-            var_dump($list);
-            $listdetail = $this->model->getdetail($list['orders_id']);
+            var_dump($listproducts);
+           
             
             require_once "./view/DetailCustomerOder.php";
         } 

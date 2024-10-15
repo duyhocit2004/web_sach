@@ -23,6 +23,7 @@
             }
             
             $method = $this->model->GetMethod();
+            $_SESSION['cart'];
             $user1 = $user;
 
         }
@@ -44,8 +45,10 @@
             // Check user
             $user = $this->model->checkuserorder($_SESSION['user_clients']['email']);
             $id_nguoi_dung = $user['id'] ?? null;
+
         
             // Add order
+            // var_dump($_POST);die();
             $cart = $this->model->addOrder(
                 $id_nguoi_dung,
                 $recipient_name,
@@ -60,27 +63,22 @@
             );
         
             // thêm chi tiết giỏ hàng
-            $sum_price = $_POST['sum_price'] ?? 0;
-            $product = $_POST['products'] ?? [];
-            $quantity = $_POST['quantity'] ?? [];
-        
-            // kiểm tra
-            // var_dump($sum_price, $product, $quantity);
-        
-            // Đảm bảo sản phẩm và số lượng là mảng
-            if (!empty($product) && !empty($quantity)) {
-                $this->model->AdddetailOder($cart, $product, $quantity, $sum_price);
+                // var_dump($products);
+               foreach ($_SESSION['cart'] as $item){
+                $sum = $item['price'] * $item['quality'];
+                $this->model->AdddetailOder($cart, $item['product_id'] , $item['quality'],$item['price'] ,$sum );
                 unset($_SESSION['cart']);
-            } else {
-                // Xử lý lỗi thiếu sản phẩm hoặc số lượng
-                echo "Error: No products or quantities specified.";
-            }
+               }
+
+            //    var_dump($oder);die();
+                
+        }
             
                
         header("Location: " . BASE_URL .'?act=CustomerOder');
         exit();
         }
         
+        
 
      }
- }
