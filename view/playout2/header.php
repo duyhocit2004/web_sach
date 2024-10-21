@@ -1,10 +1,10 @@
-<header class="header-area header-wide">
+<header class="header-area header-wide back">
     <!-- main header start -->
     <div class="main-header d-none d-lg-block">
         <!-- header middle area start -->
         <div class="header-main-area sticky">
             <div class="container">
-                <div class="row align-items-center position-relative">
+                <div class="row align-items-center position-relative back  ">
 
                     <!-- start logo area -->
                     <div class="col-lg-2">
@@ -30,7 +30,10 @@
 
                                         <li><a href="<?= BASE_URL . '?act=shop-product'?>">Sản Phẩm <i class="fa fa-angle-down"></i></a>
                                             <ul class="dropdown">
-                                                <li><a href="blog-left-sidebar.html">blog left sidebar</a></li>
+                                                <li><a href="blog-left-sidebar.html">Thể loại</a></li>
+                                                <li><a href="blog-left-sidebar.html">Tác Giả</a></li>
+                                                <li><a href="blog-left-sidebar.html">Độ Tuổi</a></li>
+                                                <li><a href="blog-left-sidebar.html">Định Dạng</a></li>
 
                                             </ul>
                                         </li>
@@ -74,7 +77,7 @@
                                                 <a href="#">
                                                     <i class="pe-7s-user"></i>
                                                     <ul class="dropdown-list">
-                                                    <li><a href="?act=CustomerOder">Đơn hàng</a></li>
+                                                    <li><a href="?act=CustomerOder" >Đơn hàng</a></li>
                                                         <li><a href="?act=account">Tài Khoản</a></li>
                                                         <li><a href="?act=logout">đăng xuất</a></li>
                                                     </ul>
@@ -97,7 +100,15 @@
                                     <li class="user-hover">
                                         <a href="?act=cart" class="minicart-btn">
                                             <i class="pe-7s-shopbag"></i>
-                                            <div class="notification"></div>
+                                            <div class="notification"> 
+                                                <?php if(isset($_SESSION['cart']))
+                                            {
+                                                echo $_SESSION['cart'] ? count($_SESSION['cart']) : 0 ;
+                                            }else{
+                                                echo"0";
+                                            } 
+                                            ?>
+                                            </div>
                                         </a>
                                     </li>
                                 </ul>

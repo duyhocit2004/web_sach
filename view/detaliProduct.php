@@ -308,7 +308,29 @@
     <!-- JS
 ============================================ -->
     <?php require_once "./view/playout2/js.php" ?>
+    <script>
+    $('.pro-qty').prepend('<span class="dec qtybtn">-</span>');
+    $('.pro-qty').append('<span class="inc qtybtn">+</span>');
+    $('.qtybtn').on('click', function () {
+        var $button = $(this);
+        var oldValue = $button.parent().find('input').val();
+        if ($button.hasClass('inc')) {
+            var newVal = parseFloat(oldValue) + 1;
+			console.log(newVal);
+        } else {
+            // Don't allow decrementing below zero
+            if (oldValue > 0) {
+                var newVal = parseFloat(oldValue) - 1;
+				console.log(newVal);
 
+            } else {
+                newVal = 0;
+            }
+        }
+        $button.parent().find('input').val(newVal);
+
+	});
+    </script>
 </body>
 
 

@@ -26,5 +26,5 @@
     <!-- google map active js -->
     <script src="assets/clients/js/plugins/google-map.js"></script>
     <!-- Main JS -->
-    <script src="assets/clients/js/main.js"></script>
-    <script src="assets/clients/js/main2.js"></script>
+      <script src="assets/clients/js/main.js"></script>
+      <script src="assets/clients/js/main2.js"></script>

@@ -27,3 +27,9 @@
     <link rel="stylesheet" href="assets/clients/css/plugins/jqueryui.min.css">
     <!-- main style css -->
     <link rel="stylesheet" href="assets/clients/css/style.css">
+
+    <style>
+        .back{
+            background-color: #cccccc;
+        }
+    </style>

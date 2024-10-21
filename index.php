@@ -20,6 +20,7 @@
     require_once './controllers/testcontroller.php';
     require_once './controllers/CustomerOderController.php';
     require_once './controllers/paymentOrdersController.php';
+    require_once './controllers/ProductCategoryController.php';
 
 
 
@@ -38,6 +39,7 @@
     require_once './models/genresModel.php';
     require_once './models/authorsModel.php';
     require_once './models/CustomerOderModel.php';
+    require_once './models/ProductCategoryModel.php';
 
 
 
@@ -72,7 +74,7 @@
 
         //giỏ hàng
         'cart' => (new CartController())->listOnCart(),
-        'DeleteProductOnCart' => (new CartController())->listOnCart(),
+        'DeleteProductOnCart' => (new CartController())->DeleteProductOnCart(),
         
         //thanh toán
         'order' => (new OrderController())->PageOder(),
@@ -94,5 +96,8 @@
         'detailOrder' =>(new CustomerOderController()) ->detailCustomerOder(),
 
         //phương thức thanh toán
-        'thanh-toan' =>(new paymentOrdersController())-> execPostRequest(),
+        'thanh-toan' =>(new paymentOrdersController())->execPostRequest(),
+
+        //phân loại 
+        'chu-de' =>(new ProductCategoryController())->index(),
     }; 

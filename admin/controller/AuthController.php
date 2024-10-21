@@ -17,15 +17,16 @@ class AuthController {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $email = $_POST['email'];
             $password = $_POST['password'];
-            // var_dump($email,$password);die();
             $user = $this->model->checkLogin($email, $password);
-            // var_dump($user['name']);die();
+
             if ($user == $email) {
                 $_SESSION['user_admin'] = $user;
+                // var_dump($_SESSION['user_admin'] );die();
                 if(isset($_SESSION['user_admin'])){
                     $_SESSION['user_admin'] = [
                         'email' => $email, // Lưu email
                         'name' => $password,  // Lưu tên người dùng
+                        'avatar' => $user['avatar']//lưu ảnh người dùng
                     ];
                 }
                 

@@ -1,14 +1,18 @@
 
-
-var quantities = document.querySelectorAll('.quanlity1'); // Lấy tất cả các input có class là quanlity1
-
-quantities.forEach(function(input) {
-    var quantity = input.value; // Lấy giá trị của input
-    console.log(quantity); 
-});
-// Hiển thị giá trị trong console
-$('.quanlity1').on('input', function() {
-    var quantity = $(this).val(); // Lấy giá trị của input hiện tại
-    console.log(quantity); // Hiển thị giá trị trong console
-});
-
+$('.pro-qty').prepend('<span class="dec qtybtn">-</span>');
+    $('.pro-qty').append('<span class="inc qtybtn">+</span>');
+    $('.qtybtn').on('click', function () {
+        var $button = $(this);
+        var oldValue = $button.parent().find('input').val();
+        if ($button.hasClass('inc')) {
+            var newVal = parseFloat(oldValue) + 1;
+        } else {
+            // Don't allow decrementing below zero
+            if (oldValue > 0) {
+                var newVal = parseFloat(oldValue) - 1;
+            } else {
+                newVal = 0;
+            }
+        }
+        $button.parent().find('input').val(newVal);
+	});

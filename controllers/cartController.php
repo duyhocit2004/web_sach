@@ -44,11 +44,6 @@
                                 'image' => $product['image'],
                             ];
                         }
-
-
-
-
-                    // var_dump( $_SESSION['cart']);die;
                     if(!$cart){
                         $cart_id = $this->model->addCart($user['id']);
                         $cart = ['id' => $cart_id];
@@ -57,10 +52,8 @@
                     }else{
                         $chitiet = $this->model->detail_cart($cart['id']);
                     }
-                // chi tiết giỏ hàng
-                   
 
-                    
+                // chi tiết giỏ hàng
                     $checkproduct = false ;
                         foreach ($chitiet as  $detail) {       
                             if($detail['product_id'] == $id_product ){
@@ -119,7 +112,23 @@
        
     }
     public function DeleteProductOnCart(){
+        // lấy id cần xóa
+        $id = $_GET['id'];
+        //kiểm tra giỏ hàng có tồn tại không
+        if(isset($_SESSION['cart'])){
+            foreach ($_SESSION['cart'] as $key => $value) {
+                // kiểm tra id sản phẩm có tồn tại hay không
+                if($value['product_id'] == $id){
+                    //xóa id sản phẩm trong ession
+                    unset($_SESSION['cart'][$key]);
+                    require_once "./view/Cart.php";
+                }
+            }
+        }
+        
+       
 
+       
     }
 
     
