@@ -31,4 +31,5 @@ class ContactModelUser {
         //lấy id sản phẩm vừa thêm
         return $this->model->lastInsertId();
     }
+
 }

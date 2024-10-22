@@ -58,7 +58,7 @@
                                                 <div class="myaccount-content">
                                                     <h5> thông tin cá nhân</h5>
                                                     <div class="account-details-form">
-                                                        <form action="<?=  BASE_URL . '?act=postuser&id='. $account['id'] ?>" method="post">
+                                                        <form action="<?=  BASE_URL . '?act=postuser&id='. $account['id'] ?>" method="post" enctype="multipart/form-data">
                                                             <div class="row">
                                                                 <div class="col-lg-6">
                                                                     <div class="single-input-item">

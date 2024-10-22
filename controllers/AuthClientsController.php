@@ -11,9 +11,10 @@ class AuthClientsController{
         if($_SERVER['REQUEST_METHOD']=='POST'){
             $email = $_POST['email'];
             $password = $_POST['password'];
-            // var_dump($email,$password);die();
+            
            
             $user = $this->model->checklogin($email,$password);
+            // var_dump($_SESSION['user_clients']  );die(); 
             if($user == $email){
                 header("Location: " . BASE_URL);
                 exit();

@@ -72,5 +72,13 @@ class CartClientModel {
     ]);
     return $stmt->fetchAll() ;
    }
+   public function getproducts($id){
+    $sql = "SELECT * FROM products WHERE id = :id";
+    $stmt = $this->data->prepare($sql);
+    $stmt ->execute([
+      ':id' => $id
+    ]);
+    return $stmt ->fetch();
+   }
    
 }

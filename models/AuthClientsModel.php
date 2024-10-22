@@ -16,9 +16,11 @@ class AuthClientsModel{
         $user = $stmt -> fetch();
         if($user && $password == $user['password']){
             if($user['id_role'] == 2){
+
                 $_SESSION['user_clients'] =[
                     'email' => $user['email'],
                     'password' => $user['password'],
+                    'avatar' => $user['avatar'],
                 ];
                 // echo ($user['email']);die();
                 return true;

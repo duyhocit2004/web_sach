@@ -37,7 +37,7 @@
         <!-- checkout main wrapper start -->
         <div class="checkout-page-wrapper section-padding">
             <div class="container">
-                <form action="<?= BASE_URL.'?act=postOder'?>" method="POST">
+                <form action="<?= BASE_URL.'?act=addOder'?>" method="POST">
                     <div class="row">
                         <!-- Checkout Billing Details -->
                         
@@ -46,7 +46,7 @@
                                         <div class="checkout-billing-details-wrap">
                                             <h5 class="checkout-title">Billing Details</h5>
                                             <div class="billing-form-wrap">
-                                            
+                                                    
                                                 <div class="single-input-item">
                                                         <label for="email" class="required">tên người nhận</label>
                                                         <input type="text"placeholder="tên người nhận"  value="<?=$user1['name_user']?>" name="name_user" required />
@@ -92,16 +92,18 @@
                                                             </tr>
                                                         </thead>
                                                         <tbody>
+                                                            <?php var_dump($_SESSION['cart']) ?>
                                                             <?php 
                                                             $tong = 0;
-                                                            foreach($chitiet as $detail): ?>
+                                                            foreach($_SESSION['cart'] as $products): ?>
+
                                                                 <tr>
-                                                                    <td><?=$detail['book_name']?> <strong> ×  <?=$detail['quantity']?></strong></td>
+                                                                    <td><?=$products['book_name']?><strong> ×  <?=$products['quality']?></strong></td>
                                                                     
-                                                                    <td><?=formatPrice($detail['price'])?></td>
+                                                                    <td><?=formatPrice($products['price'])?></td>
                                                                 </tr>
                                                             <?php
-                                                            $tong += $detail['price'] * $detail['quantity'];
+                                                            $tong += $products['price'] * $products['quality'];
                                                         endforeach; ?>
                                                         </tbody>
                                                         <tfoot>
@@ -110,17 +112,6 @@
                                                                 <td>tổng tiền sản phẩm</td>
                                                                 <td><strong><?=$tong?></strong></td>
                                                             
-                                                            </tr>
-                                                        
-                                                            <tr>
-                                                                
-                                                                <td>giao hàng</td>
-                                                                <td class="d-flex justify-content-center">
-                                                                            <div class="custom-control custom-radio">
-                                                                                <input type="radio" id="freeshipping" name="shipping" class="custom-control-input" required />
-                                                                                <label class="custom-control-label" for="freeshipping">nội thành(2%)</label>
-                                                                            </div>
-                                                                </td>
                                                             </tr>
                                                             <tr>
                                                                 <?php
