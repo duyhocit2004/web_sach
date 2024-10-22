@@ -46,12 +46,15 @@
 
     // Để bảo bảo tính chất chỉ gọi 1 hàm Controller để xử lý request thì mình sử dụng match
 
+
     match ($act) {
         // Trang chủ
         '/' => (new HomeController())->index(),
 
+
         //liên hệ
         'contact' => (new ContactController())->formContact(),
+        'them-lien-he' => ( new ContactControllerUser()) ->postAddContact(),
 
         //Sản Phẩm
         'shop-product' => (new ProductController())->getAllSanPham(),

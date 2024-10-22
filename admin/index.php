@@ -92,7 +92,6 @@ match ($act) {
     // Quản lý liên hệ
     'contact' => (new ContactController())->danhsachContact(),
     'xoa-lien-he' => ( new ContactController()) ->deleteContact(),
-    'them-lien-he' => ( new ContactController()) ->postAddContact(),
     // 'from-them-lien-he' => ( new ContactController()) ->deleteContact(),
 
 };
