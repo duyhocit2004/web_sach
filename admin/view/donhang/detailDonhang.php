@@ -94,7 +94,7 @@
                         <th><?=$as['book_name']?></th>
 
                         <th><?=$as['quantity']?></th>
-                        <th><?=formatPrice($as['unit_price'])?></th>
+                        <th><?=formatPrice($as['unit_price'])?> </th>
                         <th><?= formatPrice($as['sum_price'])?></th>
                     </tr>
                     <?php endforeach; ?>

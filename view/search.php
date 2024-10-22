@@ -5,7 +5,6 @@
 <?php require_once "./view/playout2/head.php" ?>
 
 <!-- Mirrored from htmldemo.net/corano/corano/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 29 Jun 2024 09:53:03 GMT -->
-
 <head>
 
 

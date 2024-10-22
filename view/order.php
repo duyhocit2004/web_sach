@@ -92,15 +92,16 @@
                                                             </tr>
                                                         </thead>
                                                         <tbody>
-                                                            <?php var_dump($_SESSION['cart']) ?>
+                                                        
                                                             <?php 
                                                             $tong = 0;
+                                                            if(isset(($_SESSION['cart']) )){
                                                             foreach($_SESSION['cart'] as $products): ?>
 
                                                                 <tr>
                                                                     <td><?=$products['book_name']?><strong> ×  <?=$products['quality']?></strong></td>
                                                                     
-                                                                    <td><?=formatPrice($products['price'])?></td>
+                                                                    <td><?=formatPrice($products['price'])?>đ</td>
                                                                 </tr>
                                                             <?php
                                                             $tong += $products['price'] * $products['quality'];
@@ -109,26 +110,41 @@
                                                         <tfoot>
                                                             
                                                             <tr>
-                                                                <td>tổng tiền sản phẩm</td>
-                                                                <td><strong><?=$tong?></strong></td>
+                                                            <?php
+                                                                $tongphi = 0;
+                                                                $phivanchuyen = 2 ;
+                                                                $tongphi =$tong * ($phivanchuyen/100);
+                                                                ?>
+                                                                <td>phí vận chuyển (2%)</td>
+                                                                <td><strong><?= formatPrice($tongphi)?>đ</strong></td>
                                                             
                                                             </tr>
                                                             <tr>
-                                                                <?php
 
-                                                                $phivanchuyen = 2 
-                                                                
-                                                                ?>
                                                                 <td>tổng tiền</td>
-                                                                <?php
-                                                                $tongphi = 0;
-                                                                $tongphi =$tong * ($phivanchuyen/100);
-                                                                ?>
+                                                               
                                                                 <input type="hidden" name="sum_price" value="<?= formatPrice($tong+$tongphi )?>">
                                                                 <td><strong><?= formatPrice($tong+$tongphi ) .'đ'?></strong></td>
                                                             </tr>
                                                         </tfoot>
                                                     </table>
+                                                    <?php }else{?>
+                                                        <table class="table table-bordered">
+                                                        <thead>
+                                                
+                                                        </thead>
+                                                        <tbody>
+                                                        </tbody>
+                                                        <tfoot>
+                                                            <tr>                                                      
+                                                                <td>phí vận chuyển (2%)</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>tổng tiền</td>
+                                                            </tr>
+                                                        </tfoot>
+                                                    </table>
+                                                    <?php }?>
                                                 </div>
                                                 <!-- Order Payment Method -->
                                                 <div class="order-payment-method">
@@ -188,6 +204,7 @@
     <!-- JS
 ============================================ -->
     <?php require_once "./view/playout2/js.php" ?>
+    
 
 </body>
 

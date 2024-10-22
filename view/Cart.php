@@ -39,7 +39,7 @@
                                         $tienship = 2;
                                         $tongtien = 0;
                                             if(isset($_SESSION['cart'])){
-                                            var_dump($_SESSION['cart']);
+                                            // var_dump($_SESSION['cart']);
                                                 foreach($_SESSION['cart'] as $product): ?> 
                                         <tr>
                                             <td class="pro-thumbnail"><a href="<?=BASE_URL . '?act=cart-product&id='.$product['product_id']?>">
@@ -60,7 +60,7 @@
                                          
                                             
                                             ?></span></td>
-                                            <td class="pro-remove"><a href="#"><i class="fa fa-trash-o"></i></a></td>
+                                            <td class="pro-remove"><a href="<?=BASE_URL . '?act=DeleteProductOnCart&id='.$product['product_id']?>"><i class="fa fa-trash-o"></i></a></td>
                                         </tr>
                                             <?php endforeach;}else{?>
                                             <?php }?>
@@ -126,36 +126,29 @@
     <?php require_once "./view/playout2/js.php" ?>
 
 </body>
+    <script>
+    $('.pro-qty').prepend('<span class="dec qtybtn">-</span>');
+    $('.pro-qty').append('<span class="inc qtybtn">+</span>');
+    $('.qtybtn').on('click', function () {
+        var $button = $(this);
+        var oldValue = $button.parent().find('input').val();
+        if ($button.hasClass('inc')) {
+            var newVal = parseFloat(oldValue) + 1;
+			console.log(newVal);
+        } else {
+            // Don't allow decrementing below zero
+            if (oldValue > 0) {
+                var newVal = parseFloat(oldValue) - 1;
+				console.log(newVal);
 
-<!-- Mirrored from htmldemo.net/corano/corano/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 29 Jun 2024 09:53:43 GMT -->
- <!-- Modernizer JS -->
- <script src="assets/clients/js/vendor/modernizr-3.6.0.min.js"></script>
-    <!-- jQuery JS -->
-    <script src="assets/clients/js/vendor/jquery-3.6.0.min.js"></script>
-    <!-- Bootstrap JS -->
-    <script src="assets/clients/js/vendor/bootstrap.bundle.min.js"></script>
-    <!-- slick Slider JS -->
-    <script src="assets/clients/js/plugins/slick.min.js"></script>
-    <!-- Countdown JS -->
-    <script src="assets/clients/js/plugins/countdown.min.js"></script>
-    <!-- Nice Select JS -->
-    <script src="assets/clients/js/plugins/nice-select.min.js"></script>
-    <!-- jquery UI JS -->
-    <script src="assets/clients/js/plugins/jqueryui.min.js"></script>
-    <!-- Image zoom JS -->
-    <script src="assets/clients/js/plugins/image-zoom.min.js"></script>
-    <!-- Images loaded JS -->
-    <script src="assets/clients/js/plugins/imagesloaded.pkgd.min.js"></script>
-    <!-- mail-chimp active js -->
-    <script src="assets/clients/js/plugins/ajaxchimp.js"></script>
-    <!-- contact form dynamic js -->
-    <script src="assets/clients/js/plugins/ajax-mail.js"></script>
-    <!-- google map api -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfmCVTjRI007pC1Yk2o2d_EhgkjTsFVN8"></script>
-    <!-- google map active js -->
-    <script src="assets/clients/js/plugins/google-map.js"></script>
-    <!-- Main JS -->
-    <script src="assets/clients/js/main.js"></script>
-    <script src="assets/clients/js/main2.js"></script>
+            } else {
+                newVal = 0;
+            }
+        }
+        $button.parent().find('input').val(newVal);
+
+	});
+	
+    </script>
 
 </html>

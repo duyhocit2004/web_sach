@@ -83,7 +83,7 @@
                     <th><img src="<?=$products['image']?>" width="100px" alt=""></th>
                     <th><?=$products['book_name']?></th>
                     <th><?=formatPrice($products['quantity'])?></th>
-                    <th><?=formatPrice($products['sum_price'])?></th>
+                    <th><?=formatPrice($products['sum_price'])?>đ</th>
                 </tr>
                     <?php endforeach;?>
             </table>
