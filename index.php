@@ -46,7 +46,9 @@ match ($act) {
     '/' => (new HomeController())->index(),
 
     //liên hệ
-    'contact' => (new ContactController())->formContact(),
+    'contact' => (new ContactControllerUser())->formContact(),
+    'them-lien-he' => ( new ContactControllerUser()) ->postAddContact(),
+
 
     //Sản Phẩm
     'shop-product' => (new ProductController())->getAllSanPham(),

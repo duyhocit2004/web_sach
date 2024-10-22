@@ -54,7 +54,7 @@
                                 <?php unset($_SESSION['success_message']); // Xóa thông báo sau khi hiển thị ?>
                             <?php endif; ?>
                             
-                            <form action="<?= BASE_URL_ADMIN . '?act=them-lien-he' ?>" method="post"
+                            <form action="<?= BASE_URL . '?act=them-lien-he' ?>" method="post"
                                 class="contact-form">
 
                                 <div class="row">
