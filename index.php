@@ -53,7 +53,7 @@
 
 
         //liên hệ
-        'contact' => (new ContactController())->formContact(),
+        'contact' => (new ContactControllerUser())->formContact(),
         'them-lien-he' => ( new ContactControllerUser()) ->postAddContact(),
 
         //Sản Phẩm
