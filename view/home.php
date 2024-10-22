@@ -118,8 +118,6 @@
             <div class="row">
                 <div class="col-12">
                     <div class="product-container">
-
-
                         <!-- product tab content start -->
                         <div class="tab-content">
                             <div class="tab-pane fade show active" id="tab1">
