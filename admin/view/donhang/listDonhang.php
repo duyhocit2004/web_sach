@@ -78,10 +78,14 @@
                                                             href="<?= BASE_URL_ADMIN . '?act=chi-tiet-don-hang&id=' . $donhang['id'] ?>">
                                                             <button class="btn btn-warning">chi tiết</button>
                                                         </a>
-                                                        <a href="<?= BASE_URL_ADMIN . '?act=xoa-don-hang&id=' . $donhang['id'] ?>"
-                                                            onclick="return confirm('Ban co muon xoa')">
-                                                            <button class="btn btn-danger">Xóa</button>
-                                                        </a>
+                                                        <?php if($donhang['payment_status_id'] < 5 ) {?>
+                                                            <a href="<?= BASE_URL_ADMIN . '?act=xoa-don-hang&id=' . $donhang['id'] ?>"
+                                                                onclick="return confirm('Ban co muon xoa')">
+                                                                <button class="btn btn-danger">Xóa</button>
+                                                            </a>
+                                                        <?php }else{
+                                                            
+                                                        } ?>
 
                                                     </td>
                                                 </tr>

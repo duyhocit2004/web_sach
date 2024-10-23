@@ -72,7 +72,7 @@
                                                     </td> 
                                                     <td><?= $sanpham['name'] ?></td>
                                                     <td><?= $sanpham['genres_name'] ?></td>
-                                                    <td><?= $sanpham['price'] ?></td>
+                                                    <td><?= formatPrice($sanpham['price']) ?></td>
                                                     <td><?= $sanpham['description'] ?></td>
                                                     <td><?= $sanpham['quantity'] ?></td>
                                                     <td>

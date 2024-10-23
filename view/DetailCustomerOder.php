@@ -12,10 +12,11 @@
         }
         .main{
             border-radius: 10;
+            
 
         }
         .mr{
-            background-color: burlywood; 
+            /* background-color: burlywood;  */
             border-radius: 10;
         }
         .my-custom-button {
@@ -38,10 +39,10 @@
     <?php require_once "./view/playout2/header.php" ?>
     <!-- end Header Area -->
 
-   <main class="container"class="main">
-    <div class="row">
-            <div class="rounded-top mr">
-                <p style="font-size: 20px;" class="my-3">chi tiết đơn đặt hàng</p>
+   <main class="container"class="main ">
+    <div class="row my-2 ">
+            <div class="rounded-top mr back">
+                <p style="font-size: 20px; color :aliceblue;" class="my-3">chi tiết đơn đặt hàng</p>
             </div>
             <div class="my-3 pd-2">
                 <div class="py-2">
@@ -66,9 +67,15 @@
                     <p><strong>phương thức thanh toán :</strong> <?=$listdetail['payment_method_name']?></p>
                 </div>
                 <div class="py-2">
-                    <p><strong>trạng thái :</strong><?=$listdetail['payment_status']?></p>
+                    <p><strong >trạng thái :</strong><?=$listdetail['payment_status']?></p>
+                    <?php if($listdetail['payment_status_id'] <= 1){ ?>
+                        <form action="<?= BASE_URL."?act=updateOderClients&id=". $listdetail['id'] ?>" method="POST">
+                                <button class="my-custom-button">hủy đơn hàng</button>
+                        </form> 
+                    <?php } else {?>
+
+                    <?php }?>
                 </div>
-                
                 <table class="table  table-striped">
                 <tr>
                     <td>STT</td>
@@ -87,9 +94,12 @@
                 </tr>
                     <?php endforeach;?>
             </table>
+            <div class="d-flex">
                 <div>
-                        <a class="my-custom-button" href="?act=CustomerOder">trở lại</a>
+                        <a class="my-custom-button" href="?act=CustomerOder">trở lại</a> 
                 </div>
+
+             
             </div>
 
    </div>

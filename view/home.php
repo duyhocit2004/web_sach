@@ -50,7 +50,7 @@
         <!-- hero slider area end -->
 
         <!-- service policy area start -->
-        <div class="service-policy section-padding" style="background-color:lightgrey ;">
+        <div class="service-policy section-padding ">
             <div class="container">
                 <div class="row mtn-30">
                     <div class="col-sm-6 col-lg-3">
@@ -103,7 +103,7 @@
         <!-- service policy area end -->
 
         <!-- product area start -->
-        <section class="product-area section-padding " ">
+        <section class="product-area section-padding ">
             <div class=" container">
             <div class="row">
                 <div class="col-12">
@@ -181,7 +181,7 @@
                     <div class="col-12">
                         <!-- section title start -->
                         <div class="section-title text-center">
-                            <h2 class="title">Sản Phẩm</h2>
+                            <h2 class="title">Sản Phẩm sắp hết</h2>
                             <!-- <p class="sub-title">Add featured products to weekly lineup</p> -->
                         </div>
                         <!-- section title start -->
@@ -190,7 +190,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="product-carousel-4 slick-row-10 slick-arrow-style">`
-                            <?php foreach ($listSanPham as $key => $sanPham): ?>
+                            <?php foreach ($listSanPham2 as $key => $sanPham): ?>
                                 <!-- product item start -->
                                 <div class="product-item">
                                     <figure class="product-thumb">
@@ -198,17 +198,6 @@
                                             <img class="pri-img" src="<?= BASE_URL . $sanPham['image'] ?>" alt="product">
                                             <img class="sec-img" src="<?= BASE_URL . $sanPham['image'] ?>" alt="product">
                                         </a>
-
-                                        <!-- Cần chỉnh sửa  -->
-                                        <div class="product-badge">
-                                            <div class="product-label new">
-                                                <span>new</span>
-                                            </div>
-                                            <div class="product-label discount">
-                                                <span>10%</span>
-                                            </div>
-                                        </div>
-                                        <!-- Cần chỉnh sửa  -->
 
 
                                         <div class="cart-hover">
@@ -247,7 +236,7 @@
                         <div class="categories-group-wrapper">
                             <!-- section title start -->
                             <div class="section-title-append">
-                                <h4>Sản Phẩm Bán Chạy</h4>
+                                <h4>Sách Phiêu Lưu</h4>
                                 <div class="slick-append"></div>
                             </div>
                             <!-- section title start -->
@@ -258,7 +247,7 @@
                             <div class="group-list-item-wrapper">
                                 <div class="group-list-carousel">
                                     <!-- group list item start -->
-                                    <?php foreach ($listSanPham as $key => $sanPham): ?>
+                                    <?php foreach ($listgerne3 as $key => $sanPham): ?>
 
                                         <div class="group-slide-item">
                                             <div class="group-item">
@@ -291,7 +280,7 @@
                         <div class="categories-group-wrapper">
                             <!-- section title start -->
                             <div class="section-title-append">
-                                <h4>Sản Phẩm đang bán</h4>
+                                <h4>sách tiểu thuyết hiên đại</h4>
                                 <div class="slick-append"></div>
                             </div>
                             <!-- section title start -->
@@ -300,7 +289,91 @@
                             <div class="group-list-item-wrapper">
                                 <div class="group-list-carousel">
                                     <!-- group list item start -->
-                                    <?php foreach ($listSanPham as $key => $sanPham): ?>
+                                    <?php foreach ($listgerne4 as $key => $sanPham): ?>
+                                        <div class="group-slide-item">
+                                            <div class="group-item">
+                                                <div class="group-item-thumb">
+                                                    <a href="<?= BASE_URL . '?act=detail-product&id=' . $sanPham['id']; ?>">
+                                                        <img class="pri-img" src="<?= BASE_URL . $sanPham['image'] ?>"
+                                                            alt="product">
+                                                    </a>
+                                                </div>
+                                                <div class="group-item-desc">
+                                                    <h5 class="group-product-name"><a
+                                                            href="<?= BASE_URL . '?act=detail-product&id=' . $sanPham['id']; ?>"><?= $sanPham['book_name'] ?></a>
+                                                    </h5>
+                                                    <div class="price-box">
+                                                        <span
+                                                            style="color: red"><?= formatPrice($sanPham['price']) . 'đ'; ?>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- group list item end -->
+                                    <?php endforeach ?>
+
+
+                                </div>
+                            </div>
+                            <!-- group list carousel start -->
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="categories-group-wrapper">
+                            <!-- section title start -->
+                            <div class="section-title-append">
+                                <h4>Sách triết lý</h4>
+                                <div class="slick-append"></div>
+                            </div>
+                            <!-- section title start -->
+
+                            <!-- group list carousel start -->
+                            <div class="group-list-item-wrapper">
+                                <div class="group-list-carousel">
+                                    <!-- group list item start -->
+                                    <?php foreach ($listgerne2 as $key => $sanPham): ?>
+                                        <div class="group-slide-item">
+                                            <div class="group-item">
+                                                <div class="group-item-thumb">
+                                                    <a href="<?= BASE_URL . '?act=detail-product&id=' . $sanPham['id']; ?>">
+                                                        <img class="pri-img" src="<?= BASE_URL . $sanPham['image'] ?>"
+                                                            alt="product">
+                                                    </a>
+                                                </div>
+                                                <div class="group-item-desc">
+                                                    <h5 class="group-product-name"><a
+                                                            href="<?= BASE_URL . '?act=detail-product&id=' . $sanPham['id']; ?>"><?= $sanPham['book_name'] ?></a>
+                                                    </h5>
+                                                    <div class="price-box">
+                                                        <span
+                                                            style="color: red"><?= formatPrice($sanPham['price']) . 'đ'; ?>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- group list item end -->
+                                    <?php endforeach ?>
+
+
+                                </div>
+                            </div>
+                            <!-- group list carousel start -->
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="categories-group-wrapper">
+                            <!-- section title start -->
+                            <div class="section-title-append">
+                                <h4>Sách lịch sử</h4>
+                                <div class="slick-append"></div>
+                            </div>
+                            <!-- section title start -->
+
+                            <!-- group list carousel start -->
+                            <div class="group-list-item-wrapper">
+                                <div class="group-list-carousel">
+                                    <!-- group list item start -->
+                                    <?php foreach ($listgerne1 as $key => $sanPham): ?>
                                         <div class="group-slide-item">
                                             <div class="group-item">
                                                 <div class="group-item-thumb">
@@ -334,53 +407,6 @@
         </section>
         <!-- group product end -->
 
-        <!-- latest blog area start -->
-        <section class="latest-blog-area section-padding pt-0">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <!-- section title start -->
-                        <div class="section-title text-center">
-                            <h2 class="title">Tin Tức</h2>
-                            <!-- <p class="sub-title">There are latest blog posts</p> -->
-                        </div>
-                        <!-- section title start -->
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                        <div class="blog-carousel-active slick-row-10 slick-arrow-style">
-                            <!-- blog post item start -->
-                            <!-- <div class="blog-post-item">
-                                <figure class="blog-thumb">
-                                    <a href="blog-details.html">
-                                        <img src="assets/clients/img/blog/blog-img1.jpg" alt="blog image">
-                                    </a>
-                                </figure>
-                                <div class="blog-content">
-                                    <div class="blog-meta">
-                                        <p>25/03/2019 | <a href="#">Corano</a></p>
-                                    </div>
-                                    <h5 class="blog-title">
-                                        <a href="blog-details.html">Celebrity Daughter Opens Up About Having Her Eye
-                                            Color Changed</a>
-                                    </h5>
-                                </div>
-                            </div> -->
-                            <!-- blog post item end -->
-
-                            <!-- blog post item start -->
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- latest blog area end -->
-
-        <!-- brand logo area start -->
-
-        <!-- brand logo area end -->
     </main>
 
     <!-- Scroll to top start -->

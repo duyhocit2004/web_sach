@@ -52,9 +52,18 @@ class TaikhoanController{
                 $error['role'] = " vui lòng nhập tên";
             }
             $_SESSION['error'] = $error;
-            $this->model->addTaikhoan($name,$password,$email,$phone,$thumble,$nationality,$address,$role);
-            header("Location : ".BASE_URL_ADMIN.'?act=tai-khoan');
+            $user = $this->model->addTaikhoan($name,
+            $password,
+            $email,
+            $phone,
+            $thumble,
+            $nationality,
+            $address,
+            $role);
+            
+            header("Location: " . BASE_URL_ADMIN . '?act=tai-khoan');
             exit();
+
         }
     }
     public function FromSuataikhoan(){
@@ -119,7 +128,8 @@ class TaikhoanController{
             }
             // var_dump($avatar,$nationality,$address,$role);die();
             $this->model->UpdateTaikhoan($name,$password,$email,$phone,$new_file,$nationality,$address,$role,$id);
-            header("Location : ".BASE_URL_ADMIN.'?act=tai-khoan');
+            header("Location: " . BASE_URL_ADMIN . '?act=tai-khoan');
+            exit(); 
 
         }
     }

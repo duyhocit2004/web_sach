@@ -21,7 +21,7 @@
                 <div class="form-content">
                     <div class="form-items">
                         <div class="website-logo-inside logo-normal">
-                            <img class="logo-size" height="100px" style="width: 300px;" src="uploads/clients/logo/logo.png" alt="">                        
+                            <img class="logo-size" height="100px" width=" 200px;" src="uploads/clients/logo/2-Photoroom.png" alt="">                        
                         </div>
                         <h3 class="font-md">đăng nhập</h3>
                         <form action="?act=checklogin" method="POST">

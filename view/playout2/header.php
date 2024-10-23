@@ -1,4 +1,4 @@
-<header class="header-area header-wide back">
+<header class="header-area header-wide">
     <!-- main header start -->
     <div class="main-header d-none d-lg-block">
         <!-- header middle area start -->
@@ -11,7 +11,7 @@
                         <div class="logo">
                             <a href="<?= BASE_URL ?>">
                                 <!-- SỬA LOGO -->
-                                <img src="uploads/clients/logo/logo.png" alt="Brand Logo">
+                                <img src="uploads/clients/logo/THế Giới sách-Photoroom.png" width="80px" alt="Brand Logo">
                             </a>
                         </div>
                     </div>

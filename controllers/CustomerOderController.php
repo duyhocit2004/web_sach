@@ -26,10 +26,17 @@ class CustomerOderController{
             // var_dump($id);
             $listproducts = $this->model->getdetailproduct( $listdetail['id']);
            
-            var_dump($listproducts);
+            // var_dump($listdetail);die();
            
             
             require_once "./view/DetailCustomerOder.php";
         } 
+    }
+    public function UpdateCustomerOder(){
+        $id = $_GET['id'];
+        // var_dump($id);die;
+        $this->model->UpdateOder($id);
+        header("location:".BASE_URL."?act=detailOrder&id=".$id);
+        exit();
     }
 }

@@ -58,5 +58,14 @@ class CustomerOderModel{
         ]);
         return $stmt->fetchAll();
     }
+    public function UpdateOder ($id){
+        $sql = "UPDATE orders SET payment_status_id = :payment WHERE id=:id";
+        $stmt = $this->data->prepare($sql);
+        $stmt ->execute([
+            ':payment' => 6,
+            'id' =>$id
+        ]);
+        return true;
+    }
 
 }

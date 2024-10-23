@@ -94,9 +94,10 @@
         //quản lý đơn hàng của khách hàng
         'CustomerOder' =>(new CustomerOderController() )->listOrder(),
         'detailOrder' =>(new CustomerOderController()) ->detailCustomerOder(),
+        'updateOderClients' => (new CustomerOderController()) ->UpdateCustomerOder(),
 
         //phương thức thanh toán
-        'thanh-toan' =>(new paymentOrdersController())->execPostRequest(),
+        // 'thanh-toan' =>(new paymentOrdersController())->execPostRequest(),
 
         //phân loại 
         'chu-de' =>(new ProductCategoryController())->index(),

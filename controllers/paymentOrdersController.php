@@ -6,25 +6,64 @@ use Endroid\QrCode\Writer\PngWriter;
 class PaymentOrdersController{
 
 
-function execPostRequest()
-{
-            // Thông tin đơn hàng
-        $order_id = 123; // ID đơn hàng
-        $total_amount = 500000; // Tổng số tiền
-        $payment_url = "http://localhost/web_ban_sach/?act=thanh-toan"; // URL thanh toán
-
-        // Tạo QR code
-        $qrCode = QrCode::create($payment_url)
-            ->setSize(300);
-
-        // Lưu QR code vào file
-        $writer = new PngWriter();
-        $result = $writer->write($qrCode);
-       
-
-        // Hoặc xuất ra trình duyệt
-         
-        // requi
-
+    function createPaymentRequest() {
+        $partnerCode = "YOUR_PARTNER_CODE"; // Thay thế bằng Partner Code của bạn
+        $accessKey = "YOUR_ACCESS_KEY"; // Thay thế bằng Access Key của bạn
+        $secretKey = "YOUR_SECRET_KEY"; // Thay thế bằng Secret Key của bạn
+        $orderId = time();
+        $redirectUrl = "http://yourwebsite.com/success.php"; // URL quay lại sau khi thanh toán thành công
+        $ipnUrl = "http://yourwebsite.com/ipn.php"; // URL để nhận thông báo
+        $amount = 10000; // Số tiền thanh toán (đơn vị VNĐ)
+        $orderInfo = "Thanh toán đơn hàng #" . $orderId;
+    
+        $requestId = time();
+        $requestType = "captureWallet";
+    
+        // Tạo thông tin yêu cầu
+        $rawHash = "partnerCode=$partnerCode&accessKey=$accessKey&requestId=$requestId&amount=$amount&orderId=$orderId&orderInfo=$orderInfo&redirectUrl=$redirectUrl&ipnUrl=$ipnUrl";
+        $signature = hash_hmac('sha256', $rawHash, $secretKey);
+    
+        $data = [
+            "partnerCode" => $partnerCode,
+            "accessKey" => $accessKey,
+            "requestId" => $requestId,
+            "amount" => $amount,
+            "orderId" => $orderId,
+            "orderInfo" => $orderInfo,
+            "redirectUrl" => $redirectUrl,
+            "ipnUrl" => $ipnUrl,
+            "signature" => $signature,
+            "requestType" => $requestType
+        ];
+    
+        $jsonData = json_encode($data);
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, "https://test-payment.momo.vn/gw_payment/transactionProcessor");
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, [
+            "Content-Type: application/json;charset=UTF-8",
+            "Content-Length: " . strlen($jsonData)
+        ]);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonData);
+    
+        $response = curl_exec($ch);
+        curl_close($ch);
+    
+        return json_decode($response, true);
+        
     }
+    
+    public function checkpayment(){
+        $response = createPaymentRequest();
+        if (isset($response['payUrl'])) {
+            // Chuyển hướng người dùng đến URL thanh toán
+            header("Location: " . $response['payUrl']);
+            exit();
+        } else {
+            echo "Có lỗi xảy ra: " . $response['message'];
+        }
+        
+    }
+
 }

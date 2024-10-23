@@ -58,6 +58,7 @@ class TaikhoanModel {
             ':address'=>$address,
             ':role'=>$role,
         ]);
+        return true;
     }
     public function GetDetailTaikhoan($id){
         $sql = "SELECT * FROM users WHERE id=$id";

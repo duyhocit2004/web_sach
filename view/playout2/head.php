@@ -5,7 +5,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="uploads/clients/logo/logo.png">
+    <link rel="shortcut icon" type="image/x-icon" href="uploads/clients/logo/THế Giới sách-Photoroom.png">
 
     <!-- CSS
 	============================================ -->
@@ -30,6 +30,6 @@
 
     <style>
         .back{
-            background-color: #cccccc;
+            background-color: #1E90FF;
         }
     </style>

@@ -14,7 +14,7 @@
 
         }
         .mr{
-            background-color: burlywood; 
+            /* background-color: burlywood;  */
             border-radius: 10;
         }
         .my-custom-button {
@@ -39,8 +39,8 @@
 
    <main class="container"class="main">
     <div class="row">
-            <div class="rounded-top mr">
-                <p style="font-size: 20px;" class="my-3">danh sách đặt hàng</p>
+            <div class="rounded-top mr my-2 back">
+                <p style="font-size: 20px; color:aliceblue;" class="my-3">danh sách đặt hàng</p>
             </div>
 
                 <table class="table  table-striped">

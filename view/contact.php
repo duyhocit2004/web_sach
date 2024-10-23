@@ -78,7 +78,7 @@
                                         </div>
 
                                         <div class="contact-btn">
-                                            <button type="submit" class="btn btn-sqr">Gửi</button>
+                                            <button type="submit" class="btn btn-sqr back">Gửi</button>
                                         </div>
 
                                     </div>
@@ -94,8 +94,8 @@
 
                             <ul>
                                 <li><i class="fa fa-fax"></i> Địa chỉ : Cao Đẳng FPT Polytechnic</li>
-                                <li><i class="fa fa-phone"></i> + 0962139512 </li>
-                                <li><i class="fa fa-envelope-o"></i>E-mail: lechinh2905@gmail.com</li>
+                                <li><i class="fa fa-phone"></i> + 0962139512 & + 033703575 </li>
+                                <li><i class="fa fa-envelope-o"></i>E-mail: lechinh2905@gmail.com & hoangduyoffline@gmail.com</li>
                             </ul>
                             <div class="working-time">
                                 <h6>Thời gian làm việc</h6>

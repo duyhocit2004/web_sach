@@ -22,9 +22,9 @@
                         <div class="col-lg-12">
                             <!-- Cart Table Area -->
                             <div class="cart-table table-responsive">
-                                <table class="table table-bordered">
-                                    <thead>
-                                        <tr>
+                                <table class="table ">
+                                    <thead class="back">
+                                        <tr class="back">
                                             <th class="pro-thumbnail">ánh sản phẩm</th>
                                             <th class="pro-title">tên sản phẩm</th>
                                             <th class="pro-price">giá</th>
@@ -98,7 +98,7 @@
                                         </table>
                                     </div>
                                 </div>
-                                <a href="<?=BASE_URL.'?act=order'?>" class="btn btn-sqr d-block">tiến hành thanh toán</a>
+                                <a href="<?=BASE_URL.'?act=order'?>" class="btn btn-sqr d-block back">tiến hành thanh toán</a>
                             </div>
                         </div>
                     </div>
@@ -126,29 +126,4 @@
     <?php require_once "./view/playout2/js.php" ?>
 
 </body>
-    <script>
-    $('.pro-qty').prepend('<span class="dec qtybtn">-</span>');
-    $('.pro-qty').append('<span class="inc qtybtn">+</span>');
-    $('.qtybtn').on('click', function () {
-        var $button = $(this);
-        var oldValue = $button.parent().find('input').val();
-        if ($button.hasClass('inc')) {
-            var newVal = parseFloat(oldValue) + 1;
-			console.log(newVal);
-        } else {
-            // Don't allow decrementing below zero
-            if (oldValue > 0) {
-                var newVal = parseFloat(oldValue) - 1;
-				console.log(newVal);
-
-            } else {
-                newVal = 0;
-            }
-        }
-        $button.parent().find('input').val(newVal);
-
-	});
-	
-    </script>
-
 </html>

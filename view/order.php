@@ -151,8 +151,8 @@
                                                     <div class="single-payment-method show">
                                                         <div class="payment-method-name">
                                                             <div class="custom-control custom-radio">
-                                                                <input type="radio" id="cashon" name="payment_method" value="1" class="custom-control-input" checked />
-                                                                <label class="custom-control-label" for="cashon">thanh toán khi nhận hàng</label>
+                                                                <input type="radio" id="cashon" name="payment_method" value="1" class="custom-control-input back" checked />
+                                                                <label class="custom-control-label " for="cashon">thanh toán khi nhận hàng</label>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -175,7 +175,7 @@
                                                 
 
                                                     <div class="summary-footer-area my-4">
-                                                        <button type="submit" class="btn btn-sqr">đặt hàng</button>
+                                                        <button type="submit" class="btn btn-sqr back">đặt hàng</button>
                                                     </div>
                                                 </div>
                                             </div>
